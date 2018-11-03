@@ -1,7 +1,9 @@
 # depslib dependency file v1.0
-1541200348 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\main.c
+1541245361 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\main.c
 	<SDL2/SDL.h>
 	<stdio.h>
+	"iConception.h"
+	"kernel.h"
 
 1540998544 c:\users\brete\documents\projects\esgi2\c\electronix\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -344,4 +346,18 @@
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
+
+1541240058 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\iconception.c
+	"iConception.h"
+
+1541240354 c:\users\brete\documents\projects\esgi2\c\electronix\src\iconception.h
+	<SDL2/SDL.h>
+
+1541247195 c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.h
+	<SDL2/SDL.h>
+	<stdio.h>
+	<stdlib.h>
+
+1541247186 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.c
+	"kernel.h"
 
