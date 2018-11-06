@@ -1,15 +1,20 @@
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "ressources.h"
+
 char ** conf;
-SDL_Window* windowP;
-SDL_Renderer* rendererP;
 
 void initConf(char * confFilename); //Load conf file
 SDL_Window* initWindow(); //Init window
-//SDL_Renderer* initRenderer(); //Init renderer
+SDL_Renderer* initRenderer(); //Init renderer
+int initImg();
+int init(SDL_Window** windowP, SDL_Renderer** rendererP);
+int postInit(SDL_Renderer* rendererP, SDL_Surface** surfaceP);
 
-int updateApp();
+int updateApp(SDL_Renderer* rendererP, SDL_Surface* surfaceP);
 
-void endApp();
+void freeRessources(SDL_Surface* surfaceP);
+void endApp(SDL_Window* windowP, SDL_Renderer* rendererP,SDL_Surface* surfaceP);

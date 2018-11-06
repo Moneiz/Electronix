@@ -20,6 +20,7 @@
 					<Add library="libSDL2main.a" />
 					<Add library="libSDL2.dll.a" />
 					<Add library="libSDL2.a" />
+					<Add library="libSDL2_image.a" />
 					<Add directory="lib" />
 				</Linker>
 			</Target>
@@ -39,9 +40,21 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="src/iConception.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/iConception.h" />
+		<Unit filename="src/kernel.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/kernel.h" />
 		<Unit filename="src/main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/ressources.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ressources.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -6,12 +6,15 @@
 
 int main(int argc, char** argv)
 {
-    //SDL_Window* window = NULL;
-    //SDL_Renderer* renderer = NULL;
+    SDL_Window* win;
+    SDL_Renderer* render;
+    SDL_Surface* surface;
 
-    initWindow();
-    updateApp();
-    endApp();
+
+    if(init(&win, &render) &  postInit(render, &surface)){
+        updateApp(render, surface);
+    }
+    endApp(win, render, surface);
 
     return 0;
 }
