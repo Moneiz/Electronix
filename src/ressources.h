@@ -1,5 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-short sizeListImgFiles() ;
-char ** listImgFiles();
+struct Ressources{
+
+    int sizeListImgFiles;
+    char ** listImgFiles;
+
+};
+
+
+struct Ressources getFilledRessources();

@@ -1,13 +1,14 @@
 #include "ressources.h"
 
 
-short sizeListImgFiles(){
-    return 1;
-}
-char ** listImgFiles(){
-    char ** result = {
-        "./img/test.jpg"
-    };
-    return result;
-}
+struct Ressources getFilledRessources(){
 
+    struct Ressources r = {
+        2,
+        {
+            "./img/test.jpg",
+            "./img/NULL"
+        }
+    };
+    return r;
+}

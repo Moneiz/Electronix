@@ -1,14 +1,14 @@
 #include "iConception.h"
 
-int initLayout(SDL_Renderer* rendererP, SDL_Surface* surfaceP){
+int initLayout(SDL_Renderer* rendererP, SDL_Surface** surfaceP){
 
     if(!initTextures(rendererP, surfaceP)){
         return 0;
     }
     return 1;
 }
-int initTextures(SDL_Renderer* rendererP, SDL_Surface* surfaceP){
-    textureP = SDL_CreateTextureFromSurface(rendererP,surfaceP);
+int initTextures(SDL_Renderer* rendererP, SDL_Surface** surfaceP){
+    textureP = SDL_CreateTextureFromSurface(rendererP,*surfaceP);
     if(!textureP){
         fprintf(stderr,"Texture Creation Error :/ -> %s\n",SDL_GetError());
         return 0;
@@ -16,7 +16,7 @@ int initTextures(SDL_Renderer* rendererP, SDL_Surface* surfaceP){
     return 1;
 }
 
-int update(SDL_Renderer* rendererP, SDL_Surface* surfaceP){
+int update(SDL_Renderer* rendererP, SDL_Surface** surfaceP){
 
     //SDL_Rect background = {640/2 - surfaceP->w/2, 480/2 - surfaceP->h/2, surfaceP->w, surfaceP->h};
     //SDL_RenderCopy(rendererP,textureP,NULL,&background);
