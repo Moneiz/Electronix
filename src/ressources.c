@@ -1,14 +1,16 @@
 #include "ressources.h"
 
 
-struct Ressources getFilledRessources(){
+Ressources getFilledRessources(){
 
-    struct Ressources r = {
-        2,
+
+    Ressources r = {
+        NB_IMAGES,
         {
-            "./img/test.jpg",
-            "./img/NULL"
+            "./img/test.jpg"
         }
+
     };
+
     return r;
 }

@@ -73,12 +73,12 @@ int init(SDL_Window** windowP, SDL_Renderer** rendererP){
     return 1;
 
 }
-int postInit(SDL_Renderer* rendererP,SDL_Surface*** surfaceP, struct Ressources r){
+int postInit(SDL_Renderer* rendererP,SDL_Surface*** surfaceP, Ressources r){
 
     int i;
-    *(surfaceP) = (int*) malloc(sizeof(SDL_Surface) * r.sizeListImgFiles);
+    *(surfaceP) = (int*) malloc(sizeof(SDL_Surface*) * r.sizeListImgFiles);
     for(i = 0; i < r.sizeListImgFiles; i++){
-        (*surfaceP)[i] = IMG_Load(r.listImgFiles[i]);
+        (*surfaceP)[i] = IMG_Load(r.listImgFiles+i);
         if(!(*surfaceP)[i]){
             fprintf(stderr,"Image Loading Error :/ -> %s\n", IMG_GetError());
             return 0;
@@ -87,22 +87,19 @@ int postInit(SDL_Renderer* rendererP,SDL_Surface*** surfaceP, struct Ressources 
     }
 
 
-
-
     initLayout(rendererP,*surfaceP);
     return 1;
 }
-void freeRessources(SDL_Surface** surfaceP, struct Ressources r){
+void freeRessources(SDL_Surface** surfaceP, Ressources r){
 
     int i;
-
     destroyTextures();
-    for(int i = 0; i < r.sizeListImgFiles; i++){
+    for(i = 0; i < r.sizeListImgFiles; i++){
         SDL_FreeSurface(*(surfaceP+i));
     }
     free(*(surfaceP));
 }
-void endApp(SDL_Window* windowP, SDL_Renderer* rendererP,SDL_Surface** surfaceP, struct Ressources r){
+void endApp(SDL_Window* windowP, SDL_Renderer* rendererP,SDL_Surface** surfaceP, Ressources r){
 
     freeRessources(surfaceP,r);
     IMG_Quit();
@@ -111,13 +108,14 @@ void endApp(SDL_Window* windowP, SDL_Renderer* rendererP,SDL_Surface** surfaceP,
     SDL_DestroyWindow(windowP);
     SDL_Quit();
 }
-int updateApp(SDL_Renderer* rendererP, SDL_Surface** surfaceP){
+int updateApp(SDL_Window* windowP, SDL_Renderer* rendererP, SDL_Surface** surfaceP){
     int continuer = 1;
     SDL_Event event;
 
     while (continuer)
     {
-        update(rendererP, surfaceP);
+        //Appel des layouts
+        update(windowP, rendererP, surfaceP);
 
         SDL_WaitEvent(&event);
         switch(event.type)

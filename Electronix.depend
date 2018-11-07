@@ -1,9 +1,10 @@
 # depslib dependency file v1.0
-1541543097 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\main.c
+1541622086 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\main.c
 	<SDL2/SDL.h>
 	<stdio.h>
 	"iConception.h"
 	"kernel.h"
+	"ressources.h"
 
 1540998544 c:\users\brete\documents\projects\esgi2\c\electronix\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -347,22 +348,22 @@
 	"begin_code.h"
 	"close_code.h"
 
-1541542687 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\iconception.c
+1541624036 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\iconception.c
 	"iConception.h"
 
-1541542639 c:\users\brete\documents\projects\esgi2\c\electronix\src\iconception.h
+1541622099 c:\users\brete\documents\projects\esgi2\c\electronix\src\iconception.h
 	<SDL2/SDL.h>
 	<stdio.h>
 	<stdlib.h>
 
-1541543083 c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.h
+1541622071 c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<stdio.h>
 	<stdlib.h>
 	"ressources.h"
 
-1541542583 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.c
+1541624582 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.c
 	"kernel.h"
 
 1540997982 c:\users\brete\documents\projects\esgi2\c\electronix\include\sdl2\sdl_image.h
@@ -371,11 +372,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1541524512 c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.h
+1541621609 c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.h
 	<stdio.h>
 	<stdlib.h>
 
-1541524501 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.c
+1541621558 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.c
 	"ressources.h"
 
 1541606419 source:z:\electronix\src\ressources.c
