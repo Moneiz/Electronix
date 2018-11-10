@@ -96,6 +96,9 @@ int postInit(SDL_Renderer* rendererP,Surfaces_manager* surfaceP, Ressources r){
         }
     }
     (*surfaceP).font = TTF_OpenFont("./fonts/Atures-700_PERSONAL_USE.ttf",65);
+    if(!( (*surfaceP).font )){
+        return 0;
+    }
     (*surfaceP).texts = (int*) malloc(sizeof(SDL_Surface*) * r.sizeListText);
     SDL_Color white = {255,255,255};
     for(i = 0; i < r.sizeListImgFiles; i++){
@@ -115,6 +118,12 @@ void freeRessources(Surfaces_manager surfaceP, Ressources r){
 
     int i;
     destroyTextures();
+
+    for(i = 0; i < r.sizeListText; i++){
+        SDL_FreeSurface(surfaceP.texts[i]);
+    }
+    free(surfaceP.texts);
+
     for(i = 0; i < r.sizeListImgFiles; i++){
         SDL_FreeSurface(surfaceP.images[i]);
     }

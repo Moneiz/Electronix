@@ -21,6 +21,7 @@
 					<Add library="libSDL2.dll.a" />
 					<Add library="libSDL2.a" />
 					<Add library="libSDL2_image.a" />
+					<Add library="libSDL2_ttf.a" />
 					<Add directory="lib" />
 				</Linker>
 			</Target>
@@ -40,14 +41,18 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="src/iConception.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="src/iConception.h" />
 		<Unit filename="src/kernel.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/kernel.h" />
+		<Unit filename="src/layoutLoader.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/layoutLoader.h" />
+		<Unit filename="src/layouts/iConception.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/layouts/iConception.h" />
 		<Unit filename="src/main.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -55,6 +60,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/ressources.h" />
+		<Unit filename="src/surfacesManager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/surfacesManager.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

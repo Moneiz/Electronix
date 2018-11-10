@@ -348,17 +348,17 @@
 	"begin_code.h"
 	"close_code.h"
 
-1541809033 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\iconception.c
+1541843837 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\iconception.c
 	"iConception.h"
 
-1541808234 c:\users\brete\documents\projects\esgi2\c\electronix\src\iconception.h
+1541843238 c:\users\brete\documents\projects\esgi2\c\electronix\src\iconception.h
 	<SDL2/SDL.h>
 	<stdio.h>
 	<stdlib.h>
 	<SDL2/SDL_ttf.h>
 	"surfacesManager.h"
 
-1541801397 c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.h
+1541846363 c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_ttf.h>
@@ -366,8 +366,9 @@
 	<stdlib.h>
 	"ressources.h"
 	"surfacesManager.h"
+	"layouts/iConception.h"
 
-1541808254 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.c
+1541843950 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.c
 	"kernel.h"
 
 1540997982 c:\users\brete\documents\projects\esgi2\c\electronix\include\sdl2\sdl_image.h
@@ -380,7 +381,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1541784063 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.c
+1541864498 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.c
 	"ressources.h"
 
 1541606419 source:z:\electronix\src\ressources.c
@@ -775,4 +776,16 @@
 
 1541785125 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\surfacesmanager.c
 	"surfacesManager.h"
+
+1541886775 c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\iconception.h
+	<SDL2/SDL.h>
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL_ttf.h>
+	"../surfacesManager.h"
+
+1541864378 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layoutloader.c
+
+1541886754 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\iconception.c
+	"iConception.h"
 

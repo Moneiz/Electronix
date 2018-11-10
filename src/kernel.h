@@ -6,6 +6,7 @@
 
 #include "ressources.h"
 #include "surfacesManager.h"
+#include "layouts/iConception.h"
 
 char ** conf;
 

@@ -11,7 +11,7 @@ Ressources getFilledRessources(){
         },
         NB_TEXT,
         {
-            "test wow"
+            "hello world!"
         }
 
     };
