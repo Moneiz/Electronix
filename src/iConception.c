@@ -1,8 +1,11 @@
 #include "iConception.h"
 
-int initLayout(SDL_Renderer* rendererP, SDL_Surface** surfaceP){
+int initLayout(SDL_Renderer* rendererP, Surfaces_manager surfaceP){
 
-    if(!initTextures(rendererP, surfaceP)){
+    if(!initTextures(rendererP, surfaceP.texts)){
+        return 0;
+    }
+    if(!font){
         return 0;
     }
     return 1;
@@ -16,7 +19,7 @@ int initTextures(SDL_Renderer* rendererP, SDL_Surface** surfaceP){
     return 1;
 }
 
-int update(SDL_Window* windowP, SDL_Renderer* rendererP, SDL_Surface** surfaceP){
+int update(SDL_Window* windowP, SDL_Renderer* rendererP, Surfaces_manager surfaceP){
 
     int i;
     int width, height;
@@ -41,13 +44,19 @@ int update(SDL_Window* windowP, SDL_Renderer* rendererP, SDL_Surface** surfaceP)
     SDL_RenderFillRect(rendererP,&header);
 
     //Test sur la fenetre
-    SDL_Rect background = {width/2, height/2, 200, 100};
+    SDL_Rect background = {width/2, height/2, (*surfaceP.texts)->w, (*surfaceP.texts)->h};
     SDL_RenderCopy(rendererP,textureP,NULL,&background);
     SDL_RenderPresent(rendererP);
+
+    //Test font
+    SDL_Color color = {255,255,255};
+
+    //SDL_RenderCopy(rendererP,*(surfaceP.texts),NULL,&background);
 
     SDL_RenderPresent(rendererP);
 }
 
 int destroyTextures(){
     SDL_DestroyTexture(textureP);
+    TTF_CloseFont(font);
 }

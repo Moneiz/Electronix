@@ -8,6 +8,10 @@ Ressources getFilledRessources(){
         NB_IMAGES,
         {
             "./img/test.jpg"
+        },
+        NB_TEXT,
+        {
+            "test wow"
         }
 
     };

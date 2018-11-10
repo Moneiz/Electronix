@@ -53,6 +53,16 @@ int initImg()
     }
     return 1;
 }
+int initTtf(){
+
+    if(TTF_Init() == -1){
+
+        fprintf(stderr, "TTF Initialisation Error :/ -> %s\n", TTF_GetError());
+        return 0;
+
+    }
+    return 1;
+}
 int init(SDL_Window** windowP, SDL_Renderer** rendererP){
 
     *windowP = initWindow();
@@ -65,22 +75,33 @@ int init(SDL_Window** windowP, SDL_Renderer** rendererP){
     else{
         return 0;
     }
-
-    if(!initImg()){
+    //Images, text init
+    if(!initImg() & !initTtf()){
         return 0;
     }
 
     return 1;
 
 }
-int postInit(SDL_Renderer* rendererP,SDL_Surface*** surfaceP, Ressources r){
+int postInit(SDL_Renderer* rendererP,Surfaces_manager* surfaceP, Ressources r){
 
     int i;
-    *(surfaceP) = (int*) malloc(sizeof(SDL_Surface*) * r.sizeListImgFiles);
+    (*surfaceP).images = (int*) malloc(sizeof(SDL_Surface*) * r.sizeListImgFiles);
     for(i = 0; i < r.sizeListImgFiles; i++){
-        (*surfaceP)[i] = IMG_Load(r.listImgFiles+i);
-        if(!(*surfaceP)[i]){
+        (*surfaceP).images[i] = IMG_Load(r.listImgFiles+i);
+        if(!(*surfaceP).images[i]){
             fprintf(stderr,"Image Loading Error :/ -> %s\n", IMG_GetError());
+            return 0;
+
+        }
+    }
+    (*surfaceP).font = TTF_OpenFont("./fonts/Atures-700_PERSONAL_USE.ttf",65);
+    (*surfaceP).texts = (int*) malloc(sizeof(SDL_Surface*) * r.sizeListText);
+    SDL_Color white = {255,255,255};
+    for(i = 0; i < r.sizeListImgFiles; i++){
+        (*surfaceP).texts[i] = TTF_RenderText_Blended((*surfaceP).font, r.listText+i, white);;
+        if(!(*surfaceP).texts[i]){
+            fprintf(stderr,"Text Loading Error :/ -> %s\n", IMG_GetError());
             return 0;
 
         }
@@ -90,25 +111,26 @@ int postInit(SDL_Renderer* rendererP,SDL_Surface*** surfaceP, Ressources r){
     initLayout(rendererP,*surfaceP);
     return 1;
 }
-void freeRessources(SDL_Surface** surfaceP, Ressources r){
+void freeRessources(Surfaces_manager surfaceP, Ressources r){
 
     int i;
     destroyTextures();
     for(i = 0; i < r.sizeListImgFiles; i++){
-        SDL_FreeSurface(*(surfaceP+i));
+        SDL_FreeSurface(surfaceP.images[i]);
     }
-    free(*(surfaceP));
+    free(surfaceP.images);
 }
-void endApp(SDL_Window* windowP, SDL_Renderer* rendererP,SDL_Surface** surfaceP, Ressources r){
+void endApp(SDL_Window* windowP, SDL_Renderer* rendererP,Surfaces_manager surfaceP, Ressources r){
 
     freeRessources(surfaceP,r);
+    TTF_Quit();
     IMG_Quit();
     SDL_DestroyRenderer(rendererP);
 
     SDL_DestroyWindow(windowP);
     SDL_Quit();
 }
-int updateApp(SDL_Window* windowP, SDL_Renderer* rendererP, SDL_Surface** surfaceP){
+int updateApp(SDL_Window* windowP, SDL_Renderer* rendererP, Surfaces_manager surfaceP){
     int continuer = 1;
     SDL_Event event;
 
