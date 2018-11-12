@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 #include "ressources.h"
-#include "surfacesManager.h"
+#include "datas/commons_datas.h"
 #include "layouts/iConception.h"
 
 char ** conf;
@@ -16,9 +16,9 @@ SDL_Renderer* initRenderer(); //Init renderer
 int initImg();
 int initTtf();
 int init(SDL_Window** windowP, SDL_Renderer** rendererP);
-int postInit(SDL_Renderer* rendererP, Surfaces_manager* surfacesP, Ressources r);
+int postInit(SDL_Renderer* rendererP, Datas* datas, Ressources r);
 
-int updateApp(SDL_Window* windowP, SDL_Renderer* rendererP, Surfaces_manager surfaceP);
+int updateApp(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas);
 
-void freeRessources(Surfaces_manager surfaceP , Ressources r);
-void endApp(SDL_Window* windowP, SDL_Renderer* rendererP,Surfaces_manager surfaceP, Ressources r);
+void freeRessources(Datas datas , Ressources r);
+void endApp(SDL_Window* windowP, SDL_Renderer* rendererP,Datas datas, Ressources r);

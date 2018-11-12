@@ -1,7 +1,7 @@
 #include "iConception.h"
 
 
-int conception_update(SDL_Window* windowP, SDL_Renderer* rendererP, Surfaces_manager surfaceP){
+int conception_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
 
     int i;
     int width, height;
@@ -30,24 +30,11 @@ int conception_update(SDL_Window* windowP, SDL_Renderer* rendererP, Surfaces_man
     SDL_RenderFillRect(rendererP,&header);
 
     //Test sur la fenetre
-    SDL_Rect text = {width/2, height/2, (*surfaceP.texts)->w, (*surfaceP.texts)->h};
-    SDL_RenderCopy(rendererP,*textsTexP,NULL,&text);
+    SDL_Rect text = {width/2, height/2, datas.surfaces->texts[0]->w, datas.surfaces->texts[0]->h};
+    SDL_RenderCopy(rendererP,datas.textures->texts[0],NULL,&text);
 
-    SDL_Rect textur = {width/4, height/4, (*surfaceP.images)->w / 4, (*surfaceP.images)->h / 4};
-    SDL_RenderCopy(rendererP,*textureP,NULL,&textur);
+    SDL_Rect textur = {width/4, height/4, datas.surfaces->images[0]->w / 4, datas.surfaces->images[0]->h / 4};
+    SDL_RenderCopy(rendererP,datas.textures->images[0],NULL,&textur);
 
     SDL_RenderPresent(rendererP);
-}
-//A isoler (complexité)
-int destroyTextures(){
-    int i;
-    for(i = 0; i < sizeof(textureP) / sizeof(SDL_Texture*); i++){
-        SDL_DestroyTexture(*(textureP+i));
-    }
-    free(textureP);
-    for(i = 0; i < sizeof(textsTexP) / sizeof(SDL_Texture*); i++){
-        SDL_DestroyTexture(*(textsTexP+i));
-    }
-    free(textsTexP);
-    TTF_CloseFont(font);
 }

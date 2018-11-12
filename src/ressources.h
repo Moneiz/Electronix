@@ -17,6 +17,7 @@ typedef struct Ressources {
     char listImgFiles[NB_IMAGES][64];
     int sizeListText;
     char listText[NB_TEXT][64];
+    char font[255];
 
 } Ressources;
 

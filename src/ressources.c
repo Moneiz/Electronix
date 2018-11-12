@@ -12,6 +12,9 @@ Ressources getFilledRessources(){
         NB_TEXT,
         {
             "hello world!"
+        },
+        {
+            "./fonts/Atures-700_PERSONAL_USE.ttf"
         }
 
     };

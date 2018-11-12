@@ -1,10 +1,12 @@
 # depslib dependency file v1.0
-1541801853 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\main.c
+1542058086 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\main.c
 	<SDL2/SDL.h>
 	<stdio.h>
 	"kernel.h"
 	"ressources.h"
-	"surfacesManager.h"
+	"datas/commons_datas.h"
+	"datas/surfacesManager.h"
+	"datas/texturesManager.h"
 
 1540998544 c:\users\brete\documents\projects\esgi2\c\electronix\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -358,17 +360,17 @@
 	<SDL2/SDL_ttf.h>
 	"surfacesManager.h"
 
-1541846363 c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.h
+1541971512 c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_ttf.h>
 	<stdio.h>
 	<stdlib.h>
 	"ressources.h"
-	"surfacesManager.h"
+	"datas/commons_datas.h"
 	"layouts/iConception.h"
 
-1541843950 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.c
+1542058205 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.c
 	"kernel.h"
 
 1540997982 c:\users\brete\documents\projects\esgi2\c\electronix\include\sdl2\sdl_image.h
@@ -377,11 +379,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1541784379 c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.h
+1541971997 c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.h
 	<stdio.h>
 	<stdlib.h>
 
-1541864498 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.c
+1541972011 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.c
 	"ressources.h"
 
 1541606419 source:z:\electronix\src\ressources.c
@@ -777,15 +779,53 @@
 1541785125 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\surfacesmanager.c
 	"surfacesManager.h"
 
-1541886775 c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\iconception.h
+1542058174 c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\iconception.h
 	<SDL2/SDL.h>
 	<stdio.h>
 	<stdlib.h>
 	<SDL2/SDL_ttf.h>
-	"../surfacesManager.h"
+	"../datas/commons_datas.h"
 
-1541864378 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layoutloader.c
+1542056635 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layoutloader.c
+	"layoutLoader.h"
 
-1541886754 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\iconception.c
+1542056530 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\iconception.c
 	"iConception.h"
+
+1541969832 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\commons_datas.c
+	"commons_datas.h"
+
+1541969985 c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\commons_datas.h
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL.h>
+	<SDL2/SDL_ttf.h>
+	"surfacesManager.h"
+	"texturesManager.h"
+
+1541941804 c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\surfacesmanager.h
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL.h>
+	<SDL2/SDL_ttf.h>
+
+1541941792 c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\texturesmanager.h
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL.h>
+	<SDL2/SDL_ttf.h>
+
+1541785125 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\surfacesmanager.c
+	"surfacesManager.h"
+
+1541938231 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\texturesmanager.c
+	"surfacesManager.h"
+
+1542056133 c:\users\brete\documents\projects\esgi2\c\electronix\src\layoutloader.h
+	<SDL2/SDL.h>
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL_ttf.h>
+	"layouts/iConception.h"
+	"datas/commons_datas.h"
 

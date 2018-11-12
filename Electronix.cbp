@@ -41,6 +41,18 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="src/datas/commons_datas.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/datas/commons_datas.h" />
+		<Unit filename="src/datas/surfacesManager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/datas/surfacesManager.h" />
+		<Unit filename="src/datas/texturesManager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/datas/texturesManager.h" />
 		<Unit filename="src/kernel.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -60,10 +72,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/ressources.h" />
-		<Unit filename="src/surfacesManager.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="src/surfacesManager.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
