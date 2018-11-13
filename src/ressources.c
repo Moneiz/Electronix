@@ -7,16 +7,13 @@ Ressources getFilledRessources(){
     Ressources r = {
         NB_IMAGES,
         {
-            "./img/test.jpg"
+            "./img/test.jpg"                    //Images list
         },
         NB_TEXT,
         {
-            "hello world!"
+            "hello world!"                      //Texts list
         },
-        {
-            "./fonts/Atures-700_PERSONAL_USE.ttf"
-        }
-
+        "./fonts/Atures-700_PERSONAL_USE.ttf",  //Police
     };
 
     return r;

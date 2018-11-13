@@ -1,7 +1,7 @@
 /**
 * \file kernel.c
 * \author Alan B
-*\version 1.0
+*\version 1.1
 *\date 13/11/2018
 *
 * Fichier destiné à réunir les fonctionnalités complexes du programme
@@ -11,6 +11,7 @@
 #include <SDL2/SDL_ttf.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "ressources.h"
 #include "datas/commons_datas.h"

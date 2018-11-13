@@ -1,7 +1,7 @@
 /**
 * \file ressources.c
 * \author Alan B.
-* \version 1.0
+* \version 1.0.1
 * \date 09/11/2018
 *
 * Fichier qui gère l'intégralité des liens de ressources avant leur chargement en postInit
@@ -28,6 +28,7 @@ struct Ressources {
     int sizeListText;
     char listText[NB_TEXT][64];
     char font[255];
+    char appVersion[32];
 
 };
 

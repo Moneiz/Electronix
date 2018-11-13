@@ -1,7 +1,7 @@
 /**
 * \file commons_datas.c
 * \author Alan B.
-* \version 1.0
+* \version 1.1
 * \date 12/11/2018
 *
 * Fichier contenant le patron du principale DTO du programme : Data
@@ -31,6 +31,8 @@ struct Datas {
     Surfaces_manager* surfaces;
     Textures_manager* textures;
     TTF_Font* font;
+    char *version;
+    char *projectName;
 
 };
 

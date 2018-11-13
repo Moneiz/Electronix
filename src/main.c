@@ -33,6 +33,8 @@ int main(int argc, char** argv)
     cDatas.surfaces = &sm;
     cDatas.textures = &tm;  //Affectation de leur adresse dans
     //les valeurs de cDatas
+    cDatas.version = "in-dev-4.3";
+    cDatas.projectName = "Electronix";
 
     if(init(&win, &render) &  postInit(render, &cDatas,r)){
         updateApp(win, render, cDatas);

@@ -21,7 +21,7 @@ SDL_Window* initWindow(){
         return NULL;
     }
 
-    SDL_Window* windowP = SDL_CreateWindow("Electronix",SDL_WINDOWPOS_UNDEFINED,
+    SDL_Window* windowP = SDL_CreateWindow("",SDL_WINDOWPOS_UNDEFINED,
                                                             SDL_WINDOWPOS_UNDEFINED,
                                                             640,
                                                             480,
@@ -148,8 +148,14 @@ void endApp(SDL_Window* windowP, SDL_Renderer* rendererP,Datas datas, Ressources
 }
 int updateApp(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
     int continuer = 1;
+    char titleWin[64];
     SDL_Event event;
 
+    strcpy(titleWin, datas.projectName);
+    strcat(titleWin, " ");
+    strcat(titleWin, datas.version);
+    SDL_SetWindowTitle(windowP, titleWin);
+    SDL_SetWindowIcon(windowP, datas.surfaces->images[0]);
     while (continuer)
     {
         //Appel des layouts
