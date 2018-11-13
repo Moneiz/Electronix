@@ -9,12 +9,13 @@
 #ifndef DATAS_H
 #define DATAS_H
 
-typedef struct Datas {
+typedef struct Datas Datas;
+struct Datas {
 
     Surfaces_manager* surfaces;
     Textures_manager* textures;
     TTF_Font* font;
 
-} Datas;
+};
 
 #endif // DATAS_H

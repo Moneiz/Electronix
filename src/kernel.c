@@ -86,9 +86,9 @@ int init(SDL_Window** windowP, SDL_Renderer** rendererP){
 int postInit(SDL_Renderer* rendererP,Datas* datas, Ressources r){
 
     int i;
-    datas->surfaces->images = (SDL_Surface*) malloc(sizeof(SDL_Surface*) * r.sizeListImgFiles);
+    datas->surfaces->images = (SDL_Surface**) malloc(sizeof(SDL_Surface*) * r.sizeListImgFiles);
     for(i = 0; i < r.sizeListImgFiles; i++){
-        datas->surfaces->images[i] = IMG_Load(r.listImgFiles+i);
+        datas->surfaces->images[i] = IMG_Load((const char*)r.listImgFiles+i);
         if(!datas->surfaces->images[i]){
             fprintf(stderr,"Image Loading Error :/ -> %s\n", IMG_GetError());
             return 0;
@@ -100,10 +100,10 @@ int postInit(SDL_Renderer* rendererP,Datas* datas, Ressources r){
         fprintf(stderr,"Font Loading Error :/ -> %s\n", IMG_GetError());
         return 0;
     }
-    datas->surfaces->texts = (int*) malloc(sizeof(SDL_Surface*) * r.sizeListText);
+    datas->surfaces->texts = (SDL_Surface**) malloc(sizeof(SDL_Surface*) * r.sizeListText);
     SDL_Color white = {255,255,255};
     for(i = 0; i < r.sizeListImgFiles; i++){
-        datas->surfaces->texts[i] = TTF_RenderText_Blended(datas->font, r.listText+i, white);;
+        datas->surfaces->texts[i] = TTF_RenderText_Blended(datas->font, (const char*)r.listText+i, white);;
         if(!datas->surfaces->texts[i]){
             fprintf(stderr,"Text Loading Error :/ -> %s\n", IMG_GetError());
             return 0;

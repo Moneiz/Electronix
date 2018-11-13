@@ -386,22 +386,26 @@
 1541972011 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.c
 	"ressources.h"
 
-1541606419 source:z:\electronix\src\ressources.c
+1542095960 source:z:\electronix\src\ressources.c
 	"ressources.h"
 
-1541606413 z:\electronix\src\ressources.h
+1542096097 z:\electronix\src\ressources.h
 	<stdio.h>
 	<stdlib.h>
 
-1541606458 source:z:\electronix\src\kernel.c
+1542095960 source:z:\electronix\src\kernel.c
 	"kernel.h"
 
-1541606446 z:\electronix\src\kernel.h
+1542096607 z:\electronix\src\kernel.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
 	<stdio.h>
 	<stdlib.h>
 	"ressources.h"
+	"datas/commons_datas.h"
+	"layouts/iConception.h"
+	"layoutLoader.h"
 
 1541577562 z:\electronix\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -751,11 +755,14 @@
 	"begin_code.h"
 	"close_code.h"
 
-1541602059 source:z:\electronix\src\main.c
+1542095960 source:z:\electronix\src\main.c
 	<SDL2/SDL.h>
 	<stdio.h>
-	"iConception.h"
 	"kernel.h"
+	"ressources.h"
+	"datas/commons_datas.h"
+	"datas/surfacesManager.h"
+	"datas/texturesManager.h"
 
 1541602689 z:\electronix\src\iconception.h
 	<SDL2/SDL.h>
@@ -828,4 +835,59 @@
 	<SDL2/SDL_ttf.h>
 	"layouts/iConception.h"
 	"datas/commons_datas.h"
+
+1542095960 source:z:\electronix\src\datas\commons_datas.c
+	"commons_datas.h"
+
+1542096310 z:\electronix\src\datas\commons_datas.h
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL.h>
+	<SDL2/SDL_ttf.h>
+	"surfacesManager.h"
+	"texturesManager.h"
+
+1542095960 z:\electronix\include\sdl2\sdl_ttf.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
+
+1542096287 z:\electronix\src\datas\surfacesmanager.h
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL.h>
+	<SDL2/SDL_ttf.h>
+
+1542096269 z:\electronix\src\datas\texturesmanager.h
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL.h>
+	<SDL2/SDL_ttf.h>
+
+1542095960 source:z:\electronix\src\datas\surfacesmanager.c
+	"surfacesManager.h"
+
+1542095960 source:z:\electronix\src\datas\texturesmanager.c
+	"surfacesManager.h"
+
+1542095960 z:\electronix\src\layouts\iconception.h
+	<SDL2/SDL.h>
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL_ttf.h>
+	"../datas/commons_datas.h"
+
+1542095960 source:z:\electronix\src\layoutloader.c
+	"layoutLoader.h"
+
+1542095960 z:\electronix\src\layoutloader.h
+	<SDL2/SDL.h>
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL_ttf.h>
+	"layouts/iConception.h"
+	"datas/commons_datas.h"
+
+1542095960 source:z:\electronix\src\layouts\iconception.c
+	"iConception.h"
 

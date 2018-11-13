@@ -6,11 +6,12 @@
 #ifndef SURFACES_MANAGER_H
 #define SURFACES_MANAGER_H
 
-typedef struct Surfaces_manager {
+typedef struct Surfaces_manager Surfaces_manager;
+struct Surfaces_manager {
 
     SDL_Surface** images;
     SDL_Surface** texts;
 
-} Surfaces_manager;
+};
 
 #endif // SURFACE_MANAGER_H

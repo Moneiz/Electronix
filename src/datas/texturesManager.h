@@ -6,11 +6,12 @@
 #ifndef TEXTURES_MANAGER_H
 #define TEXTURES_MANAGER_H
 
-typedef struct Textures_manager {
+typedef struct Textures_manager Textures_manager;
+struct Textures_manager {
 
     SDL_Texture** images;
     SDL_Texture** texts;
 
-} Textures_manager;
+};
 
 #endif // TEXTURES_MANAGER_H

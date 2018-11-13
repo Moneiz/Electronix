@@ -11,7 +11,8 @@
 Strcture contenant toutes les ressources nécessaire
 au programme(lien image, son...)
 */
-typedef struct Ressources {
+typedef struct Ressources Ressources;
+struct Ressources {
 
     int sizeListImgFiles;
     char listImgFiles[NB_IMAGES][64];
@@ -19,7 +20,7 @@ typedef struct Ressources {
     char listText[NB_TEXT][64];
     char font[255];
 
-} Ressources;
+};
 
 
 /**

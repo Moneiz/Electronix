@@ -7,6 +7,7 @@
 #include "ressources.h"
 #include "datas/commons_datas.h"
 #include "layouts/iConception.h"
+#include "layoutLoader.h"
 
 char ** conf;
 
