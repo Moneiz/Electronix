@@ -15,7 +15,7 @@ void initConf(char * confFilename){
 
 }
 SDL_Window* initWindow(){
-     if (SDL_Init(SDL_INIT_VIDEO) != 0 )
+    if (SDL_Init(SDL_INIT_VIDEO) != 0 )
     {
         fprintf(stderr,"Window Initialisation Error :/ -> %s\n",SDL_GetError());
         return NULL;
@@ -87,6 +87,9 @@ int postInit(SDL_Renderer* rendererP,Datas* datas, Ressources r){
 
     int i;
     datas->surfaces->images = (SDL_Surface**) malloc(sizeof(SDL_Surface*) * r.sizeListImgFiles);
+    if(datas->surfaces->images == NULL){
+        return errMemoryUnalloc(sizeof(SDL_Surface*) * r.sizeListImgFiles);
+    }
     for(i = 0; i < r.sizeListImgFiles; i++){
         datas->surfaces->images[i] = IMG_Load((const char*)r.listImgFiles+i);
         if(!datas->surfaces->images[i]){
@@ -101,6 +104,9 @@ int postInit(SDL_Renderer* rendererP,Datas* datas, Ressources r){
         return 0;
     }
     datas->surfaces->texts = (SDL_Surface**) malloc(sizeof(SDL_Surface*) * r.sizeListText);
+    if(datas->surfaces->texts == NULL){
+        return errMemoryUnalloc(sizeof(SDL_Surface*) * r.sizeListText);
+    }
     SDL_Color white = {255,255,255};
     for(i = 0; i < r.sizeListImgFiles; i++){
         datas->surfaces->texts[i] = TTF_RenderText_Blended(datas->font, (const char*)r.listText+i, white);;
@@ -160,6 +166,12 @@ int updateApp(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
     }
     return 0;
 
+}
+
+//Error
+int errMemoryUnalloc(int sizeByte){
+    fprintf(stderr, "! Allocation Bound Error :/ -> Cannot allocate %d bytes", sizeByte);
+    return 0;
 }
 
 

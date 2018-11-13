@@ -1,3 +1,12 @@
+/**
+* \file ressources.c
+* \author Alan B.
+* \version 1.0
+* \date 09/11/2018
+*
+* Fichier qui gère l'intégralité des liens de ressources avant leur chargement en postInit
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -8,7 +17,7 @@
 #define NB_TEXT 1
 
 /**
-Strcture contenant toutes les ressources n�cessaire
+Strcture contenant toutes les ressources nécessaire
 au programme(lien image, son...)
 */
 typedef struct Ressources Ressources;
@@ -25,7 +34,7 @@ struct Ressources {
 
 /**
 Renvoie la structure Ressources avec les variables
-affect�es
+affectées
 */
 Ressources getFilledRessources();
 

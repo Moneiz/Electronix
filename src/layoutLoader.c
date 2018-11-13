@@ -6,6 +6,8 @@ int initLayout(SDL_Renderer* rendererP, Datas* datas){
        initTexsTex(rendererP, datas)){
         return 0;
     }
+
+
     return 1;
 }
 int initTextures(SDL_Renderer* rendererP, Datas* datas){
@@ -13,7 +15,9 @@ int initTextures(SDL_Renderer* rendererP, Datas* datas){
     int i;
     int nbTex = sizeof(datas->surfaces->images) / sizeof(SDL_Surface*);
     datas->textures->images = malloc(sizeof(SDL_Texture*) * nbTex);
-
+    if(datas->textures->images == NULL){
+        return 0;
+    }
     for(i = 0; i < nbTex; i++){
         datas->textures->images[i] = SDL_CreateTextureFromSurface(rendererP,
                                                         datas->surfaces->images[i]);
@@ -29,7 +33,9 @@ int initTexsTex(SDL_Renderer* rendererP, Datas* datas){
     int i;
     int nbTex = sizeof(datas->surfaces->texts) / sizeof(SDL_Surface*);
     datas->textures->texts = malloc(sizeof(SDL_Texture*) * nbTex);
-
+    if(datas->textures->texts == NULL){
+        return 0;
+    }
     for(i = 0; i < nbTex; i++){
         datas->textures->texts[i] = SDL_CreateTextureFromSurface(rendererP,
                                                                  datas->surfaces->texts[i]);
