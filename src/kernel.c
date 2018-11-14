@@ -91,31 +91,38 @@ int postInit(SDL_Renderer* rendererP,Datas* datas, Ressources r){
         return errMemoryUnalloc(sizeof(SDL_Surface*) * r.sizeListImgFiles);
     }
     for(i = 0; i < r.sizeListImgFiles; i++){
-        datas->surfaces->images[i] = IMG_Load((const char*)r.listImgFiles+i);
+        datas->surfaces->images[i] = IMG_Load(r.listImgFiles+i);
         if(!datas->surfaces->images[i]){
             fprintf(stderr,"Image Loading Error :/ -> %s\n", IMG_GetError());
             return 0;
 
         }
+        fprintf(stderr,"Image Loaded Successful : %s\n", r.listImgFiles+i);
     }
+    datas->surfaces->nbImg = r.sizeListImgFiles;
+
+
     datas->font = TTF_OpenFont(r.font,65);
     if(!( datas->font )){
         fprintf(stderr,"Font Loading Error :/ -> %s\n", IMG_GetError());
         return 0;
     }
+
+
     datas->surfaces->texts = (SDL_Surface**) malloc(sizeof(SDL_Surface*) * r.sizeListText);
     if(datas->surfaces->texts == NULL){
         return errMemoryUnalloc(sizeof(SDL_Surface*) * r.sizeListText);
     }
     SDL_Color white = {255,255,255};
-    for(i = 0; i < r.sizeListImgFiles; i++){
-        datas->surfaces->texts[i] = TTF_RenderText_Blended(datas->font, (const char*)r.listText+i, white);;
+    for(i = 0; i < r.sizeListText; i++){
+        datas->surfaces->texts[i] = TTF_RenderText_Blended(datas->font, r.listText+i, white);;
         if(!datas->surfaces->texts[i]){
             fprintf(stderr,"Text Loading Error :/ -> %s\n", IMG_GetError());
             return 0;
 
         }
     }
+    datas->surfaces->nbText = r.sizeListText;
 
 
     initLayout(rendererP,datas);
@@ -155,7 +162,7 @@ int updateApp(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
     strcat(titleWin, " ");
     strcat(titleWin, datas.version);
     SDL_SetWindowTitle(windowP, titleWin);
-    SDL_SetWindowIcon(windowP, datas.surfaces->images[0]);
+    SDL_SetWindowIcon(windowP, datas.surfaces->images[6]);
     while (continuer)
     {
         //Appel des layouts

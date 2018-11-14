@@ -41,6 +41,9 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="ressources.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
 		<Unit filename="src/datas/commons_datas.c">
 			<Option compilerVar="CC" />
 		</Unit>

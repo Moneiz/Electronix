@@ -386,17 +386,17 @@
 1541972011 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.c
 	"ressources.h"
 
-1542123765 source:z:\electronix\src\ressources.c
+1542207932 source:z:\electronix\src\ressources.c
 	"ressources.h"
 
-1542123791 z:\electronix\src\ressources.h
+1542207893 z:\electronix\src\ressources.h
 	<stdio.h>
 	<stdlib.h>
 
-1542123887 source:z:\electronix\src\kernel.c
+1542207919 source:z:\electronix\src\kernel.c
 	"kernel.h"
 
-1542124561 z:\electronix\src\kernel.h
+1542194968 z:\electronix\src\kernel.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_ttf.h>
@@ -853,7 +853,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1542096287 z:\electronix\src\datas\surfacesmanager.h
+1542194884 z:\electronix\src\datas\surfacesmanager.h
 	<stdio.h>
 	<stdlib.h>
 	<SDL2/SDL.h>
@@ -878,7 +878,7 @@
 	<SDL2/SDL_ttf.h>
 	"../datas/commons_datas.h"
 
-1542102998 source:z:\electronix\src\layoutloader.c
+1542195013 source:z:\electronix\src\layoutloader.c
 	"layoutLoader.h"
 
 1542095960 z:\electronix\src\layoutloader.h
@@ -889,6 +889,8 @@
 	"layouts/iConception.h"
 	"datas/commons_datas.h"
 
-1542122324 source:z:\electronix\src\layouts\iconception.c
+1542200310 source:z:\electronix\src\layouts\iconception.c
 	"iConception.h"
+
+1542208499 source:z:\electronix\ressources.rc
 

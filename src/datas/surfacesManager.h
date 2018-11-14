@@ -11,6 +11,8 @@ struct Surfaces_manager {
 
     SDL_Surface** images;
     SDL_Surface** texts;
+    int nbImg;
+    int nbText;
 
 };
 

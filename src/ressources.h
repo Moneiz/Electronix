@@ -13,8 +13,8 @@
 #ifndef RESSOURCES_H
 #define RESSOURCES_H
 
-#define NB_IMAGES 1
-#define NB_TEXT 1
+#define NB_IMAGES 7
+#define NB_TEXT 2
 
 /**
 Strcture contenant toutes les ressources nécessaire

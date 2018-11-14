@@ -13,7 +13,8 @@ int initLayout(SDL_Renderer* rendererP, Datas* datas){
 int initTextures(SDL_Renderer* rendererP, Datas* datas){
 
     int i;
-    int nbTex = sizeof(datas->surfaces->images) / sizeof(SDL_Surface*);
+    int nbTex = datas->surfaces->nbImg;
+    printf("%d", nbTex);
     datas->textures->images = malloc(sizeof(SDL_Texture*) * nbTex);
     if(datas->textures->images == NULL){
         return 0;
@@ -31,7 +32,7 @@ int initTextures(SDL_Renderer* rendererP, Datas* datas){
 int initTexsTex(SDL_Renderer* rendererP, Datas* datas){
 
     int i;
-    int nbTex = sizeof(datas->surfaces->texts) / sizeof(SDL_Surface*);
+    int nbTex = datas->surfaces->nbText;
     datas->textures->texts = malloc(sizeof(SDL_Texture*) * nbTex);
     if(datas->textures->texts == NULL){
         return 0;
