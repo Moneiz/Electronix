@@ -163,19 +163,15 @@ int updateApp(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
     strcat(titleWin, datas.version);
     SDL_SetWindowTitle(windowP, titleWin);
     SDL_SetWindowIcon(windowP, datas.surfaces->images[6]);
+
+    datas.currentIRenderFct = menu_update;
+
     while (continuer)
     {
-        //Appel des layouts
-        update(windowP, rendererP, datas);
 
-        SDL_WaitEvent(&event);
-        switch(event.type)
-        {
-            case SDL_KEYDOWN:
-                continuer = 0;
-            case SDL_QUIT:
-                continuer = 0;
-        }
+        updateRender(windowP, rendererP, datas);
+        updateEvent(event, &datas, &continuer);
+
     }
     return 0;
 

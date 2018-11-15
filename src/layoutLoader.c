@@ -47,8 +47,20 @@ int initTexsTex(SDL_Renderer* rendererP, Datas* datas){
     }
     return 1;
 }
-int update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
-    conception_update(windowP, rendererP, datas);
+int updateRender(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
+    (*datas.currentIRenderFct)(windowP, rendererP,datas);
+}
+void updateEvent(SDL_Event event, Datas * datas, int * running){
+    SDL_WaitEvent(&event);
+    switch(event.type)
+    {
+        case SDL_KEYDOWN:
+            datas->currentIRenderFct = conception_update;
+            break;
+        case SDL_QUIT:
+            *running = 0;
+            break;
+    }
 }
 int destroyTextures(Datas datas){
     int i;

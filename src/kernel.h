@@ -1,8 +1,8 @@
 /**
 * \file kernel.c
 * \author Alan B
-*\version 1.2
-*\date 14/11/2018
+*\version 1.3
+*\date 15/11/2018
 *
 * Fichier destiné à réunir les fonctionnalités complexes du programme
 */
@@ -15,8 +15,8 @@
 
 #include "ressources.h"
 #include "datas/commons_datas.h"
-#include "layouts/iConception.h"
 #include "layoutLoader.h"
+#include "layouts/iMenu.h"
 
 
 /**

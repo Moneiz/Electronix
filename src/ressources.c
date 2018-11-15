@@ -13,12 +13,20 @@ Ressources getFilledRessources(){
             "./img/utils_exppng.png",
             "./img/utils_quit.png",
             "./img/commons_sq_bt.png",
-            "./img/ico.png"
+            "./img/ico.png",
+            "./img/fond.png"
         },
         NB_TEXT,
         {
-            "hello world!",                      //Texts list
-            "bonjour"
+            "Fil de cuivre",
+            "Résistance",
+            "Générateur",
+            "Condensateur",
+            "Diode",
+            "DEL",
+            "Inductance",
+            "Transistor NPN",
+
         },
         "./fonts/Atures-700_PERSONAL_USE.ttf",  //Police
     };

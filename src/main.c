@@ -11,7 +11,7 @@
 *
 * \file main.c
 * \author Alan B., Sophie P.
-* \version in-dev-4.2
+* \version in-dev-6
 * \date 13/11/2018
 *
 * ELECTRONIX PROJECT
@@ -33,7 +33,7 @@ int main(int argc, char** argv)
     cDatas.surfaces = &sm;
     cDatas.textures = &tm;  //Affectation de leur adresse dans
     //les valeurs de cDatas
-    cDatas.version = "in-dev-4.3";
+    cDatas.version = "in-dev-6";
     cDatas.projectName = "Electronix";
 
     if(init(&win, &render) &  postInit(render, &cDatas,r)){

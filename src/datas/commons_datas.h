@@ -1,8 +1,8 @@
 /**
 * \file commons_datas.c
 * \author Alan B.
-* \version 1.1
-* \date 12/11/2018
+* \version 1.2
+* \date 15/11/2018
 *
 * Fichier contenant le patron du principale DTO du programme : Data
 */
@@ -33,6 +33,9 @@ struct Datas {
     TTF_Font* font;
     char *version;
     char *projectName;
+
+    //Pointeur de fonction des updateurs
+    int (*currentIRenderFct)(SDL_Window *,SDL_Renderer *, Datas);
 
 };
 
