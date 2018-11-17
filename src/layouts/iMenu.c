@@ -18,10 +18,11 @@ int menu_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
     widthB = width/2 - width/100;
     heightB = (height/2 - width/50)/3;
 
+    datas.textures->texts[3];
+
     //Dessine le fond
     SDL_Rect background = {0,0,width,height};
     SDL_RenderCopy(rendererP,datas.textures->images[7],NULL,&background);
-    SDL_RenderPresent(rendererP);
 
     //Dessine le header
     SDL_SetRenderDrawColor(rendererP,21,51,54,0);

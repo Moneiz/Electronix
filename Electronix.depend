@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1542302687 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\main.c
+1542486817 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\main.c
 	<SDL2/SDL.h>
 	<stdio.h>
 	"kernel.h"
@@ -7,6 +7,7 @@
 	"datas/commons_datas.h"
 	"datas/surfacesManager.h"
 	"datas/texturesManager.h"
+	"config.h"
 
 1540998544 c:\users\brete\documents\projects\esgi2\c\electronix\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -360,7 +361,7 @@
 	<SDL2/SDL_ttf.h>
 	"surfacesManager.h"
 
-1542313464 c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.h
+1542486808 c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_ttf.h>
@@ -372,7 +373,7 @@
 	"layoutLoader.h"
 	"layouts/iMenu.h"
 
-1542313491 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.c
+1542489815 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.c
 	"kernel.h"
 
 1540997982 c:\users\brete\documents\projects\esgi2\c\electronix\include\sdl2\sdl_image.h
@@ -381,11 +382,12 @@
 	"begin_code.h"
 	"close_code.h"
 
-1542311485 c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.h
+1542486683 c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.h
 	<stdio.h>
 	<stdlib.h>
+	"config.h"
 
-1542310832 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.c
+1542468563 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.c
 	"ressources.h"
 
 1542207932 source:z:\electronix\src\ressources.c
@@ -796,22 +798,23 @@
 	<SDL2/SDL_ttf.h>
 	"../datas/commons_datas.h"
 
-1542313678 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layoutloader.c
+1542397140 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layoutloader.c
 	"layoutLoader.h"
 
-1542304026 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\iconception.c
+1542447354 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\iconception.c
 	"iConception.h"
 
 1541969832 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\commons_datas.c
 	"commons_datas.h"
 
-1542314029 c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\commons_datas.h
+1542447246 c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\commons_datas.h
 	<stdio.h>
 	<stdlib.h>
 	<SDL2/SDL.h>
 	<SDL2/SDL_ttf.h>
 	"surfacesManager.h"
 	"texturesManager.h"
+	"uiManager.h"
 
 1542215245 c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\surfacesmanager.h
 	<stdio.h>
@@ -828,10 +831,10 @@
 1541785125 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\surfacesmanager.c
 	"surfacesManager.h"
 
-1541938231 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\texturesmanager.c
-	"surfacesManager.h"
+1542447094 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\texturesmanager.c
+	"texturesManager.h"
 
-1542313926 c:\users\brete\documents\projects\esgi2\c\electronix\src\layoutloader.h
+1542397145 c:\users\brete\documents\projects\esgi2\c\electronix\src\layoutloader.h
 	<SDL2/SDL.h>
 	<stdio.h>
 	<stdlib.h>
@@ -899,13 +902,30 @@
 
 1542215245 source:c:\users\brete\documents\projects\esgi2\c\electronix\ressources.rc
 
-1542312072 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\imenu.c
+1542385494 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\imenu.c
 	"iMenu.h"
 
-1542313840 c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\imenu.h
+1542387144 c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\imenu.h
 	<SDL2/SDL.h>
 	<stdio.h>
 	<stdlib.h>
 	<SDL2/SDL_ttf.h>
 	"../datas/commons_datas.h"
+
+1542447077 c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\uimanager.h
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL.h>
+	<SDL2/SDL_ttf.h>
+
+1542447088 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\uimanager.c
+	"uiManager.h"
+
+1542489073 c:\users\brete\documents\projects\esgi2\c\electronix\src\config.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1542489099 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\config.c
+	"config.h"
 

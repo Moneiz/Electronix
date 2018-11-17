@@ -1,6 +1,15 @@
 #include "iConception.h"
 
+int conception_init(Datas datas){
 
+    int nbButton = 5;
+    int i;
+    SDL_Rect* rectsBt = (SDL_Rect*) malloc(sizeof(SDL_Rect) * nbButton);
+    //Test
+    //for(i = 0; i < nbButton; i++){
+      //  rectsBt[i] = {header.x+10, header.y+10, .w/5-20,header.h-20};
+    //}
+}
 int conception_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
 
     int i;

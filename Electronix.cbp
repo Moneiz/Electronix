@@ -68,6 +68,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/layouts/iConception.h" />
+		<Unit filename="src/layouts/iMenu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/layouts/iMenu.h" />
 		<Unit filename="src/main.c">
 			<Option compilerVar="CC" />
 		</Unit>

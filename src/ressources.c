@@ -1,10 +1,11 @@
 #include "ressources.h"
 
 
-Ressources getFilledRessources(){
+Ressources getFilledRessources(char * configFile){
 
 
     Ressources r = {
+        initConf(configFile),
         NB_IMAGES,
         {
             "./img/utils_new.png",                    //Images list

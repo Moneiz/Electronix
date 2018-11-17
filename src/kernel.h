@@ -1,8 +1,8 @@
 /**
 * \file kernel.c
 * \author Alan B
-*\version 1.3
-*\date 15/11/2018
+*\version 1.4
+*\date 17/11/2018
 *
 * Fichier destiné à réunir les fonctionnalités complexes du programme
 */
@@ -19,11 +19,7 @@
 #include "layouts/iMenu.h"
 
 
-/**
-(A venir) - Fonction qui se charge d'itialiser la structure Config
-afin d'exploiter les configurations utilisateurs dans le code
-*/
-void initConf(char * confFilename);
+
 /**
 Fonction qui initialise la fenetre et renvoie un pointeur de ce
 dernier. Si elle renvoie un NULL, l'initialisation a échoué.
@@ -54,7 +50,7 @@ au programme. Si elle renvoie 0, l'initialisation d'un composant a
 échoué. Si tout ce passe bien, windowP et rendererP pointeront vers
 une fenetre et un rendu.
 */
-int init(SDL_Window** windowP, SDL_Renderer** rendererP);
+int init(SDL_Window** windowP, SDL_Renderer** rendererP, Ressources r);
 /**
 Fonction qui initialise l'ensemble des données à partir des ressources
 de l'application. Les surfaces de datas (pour les textures et le text)

@@ -1,19 +1,6 @@
 #include "kernel.h"
 
-void initConf(char * confFilename){
 
-    FILE * file = NULL;
-
-    file = fopen(confFilename,"r");
-
-    if(file != NULL){
-
-        //fscanf(file,"%d %d\n%d %d %d\n",scoreX,scoreY,size,player,mode);
-
-        fclose(file);
-    }
-
-}
 SDL_Window* initWindow(){
     if (SDL_Init(SDL_INIT_VIDEO) != 0 )
     {
@@ -26,7 +13,7 @@ SDL_Window* initWindow(){
                                                             640,
                                                             480,
                                                             SDL_WINDOW_MAXIMIZED);
-    SDL_SetWindowResizable(windowP, SDL_TRUE);
+    //SDL_SetWindowResizable(windowP, SDL_TRUE);
     if(windowP == NULL){
         fprintf(stderr,"Window Creation Error :/ -> %s\n",SDL_GetError());
     }
@@ -63,7 +50,7 @@ int initTtf(){
     }
     return 1;
 }
-int init(SDL_Window** windowP, SDL_Renderer** rendererP){
+int init(SDL_Window** windowP, SDL_Renderer** rendererP, Ressources r){
 
     *windowP = initWindow();
     if(*windowP != NULL){
@@ -79,6 +66,14 @@ int init(SDL_Window** windowP, SDL_Renderer** rendererP){
     if(!initImg() & !initTtf()){
         return 0;
     }
+    printf("%d", r.config.maximized);
+
+    if(!r.config.maximized){
+        SDL_SetWindowSize(*windowP, r.config.width, r.config.height);
+    }
+    if(r.config.fullscreen)
+        SDL_SetWindowFullscreen(*windowP, SDL_WINDOW_FULLSCREEN_DESKTOP);
+
 
     return 1;
 
@@ -125,7 +120,7 @@ int postInit(SDL_Renderer* rendererP,Datas* datas, Ressources r){
     datas->surfaces->nbText = r.sizeListText;
 
 
-    initLayout(rendererP,datas);
+    initLayouts(rendererP,datas);
     return 1;
 }
 void freeRessources(Datas datas, Ressources r){

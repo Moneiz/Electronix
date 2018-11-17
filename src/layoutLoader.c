@@ -1,6 +1,6 @@
 #include "layoutLoader.h"
 
-int initLayout(SDL_Renderer* rendererP, Datas* datas){
+int initLayouts(SDL_Renderer* rendererP, Datas* datas){
 
     if(!initTextures(rendererP, datas) |
        initTexsTex(rendererP, datas)){
@@ -61,6 +61,7 @@ void updateEvent(SDL_Event event, Datas * datas, int * running){
             *running = 0;
             break;
     }
+
 }
 int destroyTextures(Datas datas){
     int i;
