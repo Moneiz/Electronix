@@ -1,14 +1,44 @@
 #include "iConception.h"
 
-int conception_init(Datas datas){
+int conception_init(Datas* datas){
 
     int nbButton = 5;
-    int i;
+
     SDL_Rect* rectsBt = (SDL_Rect*) malloc(sizeof(SDL_Rect) * nbButton);
-    //Test
-    //for(i = 0; i < nbButton; i++){
-      //  rectsBt[i] = {header.x+10, header.y+10, .w/5-20,header.h-20};
-    //}
+
+    datas->ui->rectBt = rectsBt;
+    return 0;
+}
+int conception_event(SDL_Event event,SDL_Window* windowP,Datas *datas){
+    int width, height;
+    int xMouse, yMouse;
+    int marginXHeader;
+    int i;
+
+    //Refresh buttons' position
+    SDL_GetWindowSize(windowP, &width, &height);
+
+    marginXHeader = width/2 - 0.2 * width;
+
+    SDL_Rect headerB = {marginXHeader, 0, width-marginXHeader*2, height/8};
+    SDL_Rect header = {marginXHeader + 5, 5, headerB.w -10, headerB.h-10};
+    SDL_Rect currentBt = {header.x+10, header.y+10, header.w/5-20,header.h-20};
+    for(i = 0; i < 5; i++){
+        currentBt.x = header.x+10  +header.w*i/5;
+        datas->ui->rectBt[i] = currentBt;
+    }
+
+    SDL_Rect quit = datas->ui->rectBt[4];
+
+    //EVENT MANAGER
+    SDL_GetMouseState(&xMouse, &yMouse);
+    if(currentBt.x < xMouse && xMouse < quit.x+quit.w
+       && quit.y < yMouse && yMouse < quit.y+quit.h
+       && event.type == SDL_MOUSEBUTTONDOWN){
+        datas->currentIRenderFct = NULL;
+       }
+
+    return 0;
 }
 int conception_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
 
@@ -44,8 +74,8 @@ int conception_update_header(SDL_Renderer* rendererP, Datas datas, int width, in
     int marginXHeader = width/2 - 0.2 * width;
     SDL_Rect headerB = {marginXHeader, 0, width-marginXHeader*2, height/8};
     SDL_Rect header = {marginXHeader + 5, 5, headerB.w -10, headerB.h-10};
-    SDL_Rect currentBt = {header.x+10, header.y+10, header.w/5-20,header.h-20};
-    SDL_Rect currentIcoBt = {currentBt.x+10,currentBt.y+10, currentBt.w-20, currentBt.h-20 };
+    SDL_Rect currentBt;
+    SDL_Rect currentIcoBt;
 
     SDL_SetRenderDrawColor(rendererP,100,100,100,0);
     SDL_RenderFillRect(rendererP,&headerB);
@@ -54,9 +84,13 @@ int conception_update_header(SDL_Renderer* rendererP, Datas datas, int width, in
     SDL_RenderFillRect(rendererP,&header);
 
     for(i = 0; i < 5; i++){
-        currentBt.x = header.x+10  +header.w*i/5;
-        SDL_RenderCopy(rendererP,datas.textures->images[5],NULL,&currentBt);
-        currentIcoBt.x = currentBt.x +10;
+        currentBt = datas.ui->rectBt[i];
+        SDL_RenderCopy(rendererP,datas.textures->images[5],NULL,
+                       &currentBt);
+        currentIcoBt.x = currentBt.x+10;
+        currentIcoBt.y = currentBt.y+10;
+        currentIcoBt.w = currentBt.w-20;
+        currentIcoBt.h = currentBt.h-20;
         SDL_RenderCopy(rendererP,datas.textures->images[i],NULL,&currentIcoBt);
 
     }
@@ -88,4 +122,7 @@ int conception_update_modules(SDL_Renderer* rendererP, Datas datas, int width, i
         SDL_RenderCopy(rendererP,datas.textures->texts[i],NULL,&currentMod);
     }
 
+}
+int conception_end(Datas datas){
+    free(datas.ui->rectBt);
 }

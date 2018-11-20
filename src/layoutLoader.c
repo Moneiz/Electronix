@@ -14,7 +14,6 @@ int initTextures(SDL_Renderer* rendererP, Datas* datas){
 
     int i;
     int nbTex = datas->surfaces->nbImg;
-    printf("%d", nbTex);
     datas->textures->images = malloc(sizeof(SDL_Texture*) * nbTex);
     if(datas->textures->images == NULL){
         return 0;
@@ -50,16 +49,26 @@ int initTexsTex(SDL_Renderer* rendererP, Datas* datas){
 int updateRender(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
     (*datas.currentIRenderFct)(windowP, rendererP,datas);
 }
-void updateEvent(SDL_Event event, Datas * datas, int * running){
-    SDL_WaitEvent(&event);
+void updateEvent(SDL_Event event, SDL_Window* windowP, Datas * datas, int * running){
+    SDL_WaitEvent(&event);conception_init(datas);
+    conception_event(event, windowP, datas);
     switch(event.type)
     {
         case SDL_KEYDOWN:
+
+            //conception_init(datas);
             datas->currentIRenderFct = conception_update;
+
             break;
         case SDL_QUIT:
+            conception_end(*datas);
             *running = 0;
             break;
+    }
+
+    if(datas->currentIRenderFct == NULL){
+        conception_end(*datas);
+        *running = 0;
     }
 
 }

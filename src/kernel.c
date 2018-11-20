@@ -66,7 +66,6 @@ int init(SDL_Window** windowP, SDL_Renderer** rendererP, Ressources r){
     if(!initImg() & !initTtf()){
         return 0;
     }
-    printf("%d", r.config.maximized);
 
     if(!r.config.maximized){
         SDL_SetWindowSize(*windowP, r.config.width, r.config.height);
@@ -165,7 +164,7 @@ int updateApp(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
     {
 
         updateRender(windowP, rendererP, datas);
-        updateEvent(event, &datas, &continuer);
+        updateEvent(event, windowP,&datas, &continuer);
 
     }
     return 0;

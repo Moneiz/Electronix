@@ -44,6 +44,10 @@
 		<Unit filename="ressources.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
+		<Unit filename="src/config.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/config.h" />
 		<Unit filename="src/datas/commons_datas.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -56,6 +60,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/datas/texturesManager.h" />
+		<Unit filename="src/datas/uiManager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/datas/uiManager.h" />
 		<Unit filename="src/kernel.c">
 			<Option compilerVar="CC" />
 		</Unit>

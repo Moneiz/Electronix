@@ -1,8 +1,8 @@
 /**
 * \file layoutLoader.c
 * \author Alan B.
-* \date 15/11/2018
-* \version 1.0
+* \date 20/11/2018
+* \version 1.1
 *
 * Ce fichier gère le lien entre le kernel et les différentes
 * interfaces du programme
@@ -21,5 +21,5 @@ int initLayouts(SDL_Renderer* rendererP, Datas* datas);
 int initTextures(SDL_Renderer* rendererP, Datas* datas);
 int initTexsTex(SDL_Renderer* rendererP, Datas* datas);
 int updateRender(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas);
-void updateEvent(SDL_Event event,Datas * datas, int * running);
+void updateEvent(SDL_Event event,SDL_Window * windowP, Datas * datas, int * running);
 int destroyTextures(Datas datas);

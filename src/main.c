@@ -12,7 +12,7 @@
 *
 * \file main.c
 * \author Alan B., Sophie P.
-* \version in-dev-7
+* \version in-dev-8
 * \date 17/11/2018
 *
 * ELECTRONIX PROJECT
@@ -29,12 +29,14 @@ int main(int argc, char** argv)
     Ressources r = getFilledRessources("conf.ini");
 
     Surfaces_manager sm;
-    Textures_manager tm;    //Déclaration de sm et tm
+    Textures_manager tm;
+    UI_manager uim;         //Déclaration de sm et tm
 
     cDatas.surfaces = &sm;
-    cDatas.textures = &tm;  //Affectation de leur adresse dans
-    //les valeurs de cDatas
-    cDatas.version = "in-dev-7";
+    cDatas.textures = &tm;
+    cDatas.ui = &uim;       //Affectation de leur adresse dans
+                            //les valeurs de cDatas
+    cDatas.version = "in-dev-8";
     cDatas.projectName = "Electronix";
 
     if(init(&win, &render,r) &  postInit(render, &cDatas,r)){

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1542486817 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\main.c
+1542661283 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\main.c
 	<SDL2/SDL.h>
 	<stdio.h>
 	"kernel.h"
@@ -361,7 +361,7 @@
 	<SDL2/SDL_ttf.h>
 	"surfacesManager.h"
 
-1542486808 c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.h
+1542489870 c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_ttf.h>
@@ -373,7 +373,7 @@
 	"layoutLoader.h"
 	"layouts/iMenu.h"
 
-1542489815 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.c
+1542650253 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.c
 	"kernel.h"
 
 1540997982 c:\users\brete\documents\projects\esgi2\c\electronix\include\sdl2\sdl_image.h
@@ -382,12 +382,12 @@
 	"begin_code.h"
 	"close_code.h"
 
-1542486683 c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.h
+1542489929 c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.h
 	<stdio.h>
 	<stdlib.h>
 	"config.h"
 
-1542468563 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.c
+1542560223 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.c
 	"ressources.h"
 
 1542207932 source:z:\electronix\src\ressources.c
@@ -791,17 +791,18 @@
 1541785125 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\surfacesmanager.c
 	"surfacesManager.h"
 
-1542058174 c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\iconception.h
+1542662797 c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\iconception.h
 	<SDL2/SDL.h>
 	<stdio.h>
 	<stdlib.h>
 	<SDL2/SDL_ttf.h>
 	"../datas/commons_datas.h"
+	"iMenu.h"
 
-1542397140 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layoutloader.c
+1542662968 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layoutloader.c
 	"layoutLoader.h"
 
-1542447354 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\iconception.c
+1542663314 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\iconception.c
 	"iConception.h"
 
 1541969832 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\commons_datas.c
@@ -834,7 +835,7 @@
 1542447094 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\texturesmanager.c
 	"texturesManager.h"
 
-1542397145 c:\users\brete\documents\projects\esgi2\c\electronix\src\layoutloader.h
+1542650372 c:\users\brete\documents\projects\esgi2\c\electronix\src\layoutloader.h
 	<SDL2/SDL.h>
 	<stdio.h>
 	<stdlib.h>
