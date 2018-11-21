@@ -390,17 +390,18 @@
 1542560223 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.c
 	"ressources.h"
 
-1542207932 source:z:\electronix\src\ressources.c
+1542722636 source:z:\electronix\src\ressources.c
 	"ressources.h"
 
-1542207893 z:\electronix\src\ressources.h
+1542722636 z:\electronix\src\ressources.h
 	<stdio.h>
 	<stdlib.h>
+	"config.h"
 
-1542207919 source:z:\electronix\src\kernel.c
+1542808412 source:z:\electronix\src\kernel.c
 	"kernel.h"
 
-1542194968 z:\electronix\src\kernel.h
+1542787160 z:\electronix\src\kernel.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_ttf.h>
@@ -409,10 +410,10 @@
 	<string.h>
 	"ressources.h"
 	"datas/commons_datas.h"
-	"layouts/iConception.h"
 	"layoutLoader.h"
+	"layouts/iMenu.h"
 
-1541577562 z:\electronix\include\sdl2\sdl.h
+1542722635 z:\electronix\include\sdl2\sdl.h
 	"SDL_main.h"
 	"SDL_stdinc.h"
 	"SDL_assert.h"
@@ -445,12 +446,12 @@
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_main.h
+1542722635 z:\electronix\include\sdl2\sdl_main.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_stdinc.h
+1542722635 z:\electronix\include\sdl2\sdl_stdinc.h
 	"SDL_config.h"
 	<sys/types.h>
 	<stdio.h>
@@ -479,34 +480,34 @@
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_config.h
+1542722635 z:\electronix\include\sdl2\sdl_config.h
 	"SDL_platform.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_platform.h
+1542722635 z:\electronix\include\sdl2\sdl_platform.h
 	"AvailabilityMacros.h"
 	"TargetConditionals.h"
 	<winapifamily.h>
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\begin_code.h
+1542722635 z:\electronix\include\sdl2\begin_code.h
 
-1541577562 z:\electronix\include\sdl2\close_code.h
+1542722635 z:\electronix\include\sdl2\close_code.h
 
-1541577562 z:\electronix\include\sdl2\sdl_assert.h
+1542722635 z:\electronix\include\sdl2\sdl_assert.h
 	"SDL_config.h"
 	"begin_code.h"
 	<signal.h>
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_atomic.h
+1542722635 z:\electronix\include\sdl2\sdl_atomic.h
 	"SDL_stdinc.h"
 	"SDL_platform.h"
 	"begin_code.h"
 	<mbarrier.h>
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_audio.h
+1542722635 z:\electronix\include\sdl2\sdl_audio.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_endian.h"
@@ -516,24 +517,24 @@
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_error.h
+1542722635 z:\electronix\include\sdl2\sdl_error.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_endian.h
+1542722635 z:\electronix\include\sdl2\sdl_endian.h
 	"SDL_stdinc.h"
 	<endian.h>
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_mutex.h
+1542722635 z:\electronix\include\sdl2\sdl_mutex.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_thread.h
+1542722635 z:\electronix\include\sdl2\sdl_thread.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_atomic.h"
@@ -544,18 +545,18 @@
 	<stdlib.h>
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_rwops.h
+1542722635 z:\electronix\include\sdl2\sdl_rwops.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_clipboard.h
+1542722635 z:\electronix\include\sdl2\sdl_clipboard.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_cpuinfo.h
+1542722635 z:\electronix\include\sdl2\sdl_cpuinfo.h
 	"SDL_stdinc.h"
 	<intrin.h>
 	<intrin.h>
@@ -570,7 +571,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_events.h
+1542722635 z:\electronix\include\sdl2\sdl_events.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
@@ -584,7 +585,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_video.h
+1542722635 z:\electronix\include\sdl2\sdl_video.h
 	"SDL_stdinc.h"
 	"SDL_pixels.h"
 	"SDL_rect.h"
@@ -592,13 +593,13 @@
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_pixels.h
+1542722635 z:\electronix\include\sdl2\sdl_pixels.h
 	"SDL_stdinc.h"
 	"SDL_endian.h"
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_rect.h
+1542722635 z:\electronix\include\sdl2\sdl_rect.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_pixels.h"
@@ -606,7 +607,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_surface.h
+1542722635 z:\electronix\include\sdl2\sdl_surface.h
 	"SDL_stdinc.h"
 	"SDL_pixels.h"
 	"SDL_rect.h"
@@ -615,11 +616,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_blendmode.h
+1542722635 z:\electronix\include\sdl2\sdl_blendmode.h
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_keyboard.h
+1542722635 z:\electronix\include\sdl2\sdl_keyboard.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_keycode.h"
@@ -627,27 +628,27 @@
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_keycode.h
+1542722635 z:\electronix\include\sdl2\sdl_keycode.h
 	"SDL_stdinc.h"
 	"SDL_scancode.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_scancode.h
+1542722635 z:\electronix\include\sdl2\sdl_scancode.h
 	"SDL_stdinc.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_mouse.h
+1542722635 z:\electronix\include\sdl2\sdl_mouse.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_joystick.h
+1542722635 z:\electronix\include\sdl2\sdl_joystick.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_gamecontroller.h
+1542722635 z:\electronix\include\sdl2\sdl_gamecontroller.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_rwops.h"
@@ -655,11 +656,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_quit.h
+1542722635 z:\electronix\include\sdl2\sdl_quit.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_gesture.h
+1542722635 z:\electronix\include\sdl2\sdl_gesture.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
@@ -667,66 +668,66 @@
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_touch.h
+1542722635 z:\electronix\include\sdl2\sdl_touch.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_filesystem.h
+1542722635 z:\electronix\include\sdl2\sdl_filesystem.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_haptic.h
+1542722635 z:\electronix\include\sdl2\sdl_haptic.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_joystick.h"
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_hints.h
+1542722635 z:\electronix\include\sdl2\sdl_hints.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_loadso.h
+1542722635 z:\electronix\include\sdl2\sdl_loadso.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_log.h
+1542722635 z:\electronix\include\sdl2\sdl_log.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_messagebox.h
+1542722635 z:\electronix\include\sdl2\sdl_messagebox.h
 	"SDL_stdinc.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_power.h
+1542722635 z:\electronix\include\sdl2\sdl_power.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_render.h
+1542722635 z:\electronix\include\sdl2\sdl_render.h
 	"SDL_stdinc.h"
 	"SDL_rect.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_sensor.h
+1542722635 z:\electronix\include\sdl2\sdl_sensor.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_shape.h
+1542722635 z:\electronix\include\sdl2\sdl_shape.h
 	"SDL_stdinc.h"
 	"SDL_pixels.h"
 	"SDL_rect.h"
@@ -735,7 +736,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_system.h
+1542722635 z:\electronix\include\sdl2\sdl_system.h
 	"SDL_stdinc.h"
 	"SDL_keyboard.h"
 	"SDL_render.h"
@@ -743,24 +744,24 @@
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_timer.h
+1542722635 z:\electronix\include\sdl2\sdl_timer.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_version.h
+1542722635 z:\electronix\include\sdl2\sdl_version.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1541577562 z:\electronix\include\sdl2\sdl_image.h
+1542722635 z:\electronix\include\sdl2\sdl_image.h
 	"SDL.h"
 	"SDL_version.h"
 	"begin_code.h"
 	"close_code.h"
 
-1542124415 source:z:\electronix\src\main.c
+1542787160 source:z:\electronix\src\main.c
 	<SDL2/SDL.h>
 	<stdio.h>
 	"kernel.h"
@@ -768,6 +769,7 @@
 	"datas/commons_datas.h"
 	"datas/surfacesManager.h"
 	"datas/texturesManager.h"
+	"config.h"
 
 1541602689 z:\electronix\src\iconception.h
 	<SDL2/SDL.h>
@@ -844,62 +846,66 @@
 	"layouts/iMenu.h"
 	"datas/commons_datas.h"
 
-1542095960 source:z:\electronix\src\datas\commons_datas.c
+1542722636 source:z:\electronix\src\datas\commons_datas.c
 	"commons_datas.h"
 
-1542124396 z:\electronix\src\datas\commons_datas.h
+1542722636 z:\electronix\src\datas\commons_datas.h
 	<stdio.h>
 	<stdlib.h>
 	<SDL2/SDL.h>
 	<SDL2/SDL_ttf.h>
 	"surfacesManager.h"
 	"texturesManager.h"
+	"uiManager.h"
 
-1542095960 z:\electronix\include\sdl2\sdl_ttf.h
+1542722635 z:\electronix\include\sdl2\sdl_ttf.h
 	"SDL.h"
 	"begin_code.h"
 	"close_code.h"
 
-1542194884 z:\electronix\src\datas\surfacesmanager.h
+1542722636 z:\electronix\src\datas\surfacesmanager.h
 	<stdio.h>
 	<stdlib.h>
 	<SDL2/SDL.h>
 	<SDL2/SDL_ttf.h>
 
-1542096269 z:\electronix\src\datas\texturesmanager.h
+1542722636 z:\electronix\src\datas\texturesmanager.h
 	<stdio.h>
 	<stdlib.h>
 	<SDL2/SDL.h>
 	<SDL2/SDL_ttf.h>
 
-1542095960 source:z:\electronix\src\datas\surfacesmanager.c
+1542722636 source:z:\electronix\src\datas\surfacesmanager.c
 	"surfacesManager.h"
 
-1542095960 source:z:\electronix\src\datas\texturesmanager.c
-	"surfacesManager.h"
+1542722636 source:z:\electronix\src\datas\texturesmanager.c
+	"texturesManager.h"
 
-1542095960 z:\electronix\src\layouts\iconception.h
+1542808327 z:\electronix\src\layouts\iconception.h
 	<SDL2/SDL.h>
 	<stdio.h>
 	<stdlib.h>
 	<SDL2/SDL_ttf.h>
 	"../datas/commons_datas.h"
+	"iMenu.h"
+	"../utils/uiEvent.h"
 
-1542195013 source:z:\electronix\src\layoutloader.c
+1542808452 source:z:\electronix\src\layoutloader.c
 	"layoutLoader.h"
 
-1542095960 z:\electronix\src\layoutloader.h
+1542808459 z:\electronix\src\layoutloader.h
 	<SDL2/SDL.h>
 	<stdio.h>
 	<stdlib.h>
 	<SDL2/SDL_ttf.h>
 	"layouts/iConception.h"
+	"layouts/iMenu.h"
 	"datas/commons_datas.h"
 
-1542200310 source:z:\electronix\src\layouts\iconception.c
+1542808437 source:z:\electronix\src\layouts\iconception.c
 	"iConception.h"
 
-1542208499 source:z:\electronix\ressources.rc
+1542722636 source:z:\electronix\ressources.rc
 
 1542215245 source:c:\users\brete\documents\projects\esgi2\c\electronix\ressources.rc
 
@@ -929,4 +935,38 @@
 
 1542489099 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\config.c
 	"config.h"
+
+1542722636 source:z:\electronix\src\config.c
+	"config.h"
+
+1542722636 z:\electronix\src\config.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1542798639 z:\electronix\src\datas\uimanager.h
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL.h>
+	<SDL2/SDL_ttf.h>
+
+1542722636 source:z:\electronix\src\layouts\imenu.c
+	"iMenu.h"
+
+1542722636 z:\electronix\src\layouts\imenu.h
+	<SDL2/SDL.h>
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL_ttf.h>
+	"../datas/commons_datas.h"
+
+1542722636 source:z:\electronix\src\datas\uimanager.c
+	"uiManager.h"
+
+1542797584 z:\electronix\src\utils\uievent.h
+	"../datas/commons_datas.h"
+	<SDL2/SDL.h>
+
+1542798842 source:z:\electronix\src\utils\uievent.c
+	"uiEvent.h"
 

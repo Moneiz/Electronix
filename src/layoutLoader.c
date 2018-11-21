@@ -46,12 +46,33 @@ int initTexsTex(SDL_Renderer* rendererP, Datas* datas){
     }
     return 1;
 }
+
+void redrawText(SDL_Renderer* rendererP, Datas* datas, int ptrText, char * newText){
+    SDL_FreeSurface(datas->surfaces->texts[ptrText]);
+    SDL_DestroyTexture(datas->textures->texts[ptrText]);
+
+    SDL_Color white = {255,255,255};
+    datas->surfaces->texts[ptrText] = TTF_RenderText_Blended(datas->font, newText, white);;
+    if(!datas->surfaces->texts[ptrText]){
+        fprintf(stderr,"Text Loading Error :/ -> %s\n", TTF_GetError());
+        return;
+    }
+    datas->textures->texts[ptrText] = SDL_CreateTextureFromSurface(rendererP,
+                                                                 datas->surfaces->texts[ptrText]);
+    if(!datas->textures->texts[ptrText]){
+        fprintf(stderr,"Texts Creation Error :/ -> %s\n",SDL_GetError());
+        return;
+    }
+
+}
+
 int updateRender(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
     (*datas.currentIRenderFct)(windowP, rendererP,datas);
 }
-void updateEvent(SDL_Event event, SDL_Window* windowP, Datas * datas, int * running){
-    SDL_WaitEvent(&event);conception_init(datas);
-    conception_event(event, windowP, datas);
+void updateEvent(SDL_Event event, SDL_Window* windowP, SDL_Renderer * rendererP, Datas * datas, int * running){
+    SDL_WaitEvent(&event);
+    conception_init(datas);
+    conception_event(event, windowP, rendererP,datas);
     switch(event.type)
     {
         case SDL_KEYDOWN:

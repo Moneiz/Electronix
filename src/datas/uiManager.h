@@ -9,6 +9,7 @@
 typedef struct UI_manager UI_manager;
 struct UI_manager {
 
+    int nbBt;
     SDL_Rect * rectGroup;
     SDL_Rect * rectBt;
 

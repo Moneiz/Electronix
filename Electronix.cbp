@@ -87,6 +87,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/ressources.h" />
+		<Unit filename="src/utils/uiEvent.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/utils/uiEvent.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

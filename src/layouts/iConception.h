@@ -1,3 +1,11 @@
+/**
+* \file iConception.c
+* \author Alan B.
+* \date 21/11/2018
+* \version 1.0
+*
+* Fichier qui gère la page de conception de circuit electrique
+*/
 #include <SDL2/SDL.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -5,12 +13,21 @@
 
 #include "../datas/commons_datas.h"
 #include "iMenu.h"
+#include "../utils/uiEvent.h"
 
-SDL_Texture** textureP;
-SDL_Texture** textsTexP;
-TTF_Font* font;
-
+/**
+Obligatoire : Initialisation de la page (allocation des tableaux UI)
+*/
 int conception_init(Datas *datas);
+/**
+Obligatoire : Mise à jour du rendu de la page (affichage des éléments UI)
+*/
 int conception_update(SDL_Window* windowP, SDL_Renderer* renderer, Datas datas);
-int conception_event(SDL_Event event,SDL_Window* windowP,Datas *datas);
+/**
+Obligatoire : Mise à jour de la position des élements UI et écoute des évenements de ceux ci
+*/
+int conception_event(SDL_Event event,SDL_Window* windowP,SDL_Renderer* renderer,Datas *datas);
+/**
+Obligatoire : Destruction de la page (désallocation des tableaux UI)
+*/
 int conception_end(Datas datas);
