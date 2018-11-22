@@ -27,6 +27,12 @@ Ressources getFilledRessources(char * configFile){
             "DEL",
             "Inductance",
             "Transistor NPN",
+            "Electronix",
+            "Didacticiel",
+            "Libre",
+            "Quitter",
+            "Sophie Pelluet - Alan Bretelle",
+            "1",
 
         },
         "./fonts/Atures-700_PERSONAL_USE.ttf",  //Police
