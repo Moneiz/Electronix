@@ -14,7 +14,6 @@ int level_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
 
     SDL_SetRenderDrawColor(rendererP, 21, 51, 54, 0);
     SDL_RenderFillRect(rendererP, &header);
-    /*SDL_RenderCopy(rendererP, datas.textures->texts[8], &header, &header);*/
 
     SDL_SetRenderDrawColor(rendererP, 160, 253, 255, 0);
     SDL_RenderFillRect(rendererP, &menu);

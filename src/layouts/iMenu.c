@@ -1,10 +1,5 @@
 #include "iMenu.h"
 
-//TODO
-//1. XXXMettre les déclarations de variables au début de la fonction
-//2. XXX Corriger le scintillement des éléments (le renderPresent est appelé qu'une fois)
-//3. Ajouter le texte
-//4. Réduire un peu la taille des boutons centraux en X
 int menu_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
 
     int width, height;
@@ -13,19 +8,22 @@ int menu_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
 
 	SDL_Rect background = {0,0,width,height};
     SDL_Rect header = {0, height/9, width, height/7};
-    SDL_Rect menu = {width/4, height/3, width/2, height/2 - height/200};
-    SDL_Rect credits = {width/4, height/3 + height/2, width/2, height/10};
+    SDL_Rect headerT = {(width - (height/7 - 20) * datas.surfaces->texts[8]->w/datas.surfaces->texts[8]->h)/2, height/9 + 10, (height/7 - 20) * datas.surfaces->texts[8]->w/datas.surfaces->texts[8]->h, height/7 - 20};
+
+    SDL_Rect menu = {width/2 - width/8, height/3, width/4, height/2 - height/200};
+
+    SDL_Rect creditsT = {width - width/4, height - height/30, width/4, height/30};
 
     SDL_RenderCopy(rendererP, datas.textures->images[7], NULL, &background);
 
     SDL_SetRenderDrawColor(rendererP, 21, 51, 54, 0);
     SDL_RenderFillRect(rendererP, &header);
+    SDL_RenderCopy(rendererP, datas.textures->texts[8], NULL, &headerT);
 
     SDL_SetRenderDrawColor(rendererP, 160, 253, 255, 0);
     SDL_RenderFillRect(rendererP, &menu);
 
-    SDL_SetRenderDrawColor(rendererP, 17, 17, 17, 0);
-    SDL_RenderFillRect(rendererP, &credits);
+    SDL_RenderCopy(rendererP, datas.textures->texts[12], NULL, &creditsT);
 
     menu_update_buttons(rendererP, datas, width, height);
     SDL_RenderPresent(rendererP);
@@ -35,12 +33,13 @@ int menu_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
 int menu_update_buttons(SDL_Renderer* rendererP, Datas datas, int width, int height){
 	int counter, buttonX, buttonY, buttonW, buttonH, lines;
     SDL_Rect buttons[3];
+    SDL_Rect buttonsT[3];
 
     lines = 3;
 
-    buttonX = width/4 + width/200;
+    buttonX = width/2 - width/8 + width/200;
     buttonY = height/3 + height/100;
-    buttonW = (width/2 - 2 * width/200);
+    buttonW = (width/4 - 2 * width/200);
     buttonH = (height/2 - (lines + 1) * height/100)/lines;
 
 
@@ -49,11 +48,19 @@ int menu_update_buttons(SDL_Renderer* rendererP, Datas datas, int width, int hei
     	buttons[counter].y = buttonY + counter * (height/100 + buttonH) ;
     	buttons[counter].w = buttonW;
     	buttons[counter].h = buttonH;
+
+    	// Texte des boutons
+    	buttonsT[counter].y = buttonY + counter * (height/100 + buttonH) + 30;
+    	buttonsT[counter].h = buttonH - 60;
+    	buttonsT[counter].w = buttonsT[counter].h * datas.surfaces->texts[counter + 9]->w / datas.surfaces->texts[counter + 9]->h;
+        buttonsT[counter].x = buttonX + ( buttonW - buttonsT[counter].w)/2;
+
     	if(counter == 2){
     		SDL_SetRenderDrawColor(rendererP, 175, 18, 18, 0);
     	}else{
     		SDL_SetRenderDrawColor(rendererP, 21, 51, 54, 0);
     	}
     	SDL_RenderFillRect(rendererP, &buttons[counter]);
+    	SDL_RenderCopy(rendererP,datas.textures->texts[9 + counter],NULL, &buttonsT[counter]);
     }
 }

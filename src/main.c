@@ -36,7 +36,7 @@ int main(int argc, char** argv)
     cDatas.textures = &tm;
     cDatas.ui = &uim;       //Affectation de leur adresse dans
                             //les valeurs de cDatas
-    cDatas.version = "in-dev-8";
+    cDatas.version = "in-dev-10";
     cDatas.projectName = "Electronix";
 
     if(init(&win, &render,r) &  postInit(render, &cDatas,r)){

@@ -72,7 +72,8 @@ int updateRender(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
 void updateEvent(SDL_Event event, SDL_Window* windowP, SDL_Renderer * rendererP, Datas * datas, int * running){
     SDL_WaitEvent(&event);
     conception_init(datas);
-    conception_event(event, windowP, rendererP,datas);
+    datas->currentIEventsFct=conception_event;
+    (*datas->currentIEventsFct)(event, windowP, rendererP, datas);
     switch(event.type)
     {
         case SDL_KEYDOWN:

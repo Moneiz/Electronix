@@ -43,6 +43,7 @@ struct Datas {
 
     //Pointeur de fonction des updateurs
     int (*currentIRenderFct)(SDL_Window *,SDL_Renderer *, Datas);
+    int (*currentIEventsFct)(SDL_Event, SDL_Window*, SDL_Renderer*, Datas*);
 
     //Special
     TTF_Font* font;

@@ -4,7 +4,7 @@
 * \version 1.2
 * \date 17/11/2018
 *
-* Fichier qui gÃ¨re l'intÃ©gralitÃ© des liens de ressources avant leur chargement en postInit
+* Fichier qui gère l'intégralité des liens de ressources avant leur chargement en postInit
 */
 
 #include <stdio.h>
@@ -18,11 +18,11 @@
 
 
 #define NB_IMAGES 8
-#define NB_TEXT 8
+#define NB_TEXT 14
 
 
 /**
-Strcture contenant toutes les ressources nÃ©cessaire
+Strcture contenant toutes les ressources nécessaire
 au programme(lien image, son...)
 */
 typedef struct Ressources Ressources;
@@ -41,7 +41,7 @@ struct Ressources {
 
 /**
 Renvoie la structure Ressources avec les variables
-affectÃ©es
+affectées
 */
 Ressources getFilledRessources(char * configFile);
 

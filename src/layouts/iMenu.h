@@ -2,7 +2,7 @@
 * \file iMenu.c
 * \author Sophie P.
 * \date 15/11/2018
-* \version 1.0
+* \version 1.1
 *
 * Dessine le menu du programme
 */
