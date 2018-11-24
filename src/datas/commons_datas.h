@@ -1,8 +1,8 @@
 /**
 * \file commons_datas.c
 * \author Alan B.
-* \version 1.2
-* \date 15/11/2018
+* \version 1.3
+* \date 24/11/2018
 *
 * Fichier contenant le patron du principale DTO du programme : Data
 */
@@ -12,13 +12,14 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
 
+
 #include "surfacesManager.h"
 #include "texturesManager.h"
 #include "uiManager.h"
+#include "modules.h"
 
 #ifndef DATAS_H
 #define DATAS_H
-
 
 /**
 La structure Data contient des pointeurs vers
@@ -36,6 +37,13 @@ struct Datas {
     Surfaces_manager* surfaces;
     Textures_manager* textures;
     UI_manager* ui;
+
+    //Module
+    Module* modulesList;
+    int nbModules;
+    int idSel;
+
+    int zoomLevel;
 
     //Project infos
     char *version;

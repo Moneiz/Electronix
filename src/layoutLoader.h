@@ -1,8 +1,8 @@
 /**
 * \file layoutLoader.c
 * \author Alan B.
-* \date 21/11/2018
-* \version 1.2
+* \date 24/11/2018
+* \version 1.3
 *
 * Ce fichier gère le lien entre le kernel et les différentes
 * interfaces du programme

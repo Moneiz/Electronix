@@ -12,8 +12,8 @@
 *
 * \file main.c
 * \author Alan B., Sophie P.
-* \version in-dev-8
-* \date 17/11/2018
+* \version in-dev-11
+* \date 24/11/2018
 *
 * ELECTRONIX PROJECT
 *
@@ -32,17 +32,23 @@ int main(int argc, char** argv)
     Textures_manager tm;
     UI_manager uim;         //Déclaration de sm et tm
 
+    cDatas.nbModules = 3;
+    Module* modules = initModules(cDatas.nbModules);
+    cDatas.modulesList = modules;
+
     cDatas.surfaces = &sm;
     cDatas.textures = &tm;
     cDatas.ui = &uim;       //Affectation de leur adresse dans
                             //les valeurs de cDatas
-    cDatas.version = "in-dev-10";
+
+    cDatas.version = "in-dev-11";
     cDatas.projectName = "Electronix";
 
     if(init(&win, &render,r) &  postInit(render, &cDatas,r)){
         updateApp(win, render, cDatas);
     }
     endApp(win, render, cDatas,r);
+    freeModules(cDatas.modulesList);
 
     return 0;
 }

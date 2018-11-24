@@ -1,8 +1,8 @@
 /**
 * \file iConception.c
 * \author Alan B.
-* \date 21/11/2018
-* \version 1.0
+* \date 24/11/2018
+* \version 1.1
 *
 * Fichier qui gère la page de conception de circuit electrique
 */
@@ -13,7 +13,9 @@
 
 #include "../datas/commons_datas.h"
 #include "iMenu.h"
+#include "iLevel.h"
 #include "../utils/uiEvent.h"
+#include "../moduleLoader.h"
 
 /**
 Obligatoire : Initialisation de la page (allocation des tableaux UI)

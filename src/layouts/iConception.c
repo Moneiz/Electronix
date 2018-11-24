@@ -12,6 +12,10 @@ int conception_init(Datas* datas){
     datas->ui->nbBt = nbButton;
     datas->ui->rectBt = rectsBt;
     datas->ui->rectGroup = rectsGr;
+
+    datas->idSel = 0;
+    datas->zoomLevel = 50;
+
     return 0;
 }
 int conception_event(SDL_Event event,SDL_Window* windowP, SDL_Renderer* rendererP,Datas *datas){
@@ -43,17 +47,28 @@ int conception_event(SDL_Event event,SDL_Window* windowP, SDL_Renderer* renderer
     if(event.type == SDL_MOUSEBUTTONDOWN){
         idBt = getIdButtonOn(*datas, xMouse, yMouse);
         switch(idBt){
-            case 0:
-                redrawText(rendererP,datas,2,"Nothing");
-                break;
-            case 1:
-                redrawText(rendererP,datas,2,"Transistor");
+            case 2:
+                datas->currentIRenderFct = level_update;
                 break;
             case 4:
                 datas->currentIRenderFct = menu_update;
                 break;
             default:
                 break;
+        }
+    }
+    if(event.type == SDL_MOUSEWHEEL){
+        if(event.wheel.y > 0 && datas->zoomLevel < 100){
+            datas->zoomLevel+=3;
+        }else if (event.wheel.y < 0 && datas->zoomLevel > 10){
+            datas->zoomLevel-=3;
+        }
+    }
+    if(event.type == SDL_KEYDOWN){
+        if(event.key.keysym.sym == SDLK_UP){
+            datas->idSel=(datas->idSel+datas->nbModules-1)%datas->nbModules;
+        }else if(event.key.keysym.sym == SDLK_DOWN){
+            datas->idSel=(datas->idSel+1)%datas->nbModules;
         }
     }
 
@@ -72,10 +87,10 @@ int conception_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas)
 
     //Dessine la grille de la page
     SDL_SetRenderDrawColor(rendererP,0,0,0,0);
-    for(i = 0; i < height; i+=30){
+    for(i = 0; i < height; i+=datas.zoomLevel){
         SDL_RenderDrawLine(rendererP, 0, i, width, i);
     }
-    for(i = 0; i < width; i+=30){
+    for(i = 0; i < width; i+=datas.zoomLevel){
         SDL_RenderDrawLine(rendererP, i, 0, i, height);
     }
 
@@ -136,21 +151,23 @@ int conception_update_modules(SDL_Renderer* rendererP, Datas datas, int width, i
     int i;
     SDL_Rect modulesB = datas.ui->rectGroup[1];
     SDL_Rect modules = {modulesB.x+5, modulesB.y+5, modulesB.w-10, modulesB.h-10};
-    SDL_Rect currentMod = {modules.x+5, modules.y+5, modules.w -10, 20};
+    SDL_Rect currentMod = {modules.x+5, modules.y+5, modules.w -10, 40};
+    SDL_Rect currentModIco = {currentMod.x+5, currentMod.y+5, currentMod.w/3 -10, 30};
+    SDL_Rect currentModText = {currentMod.x+10+currentMod.w/3, currentMod.y+5, 2*currentMod.w/3 -10, 20};
 
     SDL_SetRenderDrawColor(rendererP,100,100,100,0);
     SDL_RenderFillRect(rendererP,&modulesB);
     SDL_SetRenderDrawColor(rendererP,50,50,50,0);
     SDL_RenderFillRect(rendererP,&modules);
 
-    for(i = 0; i < 8; i++){
-        currentMod.y = modules.y + 5 +30*i;
-        currentMod.h = 20;
-        currentMod.w = currentMod.h*datas.surfaces->texts[i]->w / datas.surfaces->texts[i]->h;
+    for(i = 0; i < datas.nbModules; i++){
+        currentMod.y = modules.y + 5 +45*i;
+        currentMod.h = 40;
+        currentMod.w = currentMod.h*datas.surfaces->texts[0]->w / datas.surfaces->texts[0]->h;
         if(currentMod.w > modules.w - 10){
             currentMod.w = modules.w-10;
         }
-        SDL_RenderCopy(rendererP,datas.textures->texts[i],NULL,&currentMod);
+        showBtModule(rendererP,currentMod,datas, i);
     }
 
 }

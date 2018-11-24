@@ -52,6 +52,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/datas/commons_datas.h" />
+		<Unit filename="src/datas/modules.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/datas/modules.h" />
 		<Unit filename="src/datas/surfacesManager.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -76,6 +80,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/layouts/iConception.h" />
+		<Unit filename="src/layouts/iLevel.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/layouts/iLevel.h" />
 		<Unit filename="src/layouts/iMenu.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -83,6 +91,14 @@
 		<Unit filename="src/main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/moduleLoader.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/moduleLoader.h" />
+		<Unit filename="src/modules/mGenerator.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/modules/mGenerator.h" />
 		<Unit filename="src/ressources.c">
 			<Option compilerVar="CC" />
 		</Unit>

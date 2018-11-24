@@ -15,24 +15,22 @@ Ressources getFilledRessources(char * configFile){
             "./img/utils_quit.png",
             "./img/commons_sq_bt.png",
             "./img/ico.png",
-            "./img/fond.png"
+            "./img/fond.png",
+            "./img/m_generator.png",
+            "./img/m_wire.png",
+            "./img/m_resistor.png"
         },
         NB_TEXT,
         {
-            "Fil de cuivre",
-            "Résistance",
-            "Générateur",
-            "Condensateur",
-            "Diode",
-            "DEL",
-            "Inductance",
-            "Transistor NPN",
             "Electronix",
             "Didacticiel",
             "Libre",
             "Quitter",
             "Sophie Pelluet - Alan Bretelle",
             "1",
+            "Générateur",
+            "Fil de cuivre",
+            "Résistance"
 
         },
         "./fonts/Atures-700_PERSONAL_USE.ttf",  //Police
