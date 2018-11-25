@@ -12,8 +12,8 @@
 *
 * \file main.c
 * \author Alan B., Sophie P.
-* \version pre-alpha-1
-* \date 24/11/2018
+* \version pre-alpha-2.1
+* \date 25/11/2018
 *
 * ELECTRONIX PROJECT
 *
@@ -42,7 +42,7 @@ int main(int argc, char** argv)
     cDatas.ui = &uim;
     cDatas.grid = &gm;
 
-    cDatas.version = "pre-alpha-1";
+    cDatas.version = "pre-alpha-2.1";
     cDatas.projectName = "Electronix";
 
     if(init(&win, &render,r) &  postInit(render, &cDatas,r)){

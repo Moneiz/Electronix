@@ -16,7 +16,6 @@ int conception_init(Datas* datas){
     datas->ui->rectGroup = rectsGr;
 
     datas->idSel = 0;
-    datas->grid->zoomLevel = 50;
 
     return 0;
 }

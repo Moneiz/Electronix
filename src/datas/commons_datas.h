@@ -1,8 +1,8 @@
 /**
 * \file commons_datas.c
 * \author Alan B.
-* \version 1.3
-* \date 24/11/2018
+* \version 1.4
+* \date 25/11/2018
 *
 * Fichier contenant le patron du principale DTO du programme : Data
 */
@@ -23,37 +23,44 @@
 #define DATAS_H
 
 /**
-La structure Data contient des pointeurs vers
-- le Surfaces_manager (accès aux surfaces chargés)
-- le Textures_manager (accès aux textures chargés)
-- le UI_Manager (accès aux UI)
-- le TTF_Font (accès à la police de caractères)
-- les infos du projet (version et nom du projet)
-- pointeurs des rendus et events updater
+La structure Datas est le DTO principal du programme
 */
+
+
+
+
+
+
 typedef struct Datas Datas;
 struct Datas {
 
-    //Managers
+    /**Accès aux surfaces chargés*/
     Surfaces_manager* surfaces;
+    /**Accès aux textures chargés*/
     Textures_manager* textures;
+    /**Accès aux UI*/
     UI_manager* ui;
+    /**Accès à la grille*/
     Grid_Manager* grid;
 
-    //Module
+    /**Liste des modules*/
     Module* modulesList;
+    /**Nombre de module*/
     int nbModules;
+    /**Module actuellement sélectionné*/
     int idSel;
 
-    //Project infos
+    /**Version du projet*/
     char *version;
+    /**Nom du projet*/
     char *projectName;
 
-    //Pointeur de fonction des updateurs
+    /**Pointeur vers la fonction de rendu actuelle*/
     int (*currentIRenderFct)(SDL_Window *,SDL_Renderer *, Datas);
+    /**Pointeur vers la fonction des évènements actuelle*/
     int (*currentIEventsFct)(SDL_Event, SDL_Window*, SDL_Renderer*, Datas*);
 
-    //Special
+    /**Police de texte du programme*/
     TTF_Font* font;
 };
 

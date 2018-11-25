@@ -13,6 +13,7 @@ Module* initModules(int nbModule){
 void gridInit(Datas * datas){
     datas->grid->nbComponents = 0;
     datas->grid->components = NULL;
+    datas->grid->zoomLevel = 50;
 }
 void addComponentOnGrid(Datas * datas, Component component){
 
