@@ -16,6 +16,7 @@
 #include "surfacesManager.h"
 #include "texturesManager.h"
 #include "uiManager.h"
+#include "gridManager.h"
 #include "modules.h"
 
 #ifndef DATAS_H
@@ -37,13 +38,12 @@ struct Datas {
     Surfaces_manager* surfaces;
     Textures_manager* textures;
     UI_manager* ui;
+    Grid_Manager* grid;
 
     //Module
     Module* modulesList;
     int nbModules;
     int idSel;
-
-    int zoomLevel;
 
     //Project infos
     char *version;

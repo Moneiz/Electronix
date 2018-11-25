@@ -4,5 +4,6 @@
 #include "modules/mGenerator.h"
 
 Module* initModules();
+void gridInit(Datas * datas);
 void showBtModule(SDL_Renderer* rendererP,SDL_Rect currentMod, Datas datas, int id);
 

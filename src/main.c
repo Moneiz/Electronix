@@ -12,7 +12,7 @@
 *
 * \file main.c
 * \author Alan B., Sophie P.
-* \version in-dev-11
+* \version pre-alpha-1
 * \date 24/11/2018
 *
 * ELECTRONIX PROJECT
@@ -30,7 +30,8 @@ int main(int argc, char** argv)
 
     Surfaces_manager sm;
     Textures_manager tm;
-    UI_manager uim;         //Déclaration de sm et tm
+    UI_manager uim;
+    Grid_Manager gm;
 
     cDatas.nbModules = 3;
     Module* modules = initModules(cDatas.nbModules);
@@ -38,10 +39,10 @@ int main(int argc, char** argv)
 
     cDatas.surfaces = &sm;
     cDatas.textures = &tm;
-    cDatas.ui = &uim;       //Affectation de leur adresse dans
-                            //les valeurs de cDatas
+    cDatas.ui = &uim;
+    cDatas.grid = &gm;
 
-    cDatas.version = "in-dev-11";
+    cDatas.version = "pre-alpha-1";
     cDatas.projectName = "Electronix";
 
     if(init(&win, &render,r) &  postInit(render, &cDatas,r)){

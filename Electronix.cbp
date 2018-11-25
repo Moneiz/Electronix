@@ -52,6 +52,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/datas/commons_datas.h" />
+		<Unit filename="src/datas/gridManager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/datas/gridManager.h" />
 		<Unit filename="src/datas/modules.c">
 			<Option compilerVar="CC" />
 		</Unit>

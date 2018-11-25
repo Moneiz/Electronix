@@ -10,6 +10,27 @@ Module* initModules(int nbModule){
     return modulesList;
 
 }
+void gridInit(Datas * datas){
+    datas->grid->nbComponents = 0;
+    datas->grid->components = NULL;
+}
+void addComponentOnGrid(Datas * datas, Component component){
+
+    int i;
+    Component* temp = (Component*) malloc(sizeof(Component) * (datas->grid->nbComponents+1));
+
+    for(i = 0; i < datas->grid->nbComponents; i++){
+        temp[i] = datas->grid->components[i];
+    }
+    temp[datas->grid->nbComponents] = component;
+    datas->grid->nbComponents++;
+    if(datas->grid->components != NULL){
+        free(datas->grid->components);
+    }
+
+    datas->grid->components = temp;
+
+}
 void freeModules(Module* modulesList){
     free(modulesList);
 }

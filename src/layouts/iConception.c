@@ -9,12 +9,14 @@ int conception_init(Datas* datas){
     SDL_Rect* rectsBt = (SDL_Rect*) malloc(sizeof(SDL_Rect) * nbButton);
     SDL_Rect* rectsGr = (SDL_Rect*) malloc(sizeof(SDL_Rect) * nbGroup);
 
+    gridInit(datas);
+
     datas->ui->nbBt = nbButton;
     datas->ui->rectBt = rectsBt;
     datas->ui->rectGroup = rectsGr;
 
     datas->idSel = 0;
-    datas->zoomLevel = 50;
+    datas->grid->zoomLevel = 50;
 
     return 0;
 }
@@ -54,14 +56,19 @@ int conception_event(SDL_Event event,SDL_Window* windowP, SDL_Renderer* renderer
                 datas->currentIRenderFct = menu_update;
                 break;
             default:
+                addComponentOnGrid(datas,(Component){
+                    xMouse/datas->grid->zoomLevel,
+                    yMouse/datas->grid->zoomLevel,
+                    datas->idSel,
+                    0});
                 break;
         }
     }
     if(event.type == SDL_MOUSEWHEEL){
-        if(event.wheel.y > 0 && datas->zoomLevel < 100){
-            datas->zoomLevel+=3;
-        }else if (event.wheel.y < 0 && datas->zoomLevel > 10){
-            datas->zoomLevel-=3;
+        if(event.wheel.y > 0 && datas->grid->zoomLevel < 100){
+            datas->grid->zoomLevel+=3;
+        }else if (event.wheel.y < 0 && datas->grid->zoomLevel > 10){
+            datas->grid->zoomLevel-=3;
         }
     }
     if(event.type == SDL_KEYDOWN){
@@ -71,13 +78,17 @@ int conception_event(SDL_Event event,SDL_Window* windowP, SDL_Renderer* renderer
             datas->idSel=(datas->idSel+1)%datas->nbModules;
         }
     }
-
     return 0;
 }
 int conception_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
 
     int i;
     int width, height;
+
+    SDL_Rect currentComponent = {0,
+    0,
+    datas.grid->zoomLevel,
+    datas.grid->zoomLevel};
 
     SDL_GetWindowSize(windowP,&width, &height);
 
@@ -87,11 +98,22 @@ int conception_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas)
 
     //Dessine la grille de la page
     SDL_SetRenderDrawColor(rendererP,0,0,0,0);
-    for(i = 0; i < height; i+=datas.zoomLevel){
+    for(i = 0; i < height; i+=datas.grid->zoomLevel){
         SDL_RenderDrawLine(rendererP, 0, i, width, i);
     }
-    for(i = 0; i < width; i+=datas.zoomLevel){
+    for(i = 0; i < width; i+=datas.grid->zoomLevel){
         SDL_RenderDrawLine(rendererP, i, 0, i, height);
+    }
+
+    for(i = 0; i < datas.grid->nbComponents; i++){
+        currentComponent.x = datas.grid->components[i].posX*datas.grid->zoomLevel;
+        currentComponent.y = datas.grid->components[i].posY*datas.grid->zoomLevel;
+        SDL_RenderCopy(rendererP,datas.textures->images[
+                datas.modulesList[
+                        datas.grid->components[i].idModule
+                    ].idTex
+                ],NULL,
+            &currentComponent);
     }
 
     //Header
@@ -174,4 +196,6 @@ int conception_update_modules(SDL_Renderer* rendererP, Datas datas, int width, i
 int conception_end(Datas datas){
     free(datas.ui->rectBt);
     free(datas.ui->rectGroup);
+    datas.grid->nbComponents = 0;
+    free(datas.grid->components);
 }
