@@ -15,6 +15,18 @@ void gridInit(Datas * datas){
     datas->grid->components = NULL;
     datas->grid->zoomLevel = 50;
 }
+void onClickComponent(SDL_MouseButtonEvent mEvent,Datas* datas, Component component){
+    if(mEvent.button == SDL_BUTTON_LEFT){
+        if(isEmpty(datas, component.posX, component.posY)){
+            addComponentOnGrid(datas, component);
+        }
+    }
+    else if(mEvent.button == SDL_BUTTON_RIGHT){
+        if(!isEmpty(datas, component.posX, component.posY)){
+            removeComponentOnGrid(datas, component);
+        }
+    }
+}
 void addComponentOnGrid(Datas * datas, Component component){
 
     int i;
@@ -30,6 +42,46 @@ void addComponentOnGrid(Datas * datas, Component component){
     }
 
     datas->grid->components = temp;
+
+}
+void removeComponentOnGrid(Datas * datas, Component component){
+
+    int i;
+    int idToRemove = 0;
+
+    for(i = 0; i < datas->grid->nbComponents; i++){
+        if(datas->grid->components[i].posX == component.posX &&
+           datas->grid->components[i].posY == component.posY){
+                idToRemove = i;
+           }
+    }
+
+    Component* temp = (Component*) malloc(sizeof(Component) * (datas->grid->nbComponents-1));
+
+    for(i = 0; i < idToRemove; i++){
+        temp[i] = datas->grid->components[i];
+    }
+    for(i = idToRemove; i < datas->grid->nbComponents-1;i++){
+        temp[i] = datas->grid->components[i+1];
+    }
+
+    datas->grid->nbComponents--;
+    if(datas->grid->components != NULL){
+        free(datas->grid->components);
+    }
+    datas->grid->components = temp;
+
+}
+int isEmpty(Datas* datas, int x, int y){
+
+    int i;
+    for(i = 0; i < datas->grid->nbComponents; i++){
+        if(datas->grid->components[i].posX == x &&
+           datas->grid->components[i].posY == y){
+            return 0;
+           }
+    }
+    return 1;
 
 }
 void freeModules(Module* modulesList){

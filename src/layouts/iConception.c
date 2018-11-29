@@ -48,6 +48,10 @@ int conception_event(SDL_Event event,SDL_Window* windowP, SDL_Renderer* renderer
     if(event.type == SDL_MOUSEBUTTONDOWN){
         idBt = getIdButtonOn(*datas, xMouse, yMouse);
         switch(idBt){
+            case 0:
+                free(datas->grid->components);
+                gridInit(datas);
+                break;
             case 2:
                 datas->currentIRenderFct = level_update;
                 break;
@@ -55,7 +59,7 @@ int conception_event(SDL_Event event,SDL_Window* windowP, SDL_Renderer* renderer
                 datas->currentIRenderFct = menu_update;
                 break;
             default:
-                addComponentOnGrid(datas,(Component){
+                onClickComponent(event.button,datas,(Component){
                     xMouse/datas->grid->zoomLevel,
                     yMouse/datas->grid->zoomLevel,
                     datas->idSel,

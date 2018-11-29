@@ -84,10 +84,7 @@ void updateEvent(SDL_Event event, SDL_Window* windowP, SDL_Renderer * rendererP,
             datas->currentIRenderFct = conception_update;
 
             break;
-        case SDL_QUIT:
-            conception_end(*datas);
-            *running = 0;
-            break;
+
     }
 
     if(datas->currentIRenderFct == NULL){
