@@ -13,5 +13,21 @@
 #include <SDL2/SDL_ttf.h>
 
 #include "../datas/commons_datas.h"
+#include "../utils/uiEvent.h"
 
+/**
+Obligatoire : Initialisation de la page (allocation des tableaux UI)
+*/
+int level_init(Datas *datas);
+/**
+Obligatoire : Mise à jour du rendu de la page (affichage des éléments UI)
+*/
 int level_update(SDL_Window* windowP, SDL_Renderer* renderer, Datas datas);
+/**
+Obligatoire : Mise à jour de la position des élements UI et écoute des évenements de ceux ci
+*/
+int level_event(SDL_Event event,SDL_Window* windowP,SDL_Renderer* renderer,Datas *datas, int *running);
+/**
+Obligatoire : Destruction de la page (désallocation des tableaux UI)
+*/
+int level_end(Datas datas);

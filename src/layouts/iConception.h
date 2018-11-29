@@ -12,8 +12,8 @@
 #include <SDL2/SDL_ttf.h>
 
 #include "../datas/commons_datas.h"
-#include "iMenu.h"
 #include "iLevel.h"
+#include "iMenu.h"
 #include "../utils/uiEvent.h"
 #include "../moduleLoader.h"
 
@@ -28,7 +28,7 @@ int conception_update(SDL_Window* windowP, SDL_Renderer* renderer, Datas datas);
 /**
 Obligatoire : Mise à jour de la position des élements UI et écoute des évenements de ceux ci
 */
-int conception_event(SDL_Event event,SDL_Window* windowP,SDL_Renderer* renderer,Datas *datas);
+int conception_event(SDL_Event event,SDL_Window* windowP,SDL_Renderer* renderer,Datas *datas, int *running);
 /**
 Obligatoire : Destruction de la page (désallocation des tableaux UI)
 */
