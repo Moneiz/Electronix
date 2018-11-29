@@ -75,6 +75,7 @@ void updateEvent(SDL_Event event, SDL_Window* windowP, SDL_Renderer * rendererP,
     (*datas->currentIEventsFct)(event, windowP, rendererP, datas, running);
     switch(event.type)
     {
+
         case SDL_QUIT:
             conception_end(*datas);
             *running = 0;

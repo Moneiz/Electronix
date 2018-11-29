@@ -21,9 +21,21 @@ Initialise les données de la grille
 */
 void gridInit(Datas * datas);
 /**
+Action à réaliser lors d'un clique sur la grille
+*/
+void onClickComponent(SDL_MouseButtonEvent mEvent, Datas* datas, Component component);
+/**
 Ajoute le composant sur la grille
 */
 void addComponentOnGrid(Datas * datas, Component component);
+/**
+Supprime le composant  (selon ses coordonnées) de la grille
+*/
+void removeComponentOnGrid(Datas * datas, Component component);
+
+/**Vérifie que l'emplacement x et y est libre*/
+int isEmpty(Datas * datas, int x, int y);
+
 /**
 Affiche le module identifié par id dans la barre des modules
 */

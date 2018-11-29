@@ -17,7 +17,7 @@
 
 
 
-#define NB_IMAGES 11
+#define NB_IMAGES 12
 #define NB_TEXT 9
 
 

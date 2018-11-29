@@ -18,7 +18,8 @@ Ressources getFilledRessources(char * configFile){
             "./img/fond.png",
             "./img/m_generator.png",
             "./img/m_wire.png",
-            "./img/m_resistor.png"
+            "./img/m_resistor.png",
+            "./img/m_wire_corner.png"
         },
         NB_TEXT,
         {
