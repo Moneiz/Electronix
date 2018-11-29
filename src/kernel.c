@@ -160,6 +160,9 @@ int updateApp(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
 
     datas.currentIRenderFct = menu_update;
 
+    menu_init(&datas);
+    datas.currentIEventsFct=menu_event;
+
     while (continuer)
     {
 

@@ -71,19 +71,10 @@ int updateRender(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
 }
 void updateEvent(SDL_Event event, SDL_Window* windowP, SDL_Renderer * rendererP, Datas * datas, int * running){
     SDL_WaitEvent(&event);
-    if(datas->currentIEventsFct != conception_event){
-        conception_init(datas);
-        datas->currentIEventsFct=conception_event;
-    }
-    (*datas->currentIEventsFct)(event, windowP, rendererP, datas);
+
+    (*datas->currentIEventsFct)(event, windowP, rendererP, datas, running);
     switch(event.type)
     {
-        case SDL_KEYDOWN:
-
-            //conception_init(datas);
-            datas->currentIRenderFct = conception_update;
-
-            break;
         case SDL_QUIT:
             conception_end(*datas);
             *running = 0;

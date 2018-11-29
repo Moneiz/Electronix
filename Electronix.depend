@@ -980,7 +980,7 @@
 1542877482 source:c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\config.c
 	"config.h"
 
-1542877482 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\config.h
+1543464281 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\config.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -988,7 +988,7 @@
 1542385047 source:c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\datas\commons_datas.c
 	"commons_datas.h"
 
-1542877482 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\datas\commons_datas.h
+1543487615 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\datas\commons_datas.h
 	<stdio.h>
 	<stdlib.h>
 	<SDL2/SDL.h>
@@ -996,6 +996,8 @@
 	"surfacesManager.h"
 	"texturesManager.h"
 	"uiManager.h"
+	"gridManager.h"
+	"modules.h"
 
 1541773080 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -1344,19 +1346,19 @@
 	"begin_code.h"
 	"close_code.h"
 
-1542385047 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\datas\surfacesmanager.h
+1543464281 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\datas\surfacesmanager.h
 	<stdio.h>
 	<stdlib.h>
 	<SDL2/SDL.h>
 	<SDL2/SDL_ttf.h>
 
-1542385047 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\datas\texturesmanager.h
+1543464281 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\datas\texturesmanager.h
 	<stdio.h>
 	<stdlib.h>
 	<SDL2/SDL.h>
 	<SDL2/SDL_ttf.h>
 
-1542877482 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\datas\uimanager.h
+1543464281 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\datas\uimanager.h
 	<stdio.h>
 	<stdlib.h>
 	<SDL2/SDL.h>
@@ -1371,7 +1373,7 @@
 1542877482 source:c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\datas\uimanager.c
 	"uiManager.h"
 
-1542877482 source:c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\kernel.c
+1543458509 source:c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\kernel.c
 	"kernel.h"
 
 1542877482 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\kernel.h
@@ -1392,12 +1394,12 @@
 	"begin_code.h"
 	"close_code.h"
 
-1542877482 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\ressources.h
+1543464281 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\ressources.h
 	<stdio.h>
 	<stdlib.h>
 	"config.h"
 
-1542877482 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\layoutloader.h
+1543482811 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\layoutloader.h
 	<SDL2/SDL.h>
 	<stdio.h>
 	<stdlib.h>
@@ -1406,36 +1408,41 @@
 	"layouts/iMenu.h"
 	"datas/commons_datas.h"
 
-1542877482 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\layouts\iconception.h
+1543487769 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\layouts\iconception.h
 	<SDL2/SDL.h>
 	<stdio.h>
 	<stdlib.h>
 	<SDL2/SDL_ttf.h>
 	"../datas/commons_datas.h"
+	"iLevel.h"
 	"iMenu.h"
 	"../utils/uiEvent.h"
+	"../moduleLoader.h"
 
-1542877615 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\layouts\imenu.h
+1543488526 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\layouts\imenu.h
 	<SDL2/SDL.h>
 	<stdio.h>
 	<stdlib.h>
 	<SDL2/SDL_ttf.h>
 	"../datas/commons_datas.h"
+	"iLevel.h"
+	"../utils/uiEvent.h"
+	"iConception.h"
 
-1542877482 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\utils\uievent.h
+1543464281 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\utils\uievent.h
 	"../datas/commons_datas.h"
 	<SDL2/SDL.h>
 
-1542877482 source:c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\layoutloader.c
+1543487630 source:c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\layoutloader.c
 	"layoutLoader.h"
 
-1542877482 source:c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\layouts\iconception.c
+1543487664 source:c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\layouts\iconception.c
 	"iConception.h"
 
-1542877608 source:c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\layouts\imenu.c
+1543488533 source:c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\layouts\imenu.c
 	"iMenu.h"
 
-1542877482 source:c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\main.c
+1543464281 source:c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\main.c
 	<SDL2/SDL.h>
 	<stdio.h>
 	"kernel.h"
@@ -1490,4 +1497,48 @@
 
 1543101697 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\gridmanager.c
 	"gridManager.h"
+
+1543464281 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\datas\gridmanager.h
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL.h>
+	<SDL2/SDL_ttf.h>
+
+1543464281 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\datas\modules.h
+
+1543464281 source:c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\datas\gridmanager.c
+	"gridManager.h"
+
+1543464281 source:c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\datas\modules.c
+	"modules.h"
+
+1543487760 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\layouts\ilevel.h
+	<SDL2/SDL.h>
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL_ttf.h>
+	"../datas/commons_datas.h"
+	"../utils/uiEvent.h"
+
+1543464281 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\moduleloader.h
+	<SDL2/SDL.h>
+	"datas/commons_datas.h"
+	"modules/mGenerator.h"
+
+1543464281 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\modules\mgenerator.h
+
+1543487761 source:c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\layouts\ilevel.c
+	"iLevel.h"
+	"iMenu.h"
+
+1543464281 source:c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\moduleloader.c
+	"moduleLoader.h"
+
+1543464281 source:c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\modules\mgenerator.c
+
+1543464281 source:c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\ressources.c
+	"ressources.h"
+
+1543474426 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\layouts\iconception.c
+	"iConception.h"
 

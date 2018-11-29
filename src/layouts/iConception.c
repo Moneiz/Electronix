@@ -19,7 +19,7 @@ int conception_init(Datas* datas){
 
     return 0;
 }
-int conception_event(SDL_Event event,SDL_Window* windowP, SDL_Renderer* rendererP,Datas *datas){
+int conception_event(SDL_Event event,SDL_Window* windowP, SDL_Renderer* rendererP,Datas *datas, int* running){
     int width, height;
     int xMouse, yMouse;
     int marginXHeader;
@@ -49,10 +49,10 @@ int conception_event(SDL_Event event,SDL_Window* windowP, SDL_Renderer* renderer
         idBt = getIdButtonOn(*datas, xMouse, yMouse);
         switch(idBt){
             case 2:
-                datas->currentIRenderFct = level_update;
+                datas->currentIRenderFct = menu_update;
                 break;
             case 4:
-                datas->currentIRenderFct = menu_update;
+                datas->currentIRenderFct = level_update;
                 break;
             default:
                 addComponentOnGrid(datas,(Component){

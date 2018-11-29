@@ -58,7 +58,7 @@ struct Datas {
     /**Pointeur vers la fonction de rendu actuelle*/
     int (*currentIRenderFct)(SDL_Window *,SDL_Renderer *, Datas);
     /**Pointeur vers la fonction des évènements actuelle*/
-    int (*currentIEventsFct)(SDL_Event, SDL_Window*, SDL_Renderer*, Datas*);
+    int (*currentIEventsFct)(SDL_Event, SDL_Window*, SDL_Renderer*, Datas*, int*);
 
     /**Police de texte du programme*/
     TTF_Font* font;
