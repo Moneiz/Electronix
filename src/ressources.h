@@ -1,8 +1,8 @@
 /**
 * \file ressources.c
 * \author Alan B.
-* \version 1.3
-* \date 24/11/2018
+* \version 1.4
+* \date 30/11/2018
 *
 * Fichier qui gère l'intégralité des liens de ressources avant leur chargement en postInit
 */
@@ -17,8 +17,8 @@
 
 
 
-#define NB_IMAGES 12
-#define NB_TEXT 9
+#define NB_IMAGES 15
+#define NB_TEXT 10
 
 
 /**

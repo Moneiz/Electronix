@@ -1,11 +1,15 @@
 /**
 * \file modules.h
 * \author Alan B.
-* \version 1.0
-* \date 25/11/2018
+* \version 1.1
+* \date 30/11/2018
 *
 * Fichier contenant la structure d'un module
 */
+
+#include "SDL2/SDL.h"
+#include "gridManager.h"
+
 #ifndef MODULE_LOADER
 #define MODULE_LOADER
 
@@ -24,6 +28,8 @@ struct Module{
     int idTextTex;
     /**Id de la texture icone associée*/
     int idTex;
+    /**Pointeur de fonction vers la fonction de rendu*/
+    void (*ptrFctRender)(SDL_Rect,Component, int,SDL_Renderer *, SDL_Texture**);
 
 };
 

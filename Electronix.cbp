@@ -103,6 +103,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/modules/mGenerator.h" />
+		<Unit filename="src/modules/mWires.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/modules/mWires.h" />
 		<Unit filename="src/ressources.c">
 			<Option compilerVar="CC" />
 		</Unit>

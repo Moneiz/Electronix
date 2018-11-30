@@ -19,7 +19,10 @@ Ressources getFilledRessources(char * configFile){
             "./img/m_generator.png",
             "./img/m_wire.png",
             "./img/m_resistor.png",
-            "./img/m_wire_corner.png"
+            "./img/m_wire_corner.png",
+            "./img/m_capacitor.png",
+            "./img/m_wire_tri.png",
+            "./img/m_wire_qua.png"
         },
         NB_TEXT,
         {
@@ -31,7 +34,8 @@ Ressources getFilledRessources(char * configFile){
             "1",
             "Générateur",
             "Fil de cuivre",
-            "Résistance"
+            "Résistance",
+            "Condensateur"
 
         },
         "./fonts/Atures-700_PERSONAL_USE.ttf",  //Police

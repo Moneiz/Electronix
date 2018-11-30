@@ -88,11 +88,6 @@ int conception_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas)
     int i;
     int width, height;
 
-    SDL_Rect currentComponent = {0,
-    0,
-    datas.grid->zoomLevel,
-    datas.grid->zoomLevel};
-
     SDL_GetWindowSize(windowP,&width, &height);
 
     SDL_Rect background = {0, 0, width, height};
@@ -108,16 +103,7 @@ int conception_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas)
         SDL_RenderDrawLine(rendererP, i, 0, i, height);
     }
 
-    for(i = 0; i < datas.grid->nbComponents; i++){
-        currentComponent.x = datas.grid->components[i].posX*datas.grid->zoomLevel;
-        currentComponent.y = datas.grid->components[i].posY*datas.grid->zoomLevel;
-        SDL_RenderCopy(rendererP,datas.textures->images[
-                datas.modulesList[
-                        datas.grid->components[i].idModule
-                    ].idTex
-                ],NULL,
-            &currentComponent);
-    }
+    renderComponents(rendererP, datas);
 
     //Header
     conception_update_header(rendererP, datas, width,height);
