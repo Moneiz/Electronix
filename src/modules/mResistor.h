@@ -4,4 +4,4 @@
 #include "../datas/gridManager.h"
 
 void resistor_drawComponent(SDL_Rect currentRect, Component currentComponent,int idTex,SDL_Renderer * rendererP,
-                        SDL_Texture** textures);
+                   Datas datas);

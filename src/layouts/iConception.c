@@ -52,18 +52,24 @@ int conception_event(SDL_Event event,SDL_Window* windowP, SDL_Renderer* renderer
                 free(datas->grid->components);
                 gridInit(datas);
                 break;
+            case 1:
+                datas->realTimeEnable = 1;
+                break;
             case 2:
-                datas->currentIRenderFct = menu_update;
+                datas->realTimeEnable = 0;
                 break;
             case 4:
-                datas->currentIRenderFct = level_update;
+                conception_end(*datas);
+                menu_init(datas);
+                datas->currentIEventsFct = menu_event;
+                datas->currentIRenderFct = menu_update;
                 break;
             default:
-                onClickComponent(event.button,datas,(Component){
+                onClickComponent(event.button,datas,(Component){ 0,
                     xMouse/datas->grid->zoomLevel,
                     yMouse/datas->grid->zoomLevel,
                     datas->idSel,
-                    0});
+                    0,0,0,0});
                 break;
         }
     }

@@ -1,8 +1,8 @@
 /**
 * \file ressources.c
 * \author Alan B.
-* \version 1.4
-* \date 30/11/2018
+* \version 1.5
+* \date 10/12/2018
 *
 * Fichier qui gère l'intégralité des liens de ressources avant leur chargement en postInit
 */
@@ -11,6 +11,12 @@
 #include <stdlib.h>
 
 #include "config.h"
+#include "datas/gridManager.h"
+
+#include "modules/mGenerator.h"
+#include "modules/mWires.h"
+#include "modules/mResistor.h"
+#include "modules/mCapacitor.h"
 
 #ifndef RESSOURCES_H
 #define RESSOURCES_H
@@ -44,6 +50,9 @@ Renvoie la structure Ressources avec les variables
 affectées
 */
 Ressources getFilledRessources(char * configFile);
-
-
+/**
+Remplie la liste des modules
+*/
+void fillModuleList(Module* module);
 #endif
+

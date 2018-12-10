@@ -19,15 +19,23 @@ Structure désignant un composant sur la grille
 */
 typedef struct Component Component;
 struct Component {
+    int id;
     /**Position en X du composant*/
     int posX;
     /**Position en Y du composant*/
     int posY;
     /**Id du module pointé*/
     int idModule;
+
+    /**Tension du composant*/
+    int voltage;
+    /**Courant actuel du composant*/
+    int intensity;
+    /**Resistance du composant*/
+    int resistor;
+
     /**Etat du module (anticipé)*/
     int stateModule;
-
 };
 /**
 Structure qui désigne la grille et ses propriétés

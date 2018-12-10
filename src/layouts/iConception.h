@@ -1,8 +1,8 @@
 /**
 * \file iConception.c
 * \author Alan B.
-* \date 30/11/2018
-* \version 1.3
+* \date 10/12/2018
+* \version 1.4
 *
 * Fichier qui gère la page de conception de circuit electrique
 */

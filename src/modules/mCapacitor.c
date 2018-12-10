@@ -1,6 +1,6 @@
-#include "mResistor.h"
+#include "mCapacitor.h"
 
-void resistor_drawComponent(SDL_Rect currentRect,Component currentComponent, int idTex,SDL_Renderer * rendererP,
+void capacitor_drawComponent(SDL_Rect currentRect,Component currentComponent, int idTex,SDL_Renderer * rendererP,
                         Datas datas){
 
     int state = currentComponent.stateModule;

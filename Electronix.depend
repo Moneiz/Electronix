@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1543573705 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\main.c
+1543588117 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\main.c
 	<SDL2/SDL.h>
 	<stdio.h>
 	"kernel.h"
@@ -382,12 +382,17 @@
 	"begin_code.h"
 	"close_code.h"
 
-1543586400 c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.h
+1543608732 c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.h
 	<stdio.h>
 	<stdlib.h>
 	"config.h"
+	"datas/gridManager.h"
+	"modules/mGenerator.h"
+	"modules/mWires.h"
+	"modules/mResistor.h"
+	"modules/mCapacitor.h"
 
-1543586414 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.c
+1543662521 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.c
 	"ressources.h"
 
 1542722636 source:z:\electronix\src\ressources.c
@@ -793,7 +798,7 @@
 1541785125 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\surfacesmanager.c
 	"surfacesManager.h"
 
-1543490090 c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\iconception.h
+1543588081 c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\iconception.h
 	<SDL2/SDL.h>
 	<stdio.h>
 	<stdlib.h>
@@ -807,17 +812,17 @@
 1543490089 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layoutloader.c
 	"layoutLoader.h"
 
-1543532861 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\iconception.c
+1544114893 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\iconception.c
 	"iConception.h"
 
 1541969832 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\commons_datas.c
 	"commons_datas.h"
 
-1543490089 c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\commons_datas.h
+1543702368 c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\commons_datas.h
 	<stdio.h>
 	<stdlib.h>
-	<SDL2/SDL.h>
-	<SDL2/SDL_ttf.h>
+	"SDL2/SDL.h"
+	"SDL2/SDL_ttf.h"
 	"surfacesManager.h"
 	"texturesManager.h"
 	"uiManager.h"
@@ -1477,33 +1482,34 @@
 	"iLevel.h"
 	"iMenu.h"
 
-1543586485 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\moduleloader.c
+1544476266 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\moduleloader.c
 	"moduleLoader.h"
 
-1543577078 c:\users\brete\documents\projects\esgi2\c\electronix\src\moduleloader.h
+1544362251 c:\users\brete\documents\projects\esgi2\c\electronix\src\moduleloader.h
 	<SDL2/SDL.h>
 	<stdlib.h>
+	"ressources.h"
 	"datas/commons_datas.h"
 	"modules/mGenerator.h"
-	"modules/mWires.h"
-	"modules/mResistor.h"
 
-1543576175 c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mgenerator.h
+1544362285 c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mgenerator.h
 	"SDL2/SDL.h"
 	"../datas/commons_datas.h"
 	"../datas/gridManager.h"
+	"../utils/gridHelper.h"
 
-1543576107 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mgenerator.c
+1544363444 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mgenerator.c
 	"mGenerator.h"
 
-1543576358 c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\modules.h
+1543662374 c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\modules.h
 	"SDL2/SDL.h"
 	"gridManager.h"
+	"commons_datas.h"
 
-1543058440 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\modules.c
+1543608196 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\modules.c
 	"modules.h"
 
-1543575398 c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\gridmanager.h
+1544114855 c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\gridmanager.h
 	<stdio.h>
 	<stdlib.h>
 	<SDL2/SDL.h>
@@ -1556,19 +1562,40 @@
 1543474426 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\layouts\iconception.c
 	"iConception.h"
 
-1543586433 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mwires.c
+1544363706 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mwires.c
 	"mWires.h"
 
-1543576146 c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mwires.h
+1544363305 c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mwires.h
 	"SDL2/SDL.h"
 	"../datas/commons_datas.h"
 	"../datas/gridManager.h"
 
-1543577038 c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mresistor.h
+1543661911 c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mresistor.h
 	"SDL2/SDL.h"
 	"../datas/commons_datas.h"
 	"../datas/gridManager.h"
 
-1543576996 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mresistor.c
+1543662005 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mresistor.c
 	"mResistor.h"
+
+1543661890 c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mcapacitor.h
+	"SDL2/SDL.h"
+	"../datas/commons_datas.h"
+	"../datas/gridManager.h"
+
+1543662023 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mcapacitor.c
+	"mCapacitor.h"
+
+1543611020 c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\special\ptrfctmodule.h
+	"SDL2/SDL.h"
+	"../gridManager.h"
+	"../commons_datas.h"
+
+1544362065 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\utils\gridhelper.c
+	"gridHelper.h"
+
+1544362039 c:\users\brete\documents\projects\esgi2\c\electronix\src\utils\gridhelper.h
+	"../datas/commons_datas.h"
+	"../datas/gridManager.h"
+	<SDL2/SDL.h>
 

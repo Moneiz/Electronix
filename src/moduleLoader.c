@@ -3,10 +3,7 @@
 Module* initModules(int nbModule){
 
     Module *modulesList = (Module*) malloc(sizeof(Module) * nbModule);
-    modulesList[0] = (Module) {1, 6, 8, generator_drawComponent};
-    modulesList[1] = (Module) {2, 7, 9, wire_drawComponent};
-    modulesList[2] = (Module) {3, 8, 10, resistor_drawComponent};
-    modulesList[3] = (Module) {4, 9, 12, NULL};
+    fillModuleList(modulesList);
 
     return modulesList;
 
@@ -18,7 +15,8 @@ void gridInit(Datas * datas){
 }
 void onClickComponent(SDL_MouseButtonEvent mEvent,Datas* datas, Component component){
     if(mEvent.button == SDL_BUTTON_LEFT){
-        if(isEmpty(datas, component.posX, component.posY) == NULL){
+        if(isEmpty(datas, component.posX, component.posY) == NULL
+           && canPlaceHere(datas, &component,1)){
             addComponentOnGrid(datas, component);
         }
     }
@@ -34,15 +32,17 @@ void addComponentOnGrid(Datas * datas, Component component){
     Component* temp = (Component*) malloc(sizeof(Component) * (datas->grid->nbComponents+1));
     for(i = 0; i < datas->grid->nbComponents; i++){
         temp[i] = datas->grid->components[i];
+        temp[i].id = i;
     }
+    component.id = i;
     temp[datas->grid->nbComponents] = component;
-    datas->grid->nbComponents++;
+
     if(datas->grid->components != NULL){
         free(datas->grid->components);
     }
-
+    datas->grid->nbComponents++;
     datas->grid->components = temp;
-    updateStateComponents(&datas->grid->components[i],datas,1);
+    updateStateComponents(datas->grid->components + i,datas,1);
 
 }
 void removeComponentOnGrid(Datas * datas, Component component){
@@ -64,31 +64,49 @@ void removeComponentOnGrid(Datas * datas, Component component){
 
     for(i = 0; i < idToRemove; i++){
         temp[i] = datas->grid->components[i];
+        temp[i].id = i;
     }
-    for(i = idToRemove; i < datas->grid->nbComponents-1;i++){
+    datas->grid->nbComponents--;
+    for(i = idToRemove; i < datas->grid->nbComponents;i++){
         temp[i] = datas->grid->components[i+1];
+        temp[i].id = i;
     }
 
-    datas->grid->nbComponents--;
+
     if(datas->grid->components != NULL){
         free(datas->grid->components);
     }
     datas->grid->components = temp;
 
 }
-Component* isEmpty(Datas* datas, int x, int y){
+int canPlaceHere(Datas* datas,Component *component, int recursive){
+    Component* topC, *bottomC, *rightC, *leftC;
+    int nbLink;
+    int nb = 0;
 
-    int i;
-    for(i = 0; i < datas->grid->nbComponents; i++){
-        if(datas->grid->components[i].posX == x &&
-           datas->grid->components[i].posY == y
-           && datas->grid->components[i].idModule != -1){
-            return datas->grid->components + i;
-           }
+    topC = isEmpty(datas, component->posX, component->posY+1);
+    bottomC = isEmpty(datas, component->posX, component->posY-1);
+    rightC = isEmpty(datas, component->posX+1, component->posY);
+    leftC = isEmpty(datas, component->posX-1, component->posY);
+
+    nbLink = (topC != NULL) + (bottomC != NULL) + (rightC != NULL) + (leftC != NULL);
+
+
+    if(datas->modulesList[component->idModule].nbLink >= nbLink && recursive){
+        nb += topC != NULL ? canPlaceHere(datas, topC,0) : 1;
+        nb += bottomC != NULL ? canPlaceHere(datas, bottomC,0) : 1;
+        nb += leftC != NULL ? canPlaceHere(datas, leftC,0) : 1;
+        nb += rightC != NULL ? canPlaceHere(datas, rightC,0) : 1;
+        return nb == 4;
+
     }
-    return NULL;
+    if(datas->modulesList[component->idModule].nbLink > nbLink && !recursive){
+        return 1;
+    }
 
+    return 0;
 }
+
 void freeModules(Module* modulesList){
     free(modulesList);
 }
@@ -167,7 +185,7 @@ void renderComponents(SDL_Renderer* rendererP, Datas datas){
         if(datas.modulesList[currentComponent.idModule].ptrFctRender != NULL){
            (datas.modulesList[currentComponent.idModule].ptrFctRender)
            (currentRect, currentComponent, currentIdTexturesComponent,
-                              rendererP, datas.textures->images);
+                              rendererP, datas);
         }
         else{
             SDL_RenderCopy(rendererP,

@@ -1,7 +1,19 @@
 #include "mGenerator.h"
 
+void generator_calculate(Component component, Datas *datas){
+    int i;
+    int nb = 1;
+    int* neighbour = getNeighbourComponent(datas, &component);
+    for(i = 0; i < 4; i++){
+        if(neighbour[i] != -1 && nb == 1){
+            nb++;
+            wire_calculate(datas->grid->components[neighbour[i]],component.id, datas);
+        }
+    }
+
+}
 void generator_drawComponent(SDL_Rect currentRect,Component currentComponent, int idTex,
-                             SDL_Renderer * rendererP,SDL_Texture** textures){
+        SDL_Renderer * rendererP,Datas datas){
 
     int state = currentComponent.stateModule;
     int angle = 0;
@@ -14,7 +26,7 @@ void generator_drawComponent(SDL_Rect currentRect,Component currentComponent, in
     }
 
     SDL_RenderCopyEx(rendererP,
-                     textures[idTex],
+                     datas.textures->images[idTex],
                      NULL,
                      &currentRect,
                      angle,

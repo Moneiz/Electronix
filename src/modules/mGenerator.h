@@ -3,6 +3,8 @@
 
 #include "../datas/commons_datas.h"
 #include "../datas/gridManager.h"
+#include "../utils/gridHelper.h"
 
+void generator_calculate(Component component, Datas *datas);
 void generator_drawComponent(SDL_Rect currentRect, Component currentComponent,int idTex,SDL_Renderer * rendererP,
-                             SDL_Texture** textures);
+                        Datas datas);
