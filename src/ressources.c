@@ -9,8 +9,8 @@ Ressources getFilledRessources(char * configFile){
         NB_IMAGES,
         {
             "./img/utils_new.png",                    //Images list
-            "./img/utils_run.png",
-            "./img/utils_stop.png",
+            "./img/utils_load.png",
+            "./img/utils_save.png",
             "./img/utils_exppng.png",
             "./img/utils_quit.png",
             "./img/commons_sq_bt.png",

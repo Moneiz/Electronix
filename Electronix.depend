@@ -395,18 +395,23 @@
 1543662521 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.c
 	"ressources.h"
 
-1542722636 source:z:\electronix\src\ressources.c
+1544519828 source:z:\electronix\src\ressources.c
 	"ressources.h"
 
-1542722636 z:\electronix\src\ressources.h
+1544519537 z:\electronix\src\ressources.h
 	<stdio.h>
 	<stdlib.h>
 	"config.h"
+	"datas/gridManager.h"
+	"modules/mGenerator.h"
+	"modules/mWires.h"
+	"modules/mResistor.h"
+	"modules/mCapacitor.h"
 
-1542808412 source:z:\electronix\src\kernel.c
+1543824425 source:z:\electronix\src\kernel.c
 	"kernel.h"
 
-1542787160 z:\electronix\src\kernel.h
+1542808782 z:\electronix\src\kernel.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_ttf.h>
@@ -766,7 +771,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1542787160 source:z:\electronix\src\main.c
+1543824425 source:z:\electronix\src\main.c
 	<SDL2/SDL.h>
 	<stdio.h>
 	"kernel.h"
@@ -859,27 +864,29 @@
 1542722636 source:z:\electronix\src\datas\commons_datas.c
 	"commons_datas.h"
 
-1542722636 z:\electronix\src\datas\commons_datas.h
+1544519537 z:\electronix\src\datas\commons_datas.h
 	<stdio.h>
 	<stdlib.h>
-	<SDL2/SDL.h>
-	<SDL2/SDL_ttf.h>
+	"SDL2/SDL.h"
+	"SDL2/SDL_ttf.h"
 	"surfacesManager.h"
 	"texturesManager.h"
 	"uiManager.h"
+	"gridManager.h"
+	"modules.h"
 
 1542722635 z:\electronix\include\sdl2\sdl_ttf.h
 	"SDL.h"
 	"begin_code.h"
 	"close_code.h"
 
-1542722636 z:\electronix\src\datas\surfacesmanager.h
+1543218947 z:\electronix\src\datas\surfacesmanager.h
 	<stdio.h>
 	<stdlib.h>
 	<SDL2/SDL.h>
 	<SDL2/SDL_ttf.h>
 
-1542722636 z:\electronix\src\datas\texturesmanager.h
+1543218947 z:\electronix\src\datas\texturesmanager.h
 	<stdio.h>
 	<stdlib.h>
 	<SDL2/SDL.h>
@@ -891,19 +898,22 @@
 1542722636 source:z:\electronix\src\datas\texturesmanager.c
 	"texturesManager.h"
 
-1542808327 z:\electronix\src\layouts\iconception.h
+1544536370 z:\electronix\src\layouts\iconception.h
 	<SDL2/SDL.h>
 	<stdio.h>
 	<stdlib.h>
 	<SDL2/SDL_ttf.h>
 	"../datas/commons_datas.h"
+	"iLevel.h"
 	"iMenu.h"
+	"iFileManager.h"
 	"../utils/uiEvent.h"
+	"../moduleLoader.h"
 
-1542808452 source:z:\electronix\src\layoutloader.c
+1544536436 source:z:\electronix\src\layoutloader.c
 	"layoutLoader.h"
 
-1542808459 z:\electronix\src\layoutloader.h
+1543218947 z:\electronix\src\layoutloader.h
 	<SDL2/SDL.h>
 	<stdio.h>
 	<stdlib.h>
@@ -912,7 +922,7 @@
 	"layouts/iMenu.h"
 	"datas/commons_datas.h"
 
-1542808437 source:z:\electronix\src\layouts\iconception.c
+1544536354 source:z:\electronix\src\layouts\iconception.c
 	"iConception.h"
 
 1542722636 source:z:\electronix\ressources.rc
@@ -952,31 +962,34 @@
 1542722636 source:z:\electronix\src\config.c
 	"config.h"
 
-1542722636 z:\electronix\src\config.h
+1543218947 z:\electronix\src\config.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1542798639 z:\electronix\src\datas\uimanager.h
+1543218947 z:\electronix\src\datas\uimanager.h
 	<stdio.h>
 	<stdlib.h>
 	<SDL2/SDL.h>
 	<SDL2/SDL_ttf.h>
 
-1542722636 source:z:\electronix\src\layouts\imenu.c
+1544540342 source:z:\electronix\src\layouts\imenu.c
 	"iMenu.h"
 
-1542722636 z:\electronix\src\layouts\imenu.h
+1543824425 z:\electronix\src\layouts\imenu.h
 	<SDL2/SDL.h>
 	<stdio.h>
 	<stdlib.h>
 	<SDL2/SDL_ttf.h>
 	"../datas/commons_datas.h"
+	"iLevel.h"
+	"../utils/uiEvent.h"
+	"iConception.h"
 
 1542722636 source:z:\electronix\src\datas\uimanager.c
 	"uiManager.h"
 
-1542797584 z:\electronix\src\utils\uievent.h
+1543218947 z:\electronix\src\utils\uievent.h
 	"../datas/commons_datas.h"
 	<SDL2/SDL.h>
 
@@ -1598,4 +1611,104 @@
 	"../datas/commons_datas.h"
 	"../datas/gridManager.h"
 	<SDL2/SDL.h>
+
+1544527121 z:\electronix\src\datas\gridmanager.h
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL.h>
+	<SDL2/SDL_ttf.h>
+
+1544519537 z:\electronix\src\datas\modules.h
+	"SDL2/SDL.h"
+	"gridManager.h"
+	"commons_datas.h"
+
+1543218947 source:z:\electronix\src\datas\gridmanager.c
+	"gridManager.h"
+
+1543218947 source:z:\electronix\src\datas\modules.c
+	"modules.h"
+
+1544519537 z:\electronix\src\modules\mgenerator.h
+	"SDL2/SDL.h"
+	"../datas/commons_datas.h"
+	"../datas/gridManager.h"
+	"../utils/gridHelper.h"
+
+1544519537 z:\electronix\src\utils\gridhelper.h
+	"../datas/commons_datas.h"
+	"../datas/gridManager.h"
+	<SDL2/SDL.h>
+
+1544519537 z:\electronix\src\modules\mwires.h
+	"SDL2/SDL.h"
+	"../datas/commons_datas.h"
+	"../datas/gridManager.h"
+
+1544519537 z:\electronix\src\modules\mresistor.h
+	"SDL2/SDL.h"
+	"../datas/commons_datas.h"
+	"../datas/gridManager.h"
+
+1544519537 z:\electronix\src\modules\mcapacitor.h
+	"SDL2/SDL.h"
+	"../datas/commons_datas.h"
+	"../datas/gridManager.h"
+
+1543824425 z:\electronix\src\layouts\ilevel.h
+	<SDL2/SDL.h>
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL_ttf.h>
+	"../datas/commons_datas.h"
+	"../utils/uiEvent.h"
+
+1544519537 z:\electronix\src\moduleloader.h
+	<SDL2/SDL.h>
+	<stdlib.h>
+	"ressources.h"
+	"datas/commons_datas.h"
+	"modules/mGenerator.h"
+
+1544534667 source:z:\electronix\src\layouts\ilevel.c
+	"iLevel.h"
+
+1544519537 source:z:\electronix\src\moduleloader.c
+	"moduleLoader.h"
+
+1544519537 source:z:\electronix\src\modules\mcapacitor.c
+	"mCapacitor.h"
+
+1544519537 source:z:\electronix\src\modules\mgenerator.c
+	"mGenerator.h"
+
+1544519537 source:z:\electronix\src\modules\mresistor.c
+	"mResistor.h"
+
+1544519537 source:z:\electronix\src\modules\mwires.c
+	"mWires.h"
+
+1544519537 source:z:\electronix\src\utils\gridhelper.c
+	"gridHelper.h"
+
+1544533493 source:z:\electronix\src\utils\saveload.c
+	"saveload.h"
+
+1544524091 z:\electronix\src\utils\saveload.h
+	<string.h>
+	<stdio.h>
+	"../datas/gridManager.h"
+	"../datas/commons_datas.h"
+
+1544539852 source:z:\electronix\src\layouts\ifilemanager.c
+	"iFileManager.h"
+
+1544540049 z:\electronix\src\layouts\ifilemanager.h
+	<SDL2/SDL.h>
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL_ttf.h>
+	"../datas/commons_datas.h"
+	"../utils/uiEvent.h"
+	"iConception.h"
 
