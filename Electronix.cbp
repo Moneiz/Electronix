@@ -99,14 +99,30 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/moduleLoader.h" />
+		<Unit filename="src/modules/mCapacitor.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/modules/mCapacitor.h" />
 		<Unit filename="src/modules/mGenerator.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/modules/mGenerator.h" />
+		<Unit filename="src/modules/mResistor.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/modules/mResistor.h" />
+		<Unit filename="src/modules/mWires.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/modules/mWires.h" />
 		<Unit filename="src/ressources.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/ressources.h" />
+		<Unit filename="src/utils/gridHelper.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/utils/gridHelper.h" />
 		<Unit filename="src/utils/uiEvent.c">
 			<Option compilerVar="CC" />
 		</Unit>

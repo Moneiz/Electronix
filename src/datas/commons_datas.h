@@ -7,10 +7,11 @@
 * Fichier contenant le patron du principale DTO du programme : Data
 */
 
+
 #include <stdio.h>
 #include <stdlib.h>
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_ttf.h>
+#include "SDL2/SDL.h"
+#include "SDL2/SDL_ttf.h"
 
 
 #include "surfacesManager.h"
@@ -19,18 +20,15 @@
 #include "gridManager.h"
 #include "modules.h"
 
+
 #ifndef DATAS_H
 #define DATAS_H
+
+typedef struct Module Module;
 
 /**
 La structure Datas est le DTO principal du programme
 */
-
-
-
-
-
-
 typedef struct Datas Datas;
 struct Datas {
 
@@ -49,6 +47,8 @@ struct Datas {
     int nbModules;
     /**Module actuellement sélectionné*/
     int idSel;
+    /**Le calcul temps-réel est activé*/
+    int realTimeEnable;
 
     /**Version du projet*/
     char *version;

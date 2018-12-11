@@ -1,14 +1,16 @@
 /**
 * \file moduleLoader.c
 * \author Alan B
-*\version 1.0
-*\date 25/11/2018
+*\version 1.2
+*\date 10/12/2018
 *
 * Fichier gérant les modules du programme
 */
 
 #include <SDL2/SDL.h>
+#include <stdlib.h>
 
+#include "ressources.h"
 #include "datas/commons_datas.h"
 #include "modules/mGenerator.h"
 
@@ -33,9 +35,10 @@ Supprime le composant  (selon ses coordonnées) de la grille
 */
 void removeComponentOnGrid(Datas * datas, Component component);
 
-/**Vérifie que l'emplacement x et y est libre*/
-int isEmpty(Datas * datas, int x, int y);
-
+/**
+Dessine l'ensemble des éléments de la grille
+*/
+void renderComponents(SDL_Renderer* rendererP, Datas datas);
 /**
 Affiche le module identifié par id dans la barre des modules
 */
