@@ -395,10 +395,10 @@
 1543662521 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.c
 	"ressources.h"
 
-1544519828 source:z:\electronix\src\ressources.c
+1544613779 source:z:\electronix\src\ressources.c
 	"ressources.h"
 
-1544519537 z:\electronix\src\ressources.h
+1544613795 z:\electronix\src\ressources.h
 	<stdio.h>
 	<stdlib.h>
 	"config.h"
@@ -408,7 +408,7 @@
 	"modules/mResistor.h"
 	"modules/mCapacitor.h"
 
-1543824425 source:z:\electronix\src\kernel.c
+1544610404 source:z:\electronix\src\kernel.c
 	"kernel.h"
 
 1542808782 z:\electronix\src\kernel.h
@@ -864,7 +864,7 @@
 1542722636 source:z:\electronix\src\datas\commons_datas.c
 	"commons_datas.h"
 
-1544519537 z:\electronix\src\datas\commons_datas.h
+1544625020 z:\electronix\src\datas\commons_datas.h
 	<stdio.h>
 	<stdlib.h>
 	"SDL2/SDL.h"
@@ -922,7 +922,7 @@
 	"layouts/iMenu.h"
 	"datas/commons_datas.h"
 
-1544536354 source:z:\electronix\src\layouts\iconception.c
+1544625072 source:z:\electronix\src\layouts\iconception.c
 	"iConception.h"
 
 1542722636 source:z:\electronix\ressources.rc
@@ -1691,16 +1691,17 @@
 1544519537 source:z:\electronix\src\utils\gridhelper.c
 	"gridHelper.h"
 
-1544533493 source:z:\electronix\src\utils\saveload.c
+1544624610 source:z:\electronix\src\utils\saveload.c
 	"saveload.h"
 
-1544524091 z:\electronix\src\utils\saveload.h
+1544612292 z:\electronix\src\utils\saveload.h
 	<string.h>
+	<dirent.h>
 	<stdio.h>
 	"../datas/gridManager.h"
 	"../datas/commons_datas.h"
 
-1544539852 source:z:\electronix\src\layouts\ifilemanager.c
+1544625401 source:z:\electronix\src\layouts\ifilemanager.c
 	"iFileManager.h"
 
 1544540049 z:\electronix\src\layouts\ifilemanager.h

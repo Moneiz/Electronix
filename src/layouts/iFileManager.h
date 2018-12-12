@@ -1,8 +1,8 @@
 /**
 * \file iLevelManager.c
 * \author Sophie P.
-* \date 11/12/2018
-* \version 1.0
+* \date 12/12/2018
+* \version 1.1
 *
 * Dessine le menu de choix des niveaux du mode didacticiel
 */

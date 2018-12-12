@@ -84,6 +84,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/layouts/iConception.h" />
+		<Unit filename="src/layouts/iFileManager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/layouts/iFileManager.h" />
 		<Unit filename="src/layouts/iLevel.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -123,6 +127,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/utils/gridHelper.h" />
+		<Unit filename="src/utils/saveload.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/utils/saveload.h" />
 		<Unit filename="src/utils/uiEvent.c">
 			<Option compilerVar="CC" />
 		</Unit>

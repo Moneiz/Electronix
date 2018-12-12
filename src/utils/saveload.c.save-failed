@@ -16,10 +16,11 @@ int saveCircuit(char* filename, Datas datas){
     return 0;
 }
 
-void getFileList(char result[8][128]){
+char** getFileList(){
     DIR *d;
     int nbFile;
     struct dirent *dir;
+    char result[8][128] = {0};
     char generalName[128];
     int counter =0;
     d = opendir("./saves");
@@ -35,11 +36,6 @@ void getFileList(char result[8][128]){
         }
         closedir(d);
     }
-
-    for( ; counter < 8; counter++){
-        result[counter][0] = '\0';
-    }
-
     return result;
 }
 
@@ -71,23 +67,14 @@ int loadCircuit(char* filename, Datas *datas){
         fseek(file,0, SEEK_SET);
         nbComponent = sizeFile/sizeof(Component);
 
-        if(nbComponent == 0){
-            fprintf(stderr, "! File Is Empty :/ -> %s.elc is empty file. Cancelled opening !\n", filename);
-            fclose(file);
-            return 0;
-        }
-
         free(datas->grid->components);
         datas->grid->components = (Component*) malloc(sizeof(Component) * nbComponent);
 
         result = fread(datas->grid->components, sizeof(Component),nbComponent, file );
-        fprintf(stdout, "Electronix has read %d components from %s.elc successfully!\n", nbComponent, filename);
-
         datas->grid->nbComponents = nbComponent;
 
         fclose(file);
         return 1;
     }
-    fprintf(stderr, "! File Not Found :/ -> Cannot find/open %s.elc\n", filename);
     return 0;
 }

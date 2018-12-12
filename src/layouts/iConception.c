@@ -56,13 +56,18 @@ int conception_event(SDL_Event event,SDL_Window* windowP, SDL_Renderer* renderer
                 gridInit(datas);
                 break;
             case 1:
+                datas->mode = 0;
                 conception_end(datas);
                 fileM_init(datas);
                 datas->currentIEventsFct = fileM_event;
                 datas->currentIRenderFct = fileM_update;
                 break;
             case 2:
-                saveCircuit("file", *datas);
+                datas->mode = 1;
+                conception_end(datas);
+                fileM_init(datas);
+                datas->currentIEventsFct = fileM_event;
+                datas->currentIRenderFct = fileM_update;
                 break;
             case 4:
                 conception_end(datas);
@@ -119,8 +124,8 @@ int conception_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas)
     renderComponents(rendererP, datas);
 
     //Header
-    conception_update_header(rendererP, datas, width,height);
     conception_update_modules(rendererP, datas,width, height);
+    conception_update_header(rendererP, datas, width,height);
 
     SDL_RenderPresent(rendererP);
 }

@@ -35,7 +35,11 @@ Ressources getFilledRessources(char * configFile){
             "Générateur",
             "Fil de cuivre",
             "Résistance",
-            "Condensateur"
+            "Condensateur",
+            "Retour",
+            "Charger",
+            "Sauver",
+            "_file"
 
         },
         "./fonts/Atures-700_PERSONAL_USE.ttf",  //Police
