@@ -47,13 +47,13 @@ void wire_drawComponent(SDL_Rect currentRect,Component currentComponent, int idT
             break;
         default:
             break;
-    }
+    }/* Temps réel - annulé
     if(datas.realTimeEnable){
         color = 255/(-0.3*abs(currentComponent.voltage) - 1) +255;
         color = currentComponent.voltage < 0 ? -color/2+128 : color/2 +128;
 
         SDL_SetTextureColorMod(datas.textures->images[idTex], color,0 ,255-color);
-    }
+    }*/
     SDL_RenderCopyEx(rendererP,
                      datas.textures->images[idTex],
                      NULL,

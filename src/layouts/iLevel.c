@@ -1,5 +1,4 @@
 #include "iLevel.h"
-#include "iMenu.h"
 
 int level_init(Datas* datas){
     int nbButton = 5;

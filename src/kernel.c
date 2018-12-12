@@ -165,9 +165,8 @@ int updateApp(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
 
     while (continuer)
     {
-
-        updateRender(windowP, rendererP, datas);
         updateEvent(event, windowP, rendererP,&datas, &continuer);
+        updateRender(windowP, rendererP, datas);
 
     }
     return 0;

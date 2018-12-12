@@ -1,8 +1,8 @@
 /**
 * \file commons_datas.c
 * \author Alan B.
-* \version 1.4
-* \date 25/11/2018
+* \version 1.5
+* \date 12/12/2018
 *
 * Fichier contenant le patron du principale DTO du programme : Data
 */
@@ -47,8 +47,17 @@ struct Datas {
     int nbModules;
     /**Module actuellement sélectionné*/
     int idSel;
-    /**Le calcul temps-réel est activé*/
+    /**Le calcul temps-réel est activé
+    * \deprecated
+    */
     int realTimeEnable;
+
+    /**Mode*/
+    short mode;
+    /**Liste des fichiers potentiels*/
+    char fileList[8][128];
+    /**Fichier actuellement sélectionné*/
+    int filePtr;
 
     /**Version du projet*/
     char *version;

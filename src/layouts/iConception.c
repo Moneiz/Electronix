@@ -9,7 +9,10 @@ int conception_init(Datas* datas){
     SDL_Rect* rectsBt = (SDL_Rect*) malloc(sizeof(SDL_Rect) * nbButton);
     SDL_Rect* rectsGr = (SDL_Rect*) malloc(sizeof(SDL_Rect) * nbGroup);
 
-    gridInit(datas);
+
+    if(datas->grid->nbComponents == 0){
+        gridInit(datas);
+    }
 
     datas->ui->nbBt = nbButton;
     datas->ui->rectBt = rectsBt;
@@ -49,17 +52,26 @@ int conception_event(SDL_Event event,SDL_Window* windowP, SDL_Renderer* renderer
         idBt = getIdButtonOn(*datas, xMouse, yMouse);
         switch(idBt){
             case 0:
-                free(datas->grid->components);
+                freeComponents(datas);
                 gridInit(datas);
                 break;
             case 1:
-                datas->realTimeEnable = 1;
+                datas->mode = 0;
+                conception_end(datas);
+                fileM_init(datas);
+                datas->currentIEventsFct = fileM_event;
+                datas->currentIRenderFct = fileM_update;
                 break;
             case 2:
-                datas->realTimeEnable = 0;
+                datas->mode = 1;
+                conception_end(datas);
+                fileM_init(datas);
+                datas->currentIEventsFct = fileM_event;
+                datas->currentIRenderFct = fileM_update;
                 break;
             case 4:
-                conception_end(*datas);
+                conception_end(datas);
+                freeComponents(datas);
                 menu_init(datas);
                 datas->currentIEventsFct = menu_event;
                 datas->currentIRenderFct = menu_update;
@@ -112,8 +124,8 @@ int conception_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas)
     renderComponents(rendererP, datas);
 
     //Header
-    conception_update_header(rendererP, datas, width,height);
     conception_update_modules(rendererP, datas,width, height);
+    conception_update_header(rendererP, datas, width,height);
 
     SDL_RenderPresent(rendererP);
 }
@@ -188,9 +200,11 @@ int conception_update_modules(SDL_Renderer* rendererP, Datas datas, int width, i
     }
 
 }
-int conception_end(Datas datas){
-    free(datas.ui->rectBt);
-    free(datas.ui->rectGroup);
-    datas.grid->nbComponents = 0;
-    free(datas.grid->components);
+int freeComponents(Datas *datas){
+    datas->grid->nbComponents = 0;
+    free(datas->grid->components);
+}
+int conception_end(Datas *datas){
+    free(datas->ui->rectBt);
+    free(datas->ui->rectGroup);
 }

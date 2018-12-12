@@ -1,8 +1,8 @@
 /**
 * \file iConception.c
 * \author Alan B.
-* \date 10/12/2018
-* \version 1.4
+* \date 12/12/2018
+* \version 1.5
 *
 * Fichier qui gère la page de conception de circuit electrique
 */
@@ -14,6 +14,7 @@
 #include "../datas/commons_datas.h"
 #include "iLevel.h"
 #include "iMenu.h"
+#include "iFileManager.h"
 #include "../utils/uiEvent.h"
 #include "../moduleLoader.h"
 
@@ -32,4 +33,4 @@ int conception_event(SDL_Event event,SDL_Window* windowP,SDL_Renderer* renderer,
 /**
 Obligatoire : Destruction de la page (désallocation des tableaux UI)
 */
-int conception_end(Datas datas);
+int conception_end(Datas *datas);

@@ -77,13 +77,15 @@ void updateEvent(SDL_Event event, SDL_Window* windowP, SDL_Renderer * rendererP,
     {
 
         case SDL_QUIT:
-            conception_end(*datas);
+            freeComponents(datas);
+            conception_end(datas);
             *running = 0;
             break;
     }
 
     if(datas->currentIRenderFct == NULL){
-        conception_end(*datas);
+        freeComponents(datas);
+        conception_end(datas);
         *running = 0;
     }
 

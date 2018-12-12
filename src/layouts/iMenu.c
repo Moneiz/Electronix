@@ -10,6 +10,9 @@ int menu_init(Datas* datas){
     datas->ui->nbBt = nbButton;
     datas->ui->rectBt = rectsBt;
     datas->ui->rectGroup = rectsGr;
+
+    datas->grid->nbComponents = 0; //enforce
+
     return 0;
 }
 int menu_event(SDL_Event event,SDL_Window* windowP, SDL_Renderer* rendererP,Datas *datas, int *running){
@@ -44,6 +47,9 @@ int width, height;
         idBt = getIdButtonOn(*datas, xMouse, yMouse);
         switch(idBt){
             case 0:
+                menu_end(datas);
+                level_init(datas);
+                datas->currentIEventsFct = level_event;
                 datas->currentIRenderFct = level_update;
                 break;
             case 1:

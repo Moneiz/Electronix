@@ -1,7 +1,7 @@
 /**
 * \file kernel.c
 * \author Alan B
-*\version 1.5
+*\version 1.5.1
 *\date 20/11/2018
 *
 * Fichier destiné à réunir les fonctionnalités complexes du programme
