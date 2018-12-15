@@ -47,12 +47,14 @@ int initTexsTex(SDL_Renderer* rendererP, Datas* datas){
     return 1;
 }
 
-void redrawText(SDL_Renderer* rendererP, Datas* datas, int ptrText, char * newText){
+void redrawText(SDL_Renderer* rendererP, Datas* datas, int ptrText, char * newText, int codeColor){
     SDL_FreeSurface(datas->surfaces->texts[ptrText]);
     SDL_DestroyTexture(datas->textures->texts[ptrText]);
 
-    SDL_Color white = {255,255,255};
-    datas->surfaces->texts[ptrText] = TTF_RenderText_Blended(datas->font, newText, white);;
+    SDL_Color color;
+    if(codeColor==0) color = (SDL_Color){255,255,255};
+    else if(codeColor==1) color = (SDL_Color){0,0,0};
+    datas->surfaces->texts[ptrText] = TTF_RenderText_Blended(datas->font, newText, color);;
     if(!datas->surfaces->texts[ptrText]){
         fprintf(stderr,"Text Loading Error :/ -> %s\n", TTF_GetError());
         return;
@@ -80,6 +82,9 @@ void updateEvent(SDL_Event event, SDL_Window* windowP, SDL_Renderer * rendererP,
             freeComponents(datas);
             conception_end(datas);
             *running = 0;
+            break;
+        default:
+            SDL_RaiseWindow(windowP);
             break;
     }
 

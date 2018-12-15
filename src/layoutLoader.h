@@ -35,7 +35,7 @@ int initTexsTex(SDL_Renderer* rendererP, Datas* datas);
 Fonction permettant de modifier un texte en repétant les étapes de mise
 en texture
 */
-void redrawText(SDL_Renderer* rendererP, Datas* datas, int ptrText, char * newText);
+void redrawText(SDL_Renderer* rendererP, Datas* datas, int ptrText, char * newText, int codeColor);
 /**
 Fonction mettant à jour le rendu selon l'interface de rendu pointée
 */

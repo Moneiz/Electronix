@@ -14,7 +14,8 @@ int fileM_init(Datas* datas){
     getFileList(datas->fileList);
 
     //fichier pointé par défaut
-    datas->filePtr = 0;
+    if(datas->filePtr == -1)
+        datas->filePtr = 0;
 
     //fond d'écran assombri initialisé
     datas->ui->rectGroup[1] = (SDL_Rect) {-1,-1,-1,-1};
@@ -89,6 +90,8 @@ int fileM_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
     SDL_Rect curButtonFileName;
     SDL_Rect curFileName;
 
+    if(datas.ui->rectGroup[1].w == -1) return;
+
     //Taille de la fenetre
     SDL_GetWindowSize(windowP, &width, &height);
 
@@ -120,7 +123,7 @@ int fileM_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
     //Dessin des filenames
     for(i = 0; i < 8;i++){
         if(datas.fileList[i][0] == 0) break;
-        redrawText(rendererP, &datas, 13, datas.fileList[i]);
+        redrawText(rendererP, &datas, 13, datas.fileList[i],0);
 
         curFileName = (SDL_Rect) {listBackgroud.x+10, listBackgroud.y+12 + (i*25),
             datas.surfaces->texts[13]->w/2, 15};

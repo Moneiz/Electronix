@@ -1,8 +1,7 @@
 #include "kernel.h"
 
-
 SDL_Window* initWindow(){
-    if (SDL_Init(SDL_INIT_VIDEO) != 0 )
+    if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) != 0 )
     {
         fprintf(stderr,"Window Initialisation Error :/ -> %s\n",SDL_GetError());
         return NULL;
@@ -50,6 +49,22 @@ int initTtf(){
     }
     return 1;
 }
+
+int initAudio(Datas *datas){
+    SDL_AudioSpec outAudio = datas->outAudio;
+    outAudio.freq = 22050;
+    outAudio.format = AUDIO_S16;
+    outAudio.channels = 2;
+    outAudio.samples = 1024;
+ //   outAudio.callback = fill_audio;
+    outAudio.userdata = NULL;
+
+    if(SDL_OpenAudio(&outAudio, NULL) == 0){
+        fprintf(stderr, "Audio Initialization Error :/ -> %s\n", SDL_GetError());
+        return 0;
+    }
+}
+
 int init(SDL_Window** windowP, SDL_Renderer** rendererP, Ressources r){
 
     *windowP = initWindow();
@@ -72,7 +87,6 @@ int init(SDL_Window** windowP, SDL_Renderer** rendererP, Ressources r){
     }
     if(r.config.fullscreen)
         SDL_SetWindowFullscreen(*windowP, SDL_WINDOW_FULLSCREEN_DESKTOP);
-
 
     return 1;
 

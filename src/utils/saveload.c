@@ -61,6 +61,7 @@ int loadCircuit(char* filename, Datas *datas){
     int result;
     int sizeFile;
     int nbComponent;
+
     strcat(path, filename);
     strcat(path, ".elc");
 

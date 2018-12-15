@@ -23,8 +23,8 @@
 
 
 
-#define NB_IMAGES 15
-#define NB_TEXT 14
+#define NB_IMAGES 21
+#define NB_TEXT 21
 
 
 /**

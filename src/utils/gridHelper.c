@@ -19,6 +19,27 @@ int* getNeighbourComponent(Datas* datas, Component* component){
 
     return cId;
 }
+
+void drawInfo(SDL_Renderer *renderer, SDL_Rect currentRect, Datas *datas,int value,char unity){
+    int size  = currentRect.w;
+    char buffer[5];
+    int offset =0;
+    SDL_Rect info = {
+        currentRect.x,
+        currentRect.y+size*0.1,
+        size*0.6,
+        size*0.2
+    };
+    if(value>=100) offset++;
+    else if(value <10) offset--;
+    itoa(value, buffer, 10);
+    buffer[2+offset] = ' ';
+    buffer[3+offset] = unity;
+    buffer[4+offset] = '\0';
+    redrawText(renderer, datas, 20, buffer,1);
+    SDL_RenderCopy(renderer, datas->textures->texts[20], NULL, &info);
+}
+
 Component* isEmpty(Datas* datas, int x, int y){
 
     int i;

@@ -27,12 +27,8 @@ struct Component {
     /**Id du module pointé*/
     unsigned char idModule;
 
-    /**Tension du composant*/
-    float voltage;
-    /**Courant actuel du composant*/
-    float intensity;
-    /**Resistance du composant*/
-    float resistor;
+    /**Propriété du composant (tension, résistance, capacité...)*/
+    float specificData;
 
     /**Etat du module (anticipé)*/
     unsigned char stateModule;

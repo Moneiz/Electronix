@@ -81,7 +81,7 @@ int conception_event(SDL_Event event,SDL_Window* windowP, SDL_Renderer* renderer
                     xMouse/datas->grid->zoomLevel,
                     yMouse/datas->grid->zoomLevel,
                     datas->idSel,
-                    0,0,0,0});
+                    100,0});
                 break;
         }
     }
@@ -97,6 +97,10 @@ int conception_event(SDL_Event event,SDL_Window* windowP, SDL_Renderer* renderer
             datas->idSel=(datas->idSel+datas->nbModules-1)%datas->nbModules;
         }else if(event.key.keysym.sym == SDLK_DOWN){
             datas->idSel=(datas->idSel+1)%datas->nbModules;
+        }else if(event.key.keysym.sym == SDLK_1){
+            for(i = 0; i < datas->grid->nbComponents; i++){
+                datas->grid->components[i].specificData++;
+            }
         }
     }
     return 0;

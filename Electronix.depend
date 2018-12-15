@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1543588117 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\main.c
+1544709455 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\main.c
 	<SDL2/SDL.h>
 	<stdio.h>
 	"kernel.h"
@@ -361,7 +361,7 @@
 	<SDL2/SDL_ttf.h>
 	"surfacesManager.h"
 
-1542827436 c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.h
+1544712488 c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_ttf.h>
@@ -372,8 +372,9 @@
 	"datas/commons_datas.h"
 	"layoutLoader.h"
 	"layouts/iMenu.h"
+	"utils/audio.h"
 
-1543490089 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.c
+1544800906 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\kernel.c
 	"kernel.h"
 
 1540997982 c:\users\brete\documents\projects\esgi2\c\electronix\include\sdl2\sdl_image.h
@@ -382,7 +383,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1544546787 c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.h
+1544793764 c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.h
 	<stdio.h>
 	<stdlib.h>
 	"config.h"
@@ -392,7 +393,7 @@
 	"modules/mResistor.h"
 	"modules/mCapacitor.h"
 
-1543662521 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.c
+1544793755 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\ressources.c
 	"ressources.h"
 
 1544613779 source:z:\electronix\src\ressources.c
@@ -803,7 +804,7 @@
 1541785125 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\surfacesmanager.c
 	"surfacesManager.h"
 
-1544546786 c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\iconception.h
+1544643237 c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\iconception.h
 	<SDL2/SDL.h>
 	<stdio.h>
 	<stdlib.h>
@@ -811,19 +812,20 @@
 	"../datas/commons_datas.h"
 	"iLevel.h"
 	"iMenu.h"
+	"iFileManager.h"
 	"../utils/uiEvent.h"
 	"../moduleLoader.h"
 
-1543490089 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layoutloader.c
+1544869025 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layoutloader.c
 	"layoutLoader.h"
 
-1544114893 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\iconception.c
+1544867295 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\iconception.c
 	"iConception.h"
 
 1541969832 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\commons_datas.c
 	"commons_datas.h"
 
-1544546786 c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\commons_datas.h
+1544712310 c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\commons_datas.h
 	<stdio.h>
 	<stdlib.h>
 	"SDL2/SDL.h"
@@ -852,7 +854,7 @@
 1542447094 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\texturesmanager.c
 	"texturesManager.h"
 
-1543153106 c:\users\brete\documents\projects\esgi2\c\electronix\src\layoutloader.h
+1544868995 c:\users\brete\documents\projects\esgi2\c\electronix\src\layoutloader.h
 	<SDL2/SDL.h>
 	<stdio.h>
 	<stdlib.h>
@@ -929,7 +931,7 @@
 
 1542215245 source:c:\users\brete\documents\projects\esgi2\c\electronix\ressources.rc
 
-1543490090 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\imenu.c
+1544871490 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\imenu.c
 	"iMenu.h"
 
 1543490090 c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\imenu.h
@@ -1491,11 +1493,10 @@
 	"../datas/commons_datas.h"
 	"../utils/uiEvent.h"
 
-1543490090 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\ilevel.c
+1544643237 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\ilevel.c
 	"iLevel.h"
-	"iMenu.h"
 
-1544476266 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\moduleloader.c
+1544546786 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\moduleloader.c
 	"moduleLoader.h"
 
 1544546786 c:\users\brete\documents\projects\esgi2\c\electronix\src\moduleloader.h
@@ -1511,7 +1512,7 @@
 	"../datas/gridManager.h"
 	"../utils/gridHelper.h"
 
-1544363444 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mgenerator.c
+1544870597 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mgenerator.c
 	"mGenerator.h"
 
 1544546786 c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\modules.h
@@ -1522,7 +1523,7 @@
 1543608196 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\modules.c
 	"modules.h"
 
-1544546786 c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\gridmanager.h
+1544867138 c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\gridmanager.h
 	<stdio.h>
 	<stdlib.h>
 	<SDL2/SDL.h>
@@ -1575,7 +1576,7 @@
 1543474426 c:\users\sophie\documents\cours info\2eme\langage c\electronix\electronix\src\layouts\iconception.c
 	"iConception.h"
 
-1544363706 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mwires.c
+1544867196 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mwires.c
 	"mWires.h"
 
 1544546787 c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mwires.h
@@ -1583,12 +1584,12 @@
 	"../datas/commons_datas.h"
 	"../datas/gridManager.h"
 
-1544546787 c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mresistor.h
+1544868345 c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mresistor.h
 	"SDL2/SDL.h"
 	"../datas/commons_datas.h"
 	"../datas/gridManager.h"
 
-1543662005 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mresistor.c
+1544870505 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mresistor.c
 	"mResistor.h"
 
 1544546786 c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mcapacitor.h
@@ -1596,7 +1597,7 @@
 	"../datas/commons_datas.h"
 	"../datas/gridManager.h"
 
-1543662023 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mcapacitor.c
+1544546786 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\modules\mcapacitor.c
 	"mCapacitor.h"
 
 1543611020 c:\users\brete\documents\projects\esgi2\c\electronix\src\datas\special\ptrfctmodule.h
@@ -1604,10 +1605,10 @@
 	"../gridManager.h"
 	"../commons_datas.h"
 
-1544362065 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\utils\gridhelper.c
+1544870801 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\utils\gridhelper.c
 	"gridHelper.h"
 
-1544546787 c:\users\brete\documents\projects\esgi2\c\electronix\src\utils\gridhelper.h
+1544870360 c:\users\brete\documents\projects\esgi2\c\electronix\src\utils\gridhelper.h
 	"../datas/commons_datas.h"
 	"../datas/gridManager.h"
 	<SDL2/SDL.h>
@@ -1712,4 +1713,33 @@
 	"../datas/commons_datas.h"
 	"../utils/uiEvent.h"
 	"iConception.h"
+
+1544643237 c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\ifilemanager.h
+	<SDL2/SDL.h>
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL_ttf.h>
+	"../datas/commons_datas.h"
+	"../utils/uiEvent.h"
+	"iConception.h"
+
+1544868960 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\layouts\ifilemanager.c
+	"iFileManager.h"
+
+1544866592 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\utils\saveload.c
+	"saveload.h"
+
+1544643237 c:\users\brete\documents\projects\esgi2\c\electronix\src\utils\saveload.h
+	<string.h>
+	<dirent.h>
+	<stdio.h>
+	"../datas/gridManager.h"
+	"../datas/commons_datas.h"
+
+1544712527 c:\users\brete\documents\projects\esgi2\c\electronix\src\utils\audio.h
+	"../datas/commons_datas.h"
+	<SDL2/SDL.h>
+
+1544712986 source:c:\users\brete\documents\projects\esgi2\c\electronix\src\utils\audio.c
+	"audio.h"
 

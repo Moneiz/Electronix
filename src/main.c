@@ -12,8 +12,8 @@
 *
 * \file main.c
 * \author Alan B., Sophie P.
-* \version pre-alpha-6
-* \date 30/11/2018
+* \version alpha-2
+* \date 15/12/2018
 *
 * ELECTRONIX PROJECT
 *
@@ -33,7 +33,7 @@ int main(int argc, char** argv)
     UI_manager uim;
     Grid_Manager gm;
 
-    cDatas.nbModules = 4;
+    cDatas.nbModules = 10;
     Module* modules = initModules(cDatas.nbModules);
     cDatas.modulesList = modules;
 
@@ -42,7 +42,7 @@ int main(int argc, char** argv)
     cDatas.ui = &uim;
     cDatas.grid = &gm;
 
-    cDatas.version = "pre-alpha-6";
+    cDatas.version = "alpha-2";
     cDatas.projectName = "Electronix";
 
     if(init(&win, &render,r) &  postInit(render, &cDatas,r)){

@@ -13,5 +13,5 @@
 #include <SDL2/SDL.h>
 /**Vérifie que l'emplacement x et y est libre*/
 Component* isEmpty(Datas * datas, int x, int y);
-
+void drawInfo(SDL_Renderer *renderer, SDL_Rect currentRect, Datas *datas,int value,char unity);
 int* getNeighbourComponent(Datas* datas, Component* component);

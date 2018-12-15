@@ -36,6 +36,8 @@ struct Datas {
     Surfaces_manager* surfaces;
     /**Accès aux textures chargés*/
     Textures_manager* textures;
+
+    SDL_AudioSpec outAudio;
     /**Accès aux UI*/
     UI_manager* ui;
     /**Accès à la grille*/

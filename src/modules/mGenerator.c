@@ -17,6 +17,7 @@ void generator_drawComponent(SDL_Rect currentRect,Component currentComponent, in
 
     int state = currentComponent.stateModule;
     int angle = 0;
+    int voltage = currentComponent.specificData;
 
     switch(state){
         case 1: angle = 270;
@@ -32,5 +33,5 @@ void generator_drawComponent(SDL_Rect currentRect,Component currentComponent, in
                      angle,
                      NULL,
                      SDL_FLIP_HORIZONTAL);
-
+    drawInfo(rendererP, currentRect, &datas,5, 'V');
 }

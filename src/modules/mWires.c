@@ -2,18 +2,7 @@
 
 void wire_calculate(Component component,int src, Datas *datas){
 
-    int i,j;
-    int* neighbour = getNeighbourComponent(datas, &component);
-    for(i = 0; i < 4; i++){
-        if(src != -1 && neighbour[i] != -1 && neighbour[i] == src)
-            neighbour[i] = -1;
-    }
-    for(i = 0; i<4; i++){
-        if(neighbour[i] != -1){
-            datas->grid->components[neighbour[i]].intensity = -1;
-            wire_calculate(datas->grid->components[neighbour[i]], component.id, datas);
-        }
-    }
+
 
 }
 
