@@ -1,4 +1,4 @@
-#Electronix v. alpha-2
+# Electronix v. alpha-2
 
 Electronix est un logiciel codé en C qui permet de simuler des circuits électriques. Il possède 2 modes : didacticiel et libre :
 
@@ -8,6 +8,7 @@ Electronix est un logiciel codé en C qui permet de simuler des circuits électr
 # Comment installer Electronix pour Windows 7, 8 et 10 ?
 
 Téléchargez la dernière release en cliquant sur le lien suivant : https://3dhandler.org/electronix/tree/
+
 Vous pouvez télécharger les codes sources en effectuant un clone du reposity. Vous pourrez ainsi contribuer à l'amélioration de notre projet en corrigeant les bugs. Vous aurez juste à ouvrir le fichier Electronix.cbp avec Code::Block. Toutes les configurations sont déjà faites.
 
 # Comment utiliser Electronix ?
@@ -40,6 +41,7 @@ SDL2 , SDL2_image & SDL2_TTF
 # Crédits : 
 
 Alan BRETELLE 	- Programmeur bas-niveau, développeur (orienté Conception), désigner & chef de projet
+
 Sophie PELLUET 	- Développeur (orienté Mode didacticiel)
 	
 Remerciements spécials Guillaume Jaouen, Fanatik et aux autres contributeurs
