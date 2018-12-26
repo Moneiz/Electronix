@@ -1,94 +1,49 @@
-# Electronix
+#Electronix v. alpha-2
 
-Fiche de projet  - Electronix
+Electronix est un logiciel codé en C qui permet de simuler des circuits électriques. Il possède 2 modes : didacticiel et libre :
 
-Version : 1
-Type : Serious Game/Simulateur
-Auteur : Alan BRETELLLE et Sophie PELLUET
+ - Le mode didacticiel est composé de 15 niveaux permettant de comprendre les différents concepts de l’électricité. 
+ - Le mode libre permet de concevoir librement des schémas électriques afin de tester des connaissances à plus grande échelle.
 
-SOMMAIRE
+# Comment installer Electronix pour Windows 7, 8 et 10 ?
 
-•	Résumé
-•	Bibliothèques utilisés
-•	Fonctionnalités
-•	Organigramme simplifié
+Téléchargez la dernière release en cliquant sur le lien suivant : https://3dhandler.org/electronix/tree/
+Vous pouvez télécharger les codes sources en effectuant un clone du reposity. Vous pourrez ainsi contribuer à l'amélioration de notre projet en corrigeant les bugs. Vous aurez juste à ouvrir le fichier Electronix.cbp avec Code::Block. Toutes les configurations sont déjà faites.
 
-Résumé : 
+# Comment utiliser Electronix ?
 
-Electronix est un logiciel codé en C qui permet de simuler des circuits électriques. Il possède 2 modes : didacticiel et libre.
--	Le mode didacticiel est composé de 15 niveaux permettant de comprendre les différents concepts de l’électricité. 
--	Le mode libre permet de concevoir librement des schémas électriques afin de tester des connaissances à plus grande échelle.
-Bibliothèques utilisés :
+Lors de l'ouverture du logiciel, vous pourrez choisir entre les 2 modes. Cliquez sur Libre pour concevoir vos propres schémas électriques ou sur Didacticiel si vous souhaitez suivre une formation en électronique.
+
+Une fois sur l'interface de conception, vous pouvez placez les composants sur la grille. Appuyez sur SHIFT et sur CTRL pour naviguer dans la bar des modules. Le module encadré en rouge est le module sélectionné qui sera placé lors du clique gauche sur la grille. 
+
+Si les composants sur la grille vous semble trop petit (ou trop grand), vous pouvez utiliser la molette de la souris pour zoomer ou dézoomer.
+
+Si un composant a été placé par erreur, cliquez droit dessus et il sera supprimé.
+
+Pour recommencer tout à zéro, cliquez sur la première icône en haut, sur la bar des outils.
+
+Pour charger un fichier, cliquez sur la deuxième icône sur la bar des outils. Un menu s'ouvrira et vous demander de sélectionner le fichier à ouvrir. Utilisez SHIFT et CTRL pour changer fichier de lecture. Enfin, cliquez sur Charger
+
+Pour sauver un fichier, cliquez sur la troisième icône sur la bar des outils. Un menu s'ouvrira et vous demande de sélectionner le fichier où sera enregistrer votre travail. Utilisez SHIFT et CTRL pour changer fichier sélectionné. Enfin, cliquez sur Sauver
+	
+# Rapport de bugs, suggestion d'amélioration...
+
+Nous vous serions gré de nous faire part des problèmes lors de l'utilisation de notre logiciel. N'hésitez pas non plus à nous suggérer des améliorations afin de rendre notre logiciel meilleur à l'adresse bretellealan@hotmail.fr. Voici quelques récompenses selon le nombre de rapports certifiés :
+
+   > 3 rapports - Dédicasse dans les crédits du logiciel
+	 > 10 rapports - Testeur Piwel certifié
+
+# Bibliothèques utilisées :
  
-SDL 2 , SDL image, (openGL ?)
+SDL2 , SDL2_image & SDL2_TTF
 
-Fonctionnalités :
+# Crédits : 
 
-1)	Menu
-a)	Principal
-i)	Interface : L’utilisateur pourra choisir d’entrer dans 2 modes dès le lancement de l’application. Le titre de l’application, le logo ESGI et le crédit seront affiché en plus des boutons Didacticiel et Libre ainsi qu’un bouton quitter
-ii)	Evènements : Lors du clique sur le bouton Didacticiel, la page de la sélection du niveau est affichée et sur le bouton, mode Libre, la page conception est affiché avec le paramètre Libre
-b)	Sélection du niveau
-i)	Initialisation interface : Les signatures des fichiers niveaux seront chargés depuis un fichier. Il contienne des informations utiles sur la nature de chaque niveau : le nom, le chemin, la date de création, la description, la difficulté et l’auteur.
-ii)	Interface : Après chargement des signatures, les niveaux sont affichés et listés par ordre de difficulté. Les informations chargées à l’initialisation interface seront aussi affichées pour chacun des niveaux.
-iii)	Evènement : Lors du clique sur un bouton de niveau, la page conception sera affichée avec les paramètres Didacticiel et niveaux.
-2)	Conception
-a)	Généralité
-i)	L’interface : Elle est composée d’une grille en 2 dimensions ; lignes blanches sur fond bleu foncé. Sur la droite, un menu propose la liste des différents composants électriques (cf 3. Modules). En haut de l’écran, se trouve la barre d’outils (cf 4. Barre d’outils).
-ii)	Evènements : 
-(1)	Le clique gauche de la souris sur l’interface permet d’ajouter le module sélectionné dans la liste des composants électriques à la position du curseur de la souris. Si un module existe déjà à l’emplacement du curseur, alors le menu propriété s’ouvrira en bas de l’écran (cf 5. Propriétés)
-(2)	Le clique droit de la souris sur l’interface permet de supprimer le composant sous le curseur de la souris.
-(3)	Le clique gauche sur un module de la liste des composants permet de le sélectionner
-(4)	Le clique gauche sur un élément de la barre d’outil permet de réaliser des actions (cf 4. Barre d’outils/Evènement)
-(5)	Le scrolling de la souris permet de zoomer/dézoomer la grille.
-b)	Niveau
-i)	Chargement : Le fichier niveau (.lvl) sera chargé depuis le paramètre envoyé selon un certain format afin de pouvoir détailler les instructions du niveau, les textes affichés, les schémas et toutes informations nécessaires. Les fichiers niveaux seront ainsi facilement manipulables car extérieur au code C.
-ii)	Interface : Un score en haut à droite sera affiché et indiquera à l’utilisateur son pourcentage d’avancement au sein du niveau. 
-iii)	Avancement : Le niveau est décomposé en étape(instructions ou informations). Pour passer chaque étape, l’utilisateur devra suivre les instructions demandés et les réaliser : cela peut-être un module à placer ou bien appuyer sur la touche espace après une information ou remarque. Le score augmentera.
-iv)	Fin : Une fois le niveau terminé, l’utilisateur passera en mode Libre sans suppression du circuit électrique.
-3)	Module
-a)	Initialisation : Liste des modules : Pile, résistance, DEL, diode, transistor (NPN & PNP), condensateur et inductance.
-i)	Icones et textes : Les icones de chaque module sera chargé depuis le dossier image et afficher sur l’interface des modules avec le nom du module.
-b)	Fonction : une fois placée sur la grille, le composant sera associé à une fonction qui calculera la tension et le courant de sortie selon la tension et le courant d’entrée ainsi que les propriétés associés au composant.
-4)	Barre d’outils (non définitif)
-a)	Initialisation : Liste des outils : Nouveau circuit, tester le circuit, exporter en fichier image et quitter
-b)	Nouveau circuit : supprime le circuit actuel pour en créer un nouveau
-c)	Tester le circuit : active le circuit et calcule les tensions et courant dans chaque partie du circuit. Sur le schéma, la couleur vert-rouge représentera la tension et les points en violet, le courant
-d)	Exporter en fichier image : enregistre dans un fichier le circuit actuel dans un format image
-5)	Propriété (non définitif)
-a)	Initialisation : 
-i)	Evènement de création : Le panneau des propriété sera affiché quand l’utilisateur cliquera sur un module placé sur la grille. A ce moment-là, on charge les différents propriétés modifiables de l’objet. Par exemple, on pourra changer la résistance (en ohm) d’une résistance ou bien la capacité d’un transistor.
-ii)	Modulaire : Chaque propriété affichée sera modulable selon la nature du composant.
-Organigramme simplifié
-
- 
-
-Suivi :
-
-	05-nov | Kernel Week	12-nov | Modules Week	19-nov | Event Week	26-nov	03-déc
-Sophie	Etude de SDL
-Développement partie SDL de l’appli
-Fonctionnalité 1.a.i 	1.b.i
-2.a.ii.(5)	2.b.ii.(1)					
-Alan	Etude de SDL : OK
-Développement partie SDL : OK
-Fonctionnalité 2.a.i : OK
-	3.a.i
-4.a						
-
-Note : trouver un créneau hebdomadaire (~1h30) afin de mettre en commun ce qui a été fait et ce qui sera fait.
-Remarques : 
-•	Ne pas utiliser des variables globales -> préféré les structures de programme
-•	Tout doit être organisé selon le noyau de l’app
-
-
-Documentation noyau
-
-Créer une nouvelle interface (sans événement)
-•	Créer un nouveau fichier .c et .h (nomenclature : iXxxx.c où Xxxx est le nom de l’interface)
-•	Fonctions à créer : 
-o	initLayout_xxxx(Renderer, Surface) -> Fonction qui initialise des données propres au layout
-o	update_xxxx(Window, Renderer, Surface) -> Fonction appellé à chaque réinitilisation de la fenetre (pour le dessin de la page)
-•	Ajouter l’appel de initLayout à la fin de postInit() du kernel
-•	Ajouter l’appel de update au niveau du commentaire de updateApp du kernel
-
+Alan BRETELLE 	- Programmeur bas-niveau, développeur (orienté Conception), désigner & chef de projet
+Sophie PELLUET 	- Développeur (orienté Mode didacticiel)
+	
+Remerciements spécials Guillaume Jaouen, Fanatik et aux autres contributeurs
+ainsi qu'à l'école l'ESGI PARIS 12
+	
+Piwel Organization (C) Copyrights 2018
+	
