@@ -17,6 +17,7 @@
 #include "modules/mWires.h"
 #include "modules/mResistor.h"
 #include "modules/mCapacitor.h"
+#include "modules/bipole.h"
 
 #ifndef RESSOURCES_H
 #define RESSOURCES_H
@@ -24,7 +25,7 @@
 
 
 #define NB_IMAGES 21
-#define NB_TEXT 21
+#define NB_TEXT 22
 
 
 /**

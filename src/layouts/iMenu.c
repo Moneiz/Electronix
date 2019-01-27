@@ -11,7 +11,8 @@ int menu_init(Datas* datas){
     datas->ui->rectBt = rectsBt;
     datas->ui->rectGroup = rectsGr;
 
-    datas->grid->nbComponents = 0; //enforce
+    datas->grid->nbComponents = 0;
+    datas->grid->components = NULL;
     datas->filePtr = -1;
 
     return 0;
@@ -48,10 +49,10 @@ int width, height;
         idBt = getIdButtonOn(*datas, xMouse, yMouse);
         switch(idBt){
             case 0:
-                //menu_end(datas);
-                //level_init(datas);
-                //datas->currentIEventsFct = level_event;
-                //datas->currentIRenderFct = level_update;
+                menu_end(datas);
+                level_init(datas);
+                datas->currentIEventsFct = level_event;
+                datas->currentIRenderFct = level_update;
                 break;
             case 1:
                 menu_end(datas);
@@ -61,7 +62,7 @@ int width, height;
                 break;
             case 2 :
                 menu_end(datas);
-                *running = 0;
+                datas->currentIRenderFct = NULL;
                 break;
             default :
                 break;
@@ -114,16 +115,13 @@ int menu_update_buttons(SDL_Renderer* rendererP, Datas datas, int width, int hei
 
     for(i = 0; i < datas.ui->nbBt; i++){
         currentBt = datas.ui->rectBt[i];
-            TxtH = datas.surfaces->texts[i + 1]->h;
-            TxtW = datas.surfaces->texts[i + 1]->w;
-        if(idBt == i && idBt != 0){
+        TxtH = datas.surfaces->texts[i + 1]->h;
+        TxtW = datas.surfaces->texts[i + 1]->w;
+        if(idBt == i){
             currentBt.x += 2;
             currentBt.y += 2;
         }
-        if(i == 0){
-            SDL_SetRenderDrawColor(rendererP, 10, 25, 25, 0);
-        }
-        else if(i == 2){
+        if(i == 2){
             SDL_SetRenderDrawColor(rendererP, 175, 18, 18, 0);
         }else{
             SDL_SetRenderDrawColor(rendererP, 21, 51, 54, 0);

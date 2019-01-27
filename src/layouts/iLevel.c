@@ -1,8 +1,8 @@
 #include "iLevel.h"
 
 int level_init(Datas* datas){
-    int nbButton = 5;
-    int nbGroup = 4; // menu
+    int nbButton = 16;
+    int nbGroup = 1; // menu
 
     SDL_Rect* rectsGr = (SDL_Rect*) malloc(sizeof(SDL_Rect) * nbGroup);
     SDL_Rect* rectsBt = (SDL_Rect*) malloc(sizeof(SDL_Rect) * nbButton);
@@ -13,35 +13,38 @@ int level_init(Datas* datas){
     return 0;
 }
 int level_event(SDL_Event event,SDL_Window* windowP, SDL_Renderer* rendererP,Datas *datas, int *running){
-int width, height;
+    int width, height;
     int xMouse, yMouse;
-    int counter;
+    int counterI, counterJ;
     int idBt = -1;
     int buttonX, buttonY, buttonW, buttonH;
-
+    SDL_Rect currentBt;
     //Refresh buttons' position
     SDL_GetWindowSize(windowP, &width, &height);
 
-    buttonX = width/2 - width/8 + width/200;
-    buttonY = height/3 + height/100;
-    buttonW = (width/4 - 2 * width/200);
-    buttonH = (height/2 - (datas->ui->nbBt + 1) * height/100)/datas->ui->nbBt;
+    SDL_Rect menu = {width/2-255,
+        height/2-105,
+        500,
+        300};
+    SDL_Rect back = {
+        width/2-80,
+        height/8*7,
+        160,
+        40
+    };
+    datas->ui->rectGroup[0] = menu;
+    datas->ui->rectBt[0] = back;
 
-    SDL_Rect menu = {width/4, height/3, width/2 - width/200, height/2 - height/200};
-    // SDL_Rect Line1 = ////;
-    // SDL_Rect Line2 = ////;
-    // SDL_Rect Line3 = ////;
-    SDL_Rect currentBt;
-    for(counter = 0; counter < datas->ui->nbBt; counter++){
-        SDL_Rect currentBt = {buttonX, buttonY + counter * (height/100 + buttonH), buttonW, buttonH};
-        datas->ui->rectBt[counter] = currentBt;
+
+    for(counterJ = 0; counterJ < 3; counterJ++){
+        for(counterI = 0; counterI < 5; counterI++){
+            currentBt = (SDL_Rect) {width/2-250+counterI*100,
+                height/2-100+counterJ*100,
+                90,
+                90};
+            datas->ui->rectBt[counterJ * 5 + counterI+1] = currentBt;
+        }
     }
-
-    // datas->ui->rectGroup[0] = menu;
-    // datas->ui->rectGroup[1] = Line1;
-    // datas->ui->rectGroup[1] = Line2;
-    // datas->ui->rectGroup[1] = Line3;
-    //EVENT MANAGER
 
     //Mouse on buttons
     SDL_GetMouseState(&xMouse, &yMouse);
@@ -49,17 +52,19 @@ int width, height;
         idBt = getIdButtonOn(*datas, xMouse, yMouse);
         switch(idBt){
             case 0:
-                // datas->currentIRenderFct = ;
+                level_end(datas);
+                menu_init(datas);
+                datas->currentIEventsFct = menu_event;
+                datas->currentIRenderFct = menu_update;
                 break;
-            case 1:
-                // datas->currentIRenderFct = ;
+        default:
                 break;
-            case 2:
-                // datas->currentIRenderFct = ;
-                break;
-            case 3:
-                // endApp;
-                break;
+        }
+        if(idBt > 0 && idBt < 16){
+            level_end(datas);
+            conception_init(datas);
+            datas->currentIEventsFct = conception_event;
+            datas->currentIRenderFct = conception_update;
         }
     }
     return 0;
@@ -78,29 +83,15 @@ int level_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
         (height/7 - 20) * datas.surfaces->texts[0]->w/datas.surfaces->texts[0]->h,
         height/7 - 20
     };
-    SDL_Rect menu = {width/4, height/3, width/2 - width/200, height/2 - height/200};
-    SDL_Rect back = {
-        width/3,
-        2*height/3 + height/5,
-        width/3,
-        height/10
-    };
-    SDL_Rect backT = {
-        (width - (height/10 - 20) *datas.surfaces->texts[3]->w/datas.surfaces->texts[3]->h)/2,
-        2*height/3 + height/5 + 10,
-        (height/10 - 20) *datas.surfaces->texts[3]->w/datas.surfaces->texts[3]->h,
-        height/10 - 20
-    };
+    SDL_Rect menu = datas.ui->rectGroup[0];
 
     SDL_RenderCopy(rendererP, datas.textures->images[7], NULL, &background);
     SDL_SetRenderDrawColor(rendererP, 21, 51, 54, 0);
     SDL_RenderFillRect(rendererP, &header);
     SDL_SetRenderDrawColor(rendererP, 160, 253, 255, 0);
     SDL_RenderFillRect(rendererP, &menu);
-    SDL_SetRenderDrawColor(rendererP, 175, 18, 18, 0);
-    SDL_RenderFillRect(rendererP, &back);
+
     SDL_RenderCopy(rendererP, datas.textures->texts[0], NULL, &headerT);
-    SDL_RenderCopy(rendererP, datas.textures->texts[3], NULL, &backT);
 
     level_update_buttons(rendererP, datas, width, height);
 
@@ -108,69 +99,50 @@ int level_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
  }
 
 int level_update_buttons(SDL_Renderer* rendererP, Datas datas, int width, int height){
-   int counterI, counterJ, buttonX, buttonY, buttonW, buttonH, columns, lines;;
-    SDL_Rect buttons[3][5];
+    int counterJ;
+    char t[3];
+    int idBt;
+    int xMouse, yMouse;
+    SDL_Rect levelT;
+    SDL_Rect back;
+    SDL_Rect backT;
+    SDL_GetMouseState(&xMouse, &yMouse);
+    idBt = getIdButtonOn(datas,xMouse, yMouse);
 
-    columns = 5;
-    lines = 3;
-    buttonX = width/4 + width/200;
-    buttonY = height/3 + height/100;
-    buttonW = (width/2 - (columns + 1) * width/200)/columns;
-    buttonH = (height/2 - (lines + 1) * height/100)/lines;
+    if(idBt >= 0){
+        datas.ui->rectBt[idBt].x +=2;
+        datas.ui->rectBt[idBt].y += 2;
+    }
+    back = datas.ui->rectBt[0];
+    backT = (SDL_Rect){
+        back.x + 5,
+        back.y + 5,
+        back.w - 10,
+        back.h -10
+    };
+    SDL_SetRenderDrawColor(rendererP, 175, 18, 18, 0);
+    SDL_RenderFillRect(rendererP, &datas.ui->rectBt[0]);
 
-    for(counterI = 0; counterI < 3; counterI ++){
-        for(counterJ = 0; counterJ < 5; counterJ ++){
-            buttons[counterI][counterJ].x = buttonX + counterJ * (height/100 + buttonW);
-            buttons[counterI][counterJ].y = buttonY + counterI * (width/200 + buttonH) ;
-            buttons[counterI][counterJ].w = buttonW;
-            buttons[counterI][counterJ].h = buttonH;
+    SDL_RenderCopy(rendererP, datas.textures->texts[10], NULL, &backT);
+    for(counterJ = 0; counterJ < 15; counterJ ++){
+
+            levelT = (SDL_Rect) {
+                datas.ui->rectBt[counterJ+1].x +5,
+                datas.ui->rectBt[counterJ+1].y +5,
+                datas.ui->rectBt[counterJ+1].w -10,
+                datas.ui->rectBt[counterJ+1].h -10
+            };
+            itoa(counterJ+1,t,10);
+            t[2] = '\0';
+            redrawText(rendererP, &datas, 5, t, 0);
             SDL_SetRenderDrawColor(rendererP, 21, 51, 54, 0);
-            SDL_RenderFillRect(rendererP, &buttons[counterI][counterJ]);
-        }
+            SDL_RenderFillRect(rendererP, &datas.ui->rectBt[counterJ+1]);
+            SDL_RenderCopy(rendererP,datas.textures->texts[5],NULL,&levelT);
     }
 }
 
-// int menu_update_buttons(SDL_Renderer* rendererP, Datas datas, int width, int height){
 
-//     int i;
-//     int idBt = -1;
-//     int xMouse, yMouse;
-//     int TxtW, TxtH;
-
-//     SDL_Rect menu = datas.ui->rectGroup[0];
-//     SDL_Rect currentBt;
-//     SDL_Rect currentTxtBt;
-
-//     SDL_SetRenderDrawColor(rendererP,160, 253, 255, 0);
-//     SDL_RenderFillRect(rendererP,&menu);
-
-//     SDL_GetMouseState(&xMouse, &yMouse);
-//     idBt = getIdButtonOn(datas,xMouse, yMouse);
-
-
-//     for(i = 0; i < datas.ui->nbBt; i++){
-//         currentBt = datas.ui->rectBt[i];
-//             TxtH = datas.surfaces->texts[i + 1]->h;
-//             TxtW = datas.surfaces->texts[i + 1]->w;
-//         if(idBt == i){
-//             currentBt.x += 2;
-//             currentBt.y+=2;
-//         }
-//         if(i == 2){
-//             SDL_SetRenderDrawColor(rendererP, 175, 18, 18, 0);
-//         }else{
-//             SDL_SetRenderDrawColor(rendererP, 21, 51, 54, 0);
-//         }
-//         SDL_RenderFillRect(rendererP, &currentBt);
-//         currentTxtBt.y = currentBt.y + 30;
-//         currentTxtBt.h = currentBt.h - 60;
-//         currentTxtBt.w = currentTxtBt.h * TxtW/TxtH;
-//         currentTxtBt.x = currentBt.x + ( currentBt.w - currentTxtBt.w)/2;
-//         SDL_RenderCopy(rendererP,datas.textures->texts[1 + i],NULL,&currentTxtBt);
-//     }
-// }
-
-int level_end(Datas datas){
-    free(datas.ui->rectBt);
-    free(datas.ui->rectGroup);
+int level_end(Datas *datas){
+    free(datas->ui->rectBt);
+    free(datas->ui->rectGroup);
 }

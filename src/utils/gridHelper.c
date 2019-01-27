@@ -20,35 +20,43 @@ int* getNeighbourComponent(Datas* datas, Component* component){
     return cId;
 }
 
-void drawInfo(SDL_Renderer *renderer, SDL_Rect currentRect, Datas *datas,int value,char unity){
+void drawInfo(SDL_Renderer *renderer, SDL_Rect currentRect, Datas *datas,double value,char* unity){
     int size  = currentRect.w;
-    char buffer[5];
-    int offset =0;
+    char buffer[7];
     SDL_Rect info = {
-        currentRect.x,
-        currentRect.y+size*0.1,
-        size*0.6,
-        size*0.2
+        currentRect.x-currentRect.w*0.9,
+        currentRect.y-currentRect.h*0.65,
+        currentRect.w*0.5,
+        currentRect.h*0.3
     };
-    if(value>=100) offset++;
-    else if(value <10) offset--;
-    itoa(value, buffer, 10);
-    buffer[2+offset] = ' ';
-    buffer[3+offset] = unity;
-    buffer[4+offset] = '\0';
+    sprintf(buffer, "%f", value);
+    buffer[4] = ' ';
+    buffer[5] = unity[0];
+    buffer[6] = '\0';
     redrawText(renderer, datas, 20, buffer,1);
+    SDL_SetRenderDrawColor(renderer,255,0,0,0);
+    SDL_RenderDrawLine(renderer, currentRect.x+currentRect.w*0.1,
+                           currentRect.y + currentRect.h*0.1,
+                           currentRect.x-currentRect.w*0.3,
+                           currentRect.y-currentRect.h*0.8);
+    SDL_RenderDrawLine(renderer, currentRect.x-currentRect.w*0.3,
+                           currentRect.y-currentRect.h*0.8,
+                           currentRect.x-currentRect.w*0.9,
+                           currentRect.y-currentRect.h*0.8);
     SDL_RenderCopy(renderer, datas->textures->texts[20], NULL, &info);
 }
 
-Component* isEmpty(Datas* datas, int x, int y){
+ItemComponent* isEmpty(Datas* datas, int x, int y){
 
     int i;
-    for(i = 0; i < datas->grid->nbComponents; i++){
-        if(datas->grid->components[i].posX == x &&
-           datas->grid->components[i].posY == y
-           && datas->grid->components[i].idModule != -1){
-            return datas->grid->components + i;
+    ItemComponent * inter = datas->grid->components;
+    for(i = 0; inter != NULL; i++){
+        if(inter->component->posX == x &&
+           inter->component->posY == y
+           && inter->component->idModule != -1){
+            return inter;
            }
+        inter = inter->next;
     }
     return NULL;
 

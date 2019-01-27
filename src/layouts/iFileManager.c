@@ -11,7 +11,7 @@ int fileM_init(Datas* datas){
     datas->ui->rectBt = rectsBt;
     datas->ui->rectGroup = rectsGr;
 
-    getFileList(datas->fileList);
+    getFileList(datas, datas->fileList);
 
     //fichier pointé par défaut
     if(datas->filePtr == -1)
@@ -19,7 +19,7 @@ int fileM_init(Datas* datas){
 
     //fond d'écran assombri initialisé
     datas->ui->rectGroup[1] = (SDL_Rect) {-1,-1,-1,-1};
-
+    strcpy(datas->filenameInputTxt,datas->fileList[datas->filePtr]);
     return 0;
 }
 int fileM_event(SDL_Event event,SDL_Window* windowP, SDL_Renderer* rendererP,Datas *datas, int *running){
@@ -32,7 +32,7 @@ int fileM_event(SDL_Event event,SDL_Window* windowP, SDL_Renderer* rendererP,Dat
 
     //Refresh buttons' position
     SDL_GetWindowSize(windowP, &width, &height);
-    menu = (SDL_Rect) {width/2-200, height/2-350, 400, 700};
+    menu = (SDL_Rect) {width/2-200, height/2-350, 300, 700};
 
     datas->ui->rectGroup[0] = menu;
     if(datas->ui->rectGroup[1].w == -1)
@@ -56,7 +56,7 @@ int fileM_event(SDL_Event event,SDL_Window* windowP, SDL_Renderer* rendererP,Dat
             case 1:
 
                 if(datas->mode == 0 && loadCircuit(datas->fileList[datas->filePtr],datas)
-                    || datas->mode == 1 && saveCircuit(datas->fileList[datas->filePtr], *datas))
+                    || datas->mode == 1 && saveCircuit(datas->filenameInputTxt, *datas))
                 {
                     fileM_end(datas);
                     conception_init(datas);
@@ -66,14 +66,17 @@ int fileM_event(SDL_Event event,SDL_Window* windowP, SDL_Renderer* rendererP,Dat
                 break;
         }
     }
-    if(event.type == SDL_MOUSEWHEEL){
+    if(event.type == SDL_KEYDOWN){
         for(i = 0; datas->fileList[i][0] != '\0';i++){}
-        if(event.wheel.y > 0){
+        if(event.key.keysym.sym == datas->config.upChoose){
             datas->filePtr=(datas->filePtr+i-1)%i;
-        }else if (event.wheel.y < 0){
+            strcpy(datas->filenameInputTxt , datas->fileList[datas->filePtr]);
+        }else if (event.key.keysym.sym == datas->config.downChoose){
             datas->filePtr=(datas->filePtr+1)%i;
+            strcpy(datas->filenameInputTxt , datas->fileList[datas->filePtr]);
         }
     }
+    inputTxtListener(datas, event,25);
     return 0;
 }
 int fileM_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
@@ -84,7 +87,7 @@ int fileM_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
     //Declaration des éléments
     SDL_Rect background ;
     SDL_Rect menu = datas.ui->rectGroup[0];
-    SDL_Rect listBackgroud;
+    SDL_Rect listBackgroud, inputTxt;
     SDL_Rect button;
     SDL_Rect buttonT;
     SDL_Rect curButtonFileName;
@@ -108,8 +111,17 @@ int fileM_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
     SDL_RenderFillRect(rendererP,&menu);
 
     SDL_SetRenderDrawColor(rendererP,100,100,100,0);
-    listBackgroud = (SDL_Rect) {menu.x+10, menu.y+10, menu.w -20, menu.h -70};
+    if(datas.mode == 0){
+        listBackgroud = (SDL_Rect) {menu.x+10, menu.y+10, menu.w -20, menu.h -70};
+        inputTxt = (SDL_Rect) {0, 0, 1,1};
+    }else{
+        listBackgroud = (SDL_Rect) {menu.x+10, menu.y+10, menu.w -20, menu.h -130};
+        inputTxt = (SDL_Rect) {menu.x+10, menu.y+menu.h-110, menu.w-20, 50};
+    }
+
     SDL_RenderFillRect(rendererP,&listBackgroud);
+    SDL_RenderFillRect(rendererP,&inputTxt);
+
 
     //Dessin des boutons
     for(i = 0; i < 2;i++){
@@ -126,7 +138,7 @@ int fileM_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
         redrawText(rendererP, &datas, 13, datas.fileList[i],0);
 
         curFileName = (SDL_Rect) {listBackgroud.x+10, listBackgroud.y+12 + (i*25),
-            datas.surfaces->texts[13]->w/2, 15};
+            strlen(datas.fileList[i])*10, 15};
         curButtonFileName = (SDL_Rect) {listBackgroud.x+10, listBackgroud.y+10 + (i*25),
             listBackgroud.w-20, 20};
         if(i == datas.filePtr)
@@ -136,6 +148,11 @@ int fileM_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
 
 
         SDL_RenderFillRect(rendererP,&curButtonFileName);
+        SDL_RenderCopy(rendererP, datas.textures->texts[13], NULL, &curFileName);
+    }
+    if(strlen(datas.filenameInputTxt)){
+        redrawText(rendererP, &datas, 13, datas.filenameInputTxt,0);
+        curFileName = (SDL_Rect) {inputTxt.x+10, inputTxt.y+15, strlen(datas.filenameInputTxt)*10, inputTxt.h-30};
         SDL_RenderCopy(rendererP, datas.textures->texts[13], NULL, &curFileName);
     }
     //Rendu

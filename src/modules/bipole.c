@@ -1,8 +1,7 @@
-#include "mCapacitor.h"
+#include "mResistor.h"
 
-void capacitor_drawComponent(SDL_Rect currentRect,Component currentComponent, int idTex,SDL_Renderer * rendererP,
+void bipole_drawComponent(SDL_Rect currentRect,Component currentComponent, int idTex,SDL_Renderer * rendererP,
                         Datas datas){
-
     int state = currentComponent.stateModule;
     int angle = 0;
 
@@ -12,6 +11,7 @@ void capacitor_drawComponent(SDL_Rect currentRect,Component currentComponent, in
         default:
             break;
     }
+
     if(currentComponent.isReversed){
         angle+=180;
     }
@@ -23,7 +23,4 @@ void capacitor_drawComponent(SDL_Rect currentRect,Component currentComponent, in
                      angle,
                      NULL,
                      SDL_FLIP_HORIZONTAL);
-    if(datas.grid->selectedComponent != currentComponent.id) return;
-        //printf("%f\n", currentComponent.specificData);
-        drawInfo(rendererP, currentRect, &datas,currentComponent.specificData, "F");
 }

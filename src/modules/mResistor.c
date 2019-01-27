@@ -25,6 +25,7 @@ void resistor_drawComponent(SDL_Rect currentRect,Component currentComponent, int
         default:
             break;
     }
+
     //Dessine le symbole de la résistance
     SDL_RenderCopyEx(rendererP,
                      datas.textures->images[idTex],
@@ -47,7 +48,8 @@ void resistor_drawComponent(SDL_Rect currentRect,Component currentComponent, int
             currentColorBar.y += size*0.1;
         }
     }
-    drawInfo(rendererP, currentRect, &datas,listColor[0]*10+ listColor[1], 'O');
+    if(datas.grid->selectedComponent != currentComponent.id) return;
+    drawInfo(rendererP, currentRect, &datas,currentComponent.specificData, "O");
 
 }
 

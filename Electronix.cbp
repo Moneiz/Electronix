@@ -103,6 +103,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/moduleLoader.h" />
+		<Unit filename="src/modules/bipole.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/modules/bipole.h" />
 		<Unit filename="src/modules/mCapacitor.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -127,6 +131,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/utils/gridHelper.h" />
+		<Unit filename="src/utils/listHelper.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/utils/listHelper.h" />
 		<Unit filename="src/utils/saveload.c">
 			<Option compilerVar="CC" />
 		</Unit>

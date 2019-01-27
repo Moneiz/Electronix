@@ -26,13 +26,23 @@ struct Component {
     unsigned short posY;
     /**Id du module pointé*/
     unsigned char idModule;
+    /**Etat du module*/
+    unsigned char stateModule;
 
     /**Propriété du composant (tension, résistance, capacité...)*/
     float specificData;
 
-    /**Etat du module (anticipé)*/
-    unsigned char stateModule;
+    /** Le composant est inversé*/
+    short isReversed;
+
 };
+
+typedef struct ItemComponent ItemComponent;
+struct ItemComponent {
+    Component* component;
+    ItemComponent * next;
+};
+
 /**
 Structure qui désigne la grille et ses propriétés
 */
@@ -41,10 +51,14 @@ struct Grid_Manager {
 
     /**Niveau de zoom actuel*/
     int zoomLevel;
+    int focusX;
+    int focusY;
     /**Nombre de composant sur la grille*/
     int nbComponents;
+    /**Composant pointé*/
+    int selectedComponent;
     /**Liste des composants*/
-    Component* components;
+    ItemComponent* components;
 
 };
 

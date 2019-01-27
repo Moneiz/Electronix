@@ -19,6 +19,7 @@
 #include "uiManager.h"
 #include "gridManager.h"
 #include "modules.h"
+#include "../config.h"
 
 
 #ifndef DATAS_H
@@ -60,11 +61,15 @@ struct Datas {
     char fileList[8][128];
     /**Fichier actuellement sélectionné*/
     int filePtr;
+    /**Input texte fichier*/
+    char filenameInputTxt[32];
 
     /**Version du projet*/
     char *version;
     /**Nom du projet*/
     char *projectName;
+
+    Config config;
 
     /**Pointeur vers la fonction de rendu actuelle*/
     int (*currentIRenderFct)(SDL_Window *,SDL_Renderer *, Datas);

@@ -15,6 +15,11 @@
 #include "../datas/commons_datas.h"
 #include "../utils/uiEvent.h"
 
+#ifndef I_LEVEL_H
+#define I_LEVEL_H
+#include "iMenu.h"
+#endif // I_LEVEL_H
+
 /**
 Obligatoire : Initialisation de la page (allocation des tableaux UI)
 */
@@ -30,4 +35,4 @@ int level_event(SDL_Event event,SDL_Window* windowP,SDL_Renderer* renderer,Datas
 /**
 Obligatoire : Destruction de la page (désallocation des tableaux UI)
 */
-int level_end(Datas datas);
+int level_end(Datas *datas);

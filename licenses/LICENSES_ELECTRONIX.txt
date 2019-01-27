@@ -1,0 +1,20 @@
+ELECTRONIX DE PIWEL ORGANISATION VERSION ALPHA-3
+------------------------------------------------
+
+1. Cette ACCORD DE LICENCE concerne l'Organisation Piwel ("OP"), et
+l'Individu ou l'Organisation ("Licencié") accédant et utilisant le
+logiciel ("Electronix") sous forme source ou binaire.
+
+2. Sous réserve des conditions générales du présent contrat de licence,
+OP accorde au preneur de licence une autorisation à échelle mondiale de
+reproduire, analyser, tester, distribuer et/ou afficher publiquement
+une version dérivée d'Electronix, à condition toutefois que le 
+Contrat de licence d'OP et la notification du Copyright d'OP, 
+c'est à dire : "Copyright (C) 2018-2019 Electronix Software - All rights
+reserved" soient conservés dans Electronix et dans sa version dérivée
+préparé par le licencié.
+
+3. Cet Accord de licence et tous les conflits qui peuvent en
+découler sont régis par les lois française. Dans le cas d'un
+conflit qui ne pourrait pas être réglé à l'amiable entre Piwel Org.
+et le Licencié, ce dernier sera porté devant un tribunal français.

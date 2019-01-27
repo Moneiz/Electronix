@@ -26,6 +26,10 @@ void generator_drawComponent(SDL_Rect currentRect,Component currentComponent, in
             break;
     }
 
+    if(currentComponent.isReversed){
+        angle+=180;
+    }
+
     SDL_RenderCopyEx(rendererP,
                      datas.textures->images[idTex],
                      NULL,
@@ -33,5 +37,6 @@ void generator_drawComponent(SDL_Rect currentRect,Component currentComponent, in
                      angle,
                      NULL,
                      SDL_FLIP_HORIZONTAL);
-    drawInfo(rendererP, currentRect, &datas,5, 'V');
+     if(datas.grid->selectedComponent != currentComponent.id) return;
+     drawInfo(rendererP, currentRect, &datas,currentComponent.specificData, "V");
 }

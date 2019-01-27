@@ -1,8 +1,9 @@
 #include "saveload.h"
 
 int saveCircuit(char* filename, Datas datas){
-    char path[255] = "./saves/";
+    char path[255];
     int result;
+    strcpy(path, datas.config.savesPath);
     strcat(path, filename);
     strcat(path, ".elc");
 
@@ -10,31 +11,35 @@ int saveCircuit(char* filename, Datas datas){
     if(file != NULL){
         result = fwrite(datas.grid->components, sizeof(Component),datas.grid->nbComponents, file);
         //optimisation requise !
+        fprintf(stdout, "Electronix has saved %d components to %s.elc successfully!\n", datas.grid->nbComponents, filename);
         fclose(file);
+
         return 1;
     }
+    fprintf(stderr, "! File Unwritable :/ -> %s.elc was not be created. Cancelled save !\n", filename);
     return 0;
 }
 
-void getFileList(char result[8][128]){
+void getFileList(Datas *datas,char result[8][128]){
     DIR *d;
     int nbFile;
     struct dirent *dir;
     char generalName[128];
     int counter =0;
-    d = opendir("./saves");
+    d = opendir(datas->config.savesPath);
     if(d){
         while((dir = readdir(d)) != NULL){
             if(strlen(dir->d_name) > 4){
                 strncpy(generalName,dir->d_name, strlen(dir->d_name) - 4);
                 generalName[strlen(dir->d_name)-4] = '\0';
-                if(fileExist(generalName) && counter < 8){
+                if(fileExist(datas, generalName) && counter < 8){
                     strcpy(result[counter++], generalName);
                 }
             }
         }
         closedir(d);
     }
+    fprintf(stderr, "! Folder Not Found :/ -> %s was not found as folder. Cancelled operation !\n", datas->config.savesPath);
 
     for( ; counter < 8; counter++){
         result[counter][0] = '\0';
@@ -43,13 +48,15 @@ void getFileList(char result[8][128]){
     return result;
 }
 
-int fileExist(char * filename){
+int fileExist(Datas *datas, char * filename){
 
-    char path[255] = "./saves/";
+    char path[255];
+    strcpy(path, datas->config.savesPath);
     strcat(path, filename);
     strcat(path, ".elc");
     FILE* file = fopen(path,"rb");
     if(file == NULL){
+        fprintf(stderr, "! File Not Found :/ -> %s.elc was not found !\n", filename);
         return 0;
     }
     fclose(file);
@@ -57,11 +64,11 @@ int fileExist(char * filename){
 
 }
 int loadCircuit(char* filename, Datas *datas){
-    char path[255] = "./saves/";
+    char path[255];
     int result;
     int sizeFile;
     int nbComponent;
-
+    strcpy(path, datas->config.savesPath);
     strcat(path, filename);
     strcat(path, ".elc");
 

@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "SDL2/SDL.h"
 
 #ifndef CONF_DEFINE
 #define CONF_DEFINE
@@ -29,6 +30,15 @@ struct Config {
     int width;
     /**Ordre 3 : Hauteur de l'application fenetrée */
     int height;
+    char savesPath[64];
+    char imgPath[64];
+    char fontsPath[64];
+    int upChoose;
+    int downChoose;
+    int navUp;
+    int navDown;
+    int navLeft;
+    int navRigth;
 
 };
 /**Fonction chargeant la configuration d'après le chemin
