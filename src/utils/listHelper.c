@@ -78,3 +78,13 @@ void setSpecificDataComponent(Datas *datas, int id, double value){
     if(item != NULL)
         item->component->specificData = value;
 }
+void listToArray( ItemComponent* start, Component * components){
+    ItemComponent * inter = start;
+    int i = 0;
+    while(inter != NULL){
+        components[i] = *(inter->component);
+        printf("%d", inter->component->id);
+        inter = inter->next;
+        i++;
+    }
+}

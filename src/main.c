@@ -12,7 +12,7 @@
 *
 * \file main.c
 * \author Alan B., Sophie P.
-* \version alpha-3
+* \version alpha-4
 * \date 27/0.1/2019
 *
 * ELECTRONIX PROJECT
@@ -46,7 +46,7 @@ int main(int argc, char** argv)
     cDatas.grid = &gm;
 
     //On définit la version et le nom du projet utilisé dans le programme
-    cDatas.version = "alpha-3";
+    cDatas.version = "alpha-4";
     cDatas.projectName = "Electronix";
 
     //On essaye d'initialisé et ensuite de post-initialisé

@@ -51,7 +51,6 @@ void removeComponentOnGrid(Datas * datas, Component component){
     item->component->id = -1;
     updateStateComponents(item,datas,1);
     datas->grid->components = removeItemAt(datas->grid->components, item->component->id);
-    datas->grid->nbComponents--;
 
 }
 int canPlaceHere(Datas* datas,ItemComponent *component, int recursive){
