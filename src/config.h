@@ -30,9 +30,13 @@ struct Config {
     int width;
     /**Ordre 3 : Hauteur de l'application fenetrée */
     int height;
+    /** Chemin des sauvegardes */
     char savesPath[64];
+    /** Chemin des ressources images */
     char imgPath[64];
+    /** Chemin des polices */
     char fontsPath[64];
+
     int upChoose;
     int downChoose;
     int navUp;
@@ -45,4 +49,6 @@ struct Config {
 donné en paramètre*/
 Config initConf(char * confFilename);
 
+/** Récupère le code SDLK à partir d'un IDNAME d'une touche du clavier */
+int getIntKeyFromStr(char * str);
 #endif // CONF_DEFINE

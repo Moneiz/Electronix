@@ -23,19 +23,23 @@ int width, height;
     int counter;
     int idBt = -1;
     int buttonX, buttonY, buttonW, buttonH;
+    SDL_Rect currentBt;
+    SDL_Rect menu;
 
     //Refresh buttons' position
     SDL_GetWindowSize(windowP, &width, &height);
+
+    menu = (SDL_Rect) {width/2 - width/8, height/3, width/4, height/2 - height/200};
 
     buttonX = width/2 - width/8 + width/200;
     buttonY = height/3 + height/100;
     buttonW = (width/4 - 2 * width/200);
     buttonH = (height/2 - (datas->ui->nbBt + 1) * height/100)/datas->ui->nbBt;
 
-    SDL_Rect menu = {width/2 - width/8, height/3, width/4, height/2 - height/200};
-    SDL_Rect currentBt;
+
+
     for(counter = 0; counter < datas->ui->nbBt; counter++){
-        SDL_Rect currentBt = {buttonX, buttonY + counter * (height/100 + buttonH), buttonW, buttonH};
+        currentBt = (SDL_Rect) {buttonX, buttonY + counter * (height/100 + buttonH), buttonW, buttonH};
         datas->ui->rectBt[counter] = currentBt;
     }
 
@@ -94,6 +98,7 @@ int menu_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
     menu_update_buttons(rendererP, datas, width, height);
 
     SDL_RenderPresent(rendererP);
+    return 0;
 }
 int menu_update_buttons(SDL_Renderer* rendererP, Datas datas, int width, int height){
 
@@ -133,9 +138,11 @@ int menu_update_buttons(SDL_Renderer* rendererP, Datas datas, int width, int hei
         currentTxtBt.x = currentBt.x + ( currentBt.w - currentTxtBt.w)/2;
         SDL_RenderCopy(rendererP,datas.textures->texts[1 + i],NULL,&currentTxtBt);
     }
+    return 0;
 }
 
 int menu_end(Datas *datas){
     free(datas->ui->rectBt);
     free(datas->ui->rectGroup);
+    return 0;
 }

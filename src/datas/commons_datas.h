@@ -69,6 +69,7 @@ struct Datas {
     /**Nom du projet*/
     char *projectName;
 
+    /** Configuration du logiciel */
     Config config;
 
     /**Pointeur vers la fonction de rendu actuelle*/

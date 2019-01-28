@@ -4,7 +4,7 @@ int initLayouts(SDL_Renderer* rendererP, Datas* datas){
 
     //On tente d'initialise les textures des images et
     //des textes
-    if(!initTextures(rendererP, datas) |
+    if(initTextures(rendererP, datas) &&
        initTexsTex(rendererP, datas)){
         return 0;
     }
@@ -92,7 +92,7 @@ void redrawText(SDL_Renderer* rendererP, Datas* datas, int ptrText, char * newTe
 
 int updateRender(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
     //On appelle un pointeur de fonction pour dessiner l'interface actuel
-    (*datas.currentIRenderFct)(windowP, rendererP,datas);
+    return (*datas.currentIRenderFct)(windowP, rendererP,datas);
 }
 void updateEvent(SDL_Event event, SDL_Window* windowP, SDL_Renderer * rendererP, Datas * datas, int * running){
     //On attend un évènement (souris, clavier...)
@@ -143,4 +143,5 @@ int destroyTextures(Datas datas){
     free(datas.textures->texts);
     //On ferme la police de texte
     TTF_CloseFont(datas.font);
+    return 1;
 }

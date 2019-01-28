@@ -1,27 +1,7 @@
 #include "gridHelper.h"
 
-int* getNeighbourComponent(Datas* datas, Component* component){
-    int cId[4];
-    int i;
-    int u = 0; //bug chelou ; à voir avec M. Sananes
-    Component *componentsA[4];
-
-    componentsA[0] = isEmpty(datas, component->posX, component->posY+1);
-    componentsA[1] = isEmpty(datas, component->posX, component->posY-1);
-    componentsA[2] = isEmpty(datas, component->posX+1, component->posY);
-    componentsA[3] = isEmpty(datas, component->posX-1, component->posY);
-
-    for(i = 0; i < 4;i++){
-        cId[i] = componentsA[i] == NULL ? -1 : componentsA[i]->id;
-        //printf("%d", cId[i]);
-    }
-
-
-    return cId;
-}
 
 void drawInfo(SDL_Renderer *renderer, SDL_Rect currentRect, Datas *datas,double value,char* unity){
-    int size  = currentRect.w;
     char buffer[7];
     SDL_Rect info = {
         currentRect.x-currentRect.w*0.9,

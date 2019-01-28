@@ -17,7 +17,6 @@ int level_event(SDL_Event event,SDL_Window* windowP, SDL_Renderer* rendererP,Dat
     int xMouse, yMouse;
     int counterI, counterJ;
     int idBt = -1;
-    int buttonX, buttonY, buttonW, buttonH;
     SDL_Rect currentBt;
     //Refresh buttons' position
     SDL_GetWindowSize(windowP, &width, &height);
@@ -96,6 +95,7 @@ int level_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
     level_update_buttons(rendererP, datas, width, height);
 
     SDL_RenderPresent(rendererP);
+    return 1;
  }
 
 int level_update_buttons(SDL_Renderer* rendererP, Datas datas, int width, int height){
@@ -139,10 +139,12 @@ int level_update_buttons(SDL_Renderer* rendererP, Datas datas, int width, int he
             SDL_RenderFillRect(rendererP, &datas.ui->rectBt[counterJ+1]);
             SDL_RenderCopy(rendererP,datas.textures->texts[5],NULL,&levelT);
     }
+    return 1;
 }
 
 
 int level_end(Datas *datas){
     free(datas->ui->rectBt);
     free(datas->ui->rectGroup);
+    return 1;
 }

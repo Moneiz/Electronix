@@ -114,12 +114,12 @@ int postInit(SDL_Renderer* rendererP,Datas* datas, Ressources r){
     //avec IMG_Load pour remplir le tableau alloué. Un simple fichier
     //introuvable ferme le programme
     for(i = 0; i < r.sizeListImgFiles; i++){
-        datas->surfaces->images[i] = IMG_Load(r.listImgFiles+i);
+        datas->surfaces->images[i] = IMG_Load((const char*)(r.listImgFiles+i));
         if(!datas->surfaces->images[i]){
             fprintf(stderr,"Image Loading Error :/ -> %s\n", IMG_GetError());
             return 0;
         }
-        fprintf(stdout,"Image Loaded Successful : %s\n", r.listImgFiles+i);
+        fprintf(stdout,"Image Loaded Successful : %s\n", (char*)(r.listImgFiles+i));
     }
 
     //On met le nombre d'image dans le datas
@@ -150,7 +150,7 @@ int postInit(SDL_Renderer* rendererP,Datas* datas, Ressources r){
     //IMG_Load pourremplir le tableau alloué. Si un texte ne peut
     //pas être chargé, on termine le programme.
     for(i = 0; i < r.sizeListText; i++){
-        datas->surfaces->texts[i] = TTF_RenderText_Blended(datas->font, r.listText+i, white);;
+        datas->surfaces->texts[i] = TTF_RenderText_Blended(datas->font, (const char*) (r.listText+i), white);;
         if(!datas->surfaces->texts[i]){
             fprintf(stderr,"Text Loading Error :/ -> %s\n", IMG_GetError());
             return 0;

@@ -15,7 +15,6 @@ void resistor_drawComponent(SDL_Rect currentRect,Component currentComponent, int
     int listColor[4];
     int angle = 0;
     int i;
-    char buffer[6];
 
     //Applique les états
     switch(state){
@@ -133,7 +132,5 @@ void valueToColor(int color[4], float resistor){
     color[1] = (int)(rest)%10;
     color[2] = power >= 0 ? power : 9-power;
     color[3] = 10;
-
-    return color;
 
 }

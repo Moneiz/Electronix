@@ -3,7 +3,6 @@
 int saveCircuit(char* filename, Datas datas){
     char path[255];
     Component components[datas.grid->nbComponents];
-    int result;
     strcpy(path, datas.config.savesPath);
     strcat(path, filename);
     strcat(path, ".elc");
@@ -12,7 +11,7 @@ int saveCircuit(char* filename, Datas datas){
     if(file != NULL){
         listToArray(datas.grid->components, components);
 
-        result = fwrite(components, sizeof(Component),datas.grid->nbComponents, file);
+        fwrite(components, sizeof(Component),datas.grid->nbComponents, file);
         //optimisation requise !
         fprintf(stdout, "Electronix has saved %d components to %s.elc successfully!\n", datas.grid->nbComponents, filename);
         fclose(file);
@@ -25,7 +24,6 @@ int saveCircuit(char* filename, Datas datas){
 
 void getFileList(Datas *datas,char result[8][128]){
     DIR *d;
-    int nbFile;
     struct dirent *dir;
     char generalName[128];
     int counter =0;
@@ -47,8 +45,6 @@ void getFileList(Datas *datas,char result[8][128]){
     for( ; counter < 8; counter++){
         result[counter][0] = '\0';
     }
-
-    return result;
 }
 
 int fileExist(Datas *datas, char * filename){
@@ -68,7 +64,6 @@ int fileExist(Datas *datas, char * filename){
 }
 int loadCircuit(char* filename, Datas *datas){
     char path[255];
-    int result;
     int i;
     int sizeFile;
     int nbComponent;
@@ -90,11 +85,11 @@ int loadCircuit(char* filename, Datas *datas){
             return 0;
         }
 
-        datas->grid->components = removeAll(datas->grid->components);
+        datas->grid->components = (ItemComponent*)removeAll(datas->grid->components);
 
         components = (Component*) malloc(sizeof(Component) * nbComponent);
 
-        result = fread(components, sizeof(Component),nbComponent, file );
+        fread(components, sizeof(Component),nbComponent, file );
         for(i=0; i < nbComponent; i++){
             addItem(&datas->grid->components, components[i]);
         }

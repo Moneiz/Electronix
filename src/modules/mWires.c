@@ -11,7 +11,6 @@ void wire_drawComponent(SDL_Rect currentRect,Component currentComponent, int idT
 
     int state = currentComponent.stateModule;
     int angle = 0;
-    int color;
 
     switch(state){
         case 1: angle = 90;

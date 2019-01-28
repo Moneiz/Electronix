@@ -7,12 +7,16 @@
 * Fichier gérant les modules du programme
 */
 
+
+
+
 #include <SDL2/SDL.h>
 #include <stdlib.h>
 
 #include "ressources.h"
 #include "datas/commons_datas.h"
 #include "modules/mGenerator.h"
+#include "layoutLoader.h"
 
 /**
 Initialise les données des modules
@@ -35,6 +39,15 @@ Supprime le composant  (selon ses coordonnées) de la grille
 */
 void removeComponentOnGrid(Datas * datas, Component component);
 
+/** Renvoie 1 s'il est possible de placer le compsant à cette emplacement selon ses voisins */
+int canPlaceHere(Datas* datas,ItemComponent *component, int recursive);
+
+/** Met à jour l'état du composant et ses voisins si récursif */
+void updateStateComponents(ItemComponent* component, Datas* datas, int recursive);
+
+/** Détruis les modules du programme */
+void freeModules(Module* modulesList);
+
 /**
 Dessine l'ensemble des éléments de la grille
 */
@@ -43,4 +56,5 @@ void renderComponents(SDL_Renderer* rendererP, Datas datas);
 Affiche le module identifié par id dans la barre des modules
 */
 void showBtModule(SDL_Renderer* rendererP,SDL_Rect currentMod, Datas datas, int id);
+
 

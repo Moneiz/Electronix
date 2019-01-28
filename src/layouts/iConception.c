@@ -66,31 +66,31 @@ int conception_event(SDL_Event event,SDL_Window* windowP, SDL_Renderer* renderer
             case 0:
                 freeComponents(datas);
                 gridInit(datas);
-                return;
+                return 1;
             case 1:
                 datas->mode = 0;
                 conception_end(datas);
                 fileM_init(datas);
                 datas->currentIEventsFct = fileM_event;
                 datas->currentIRenderFct = fileM_update;
-                return;
+                return 1;
             case 2:
                 datas->mode = 1;
                 conception_end(datas);
                 fileM_init(datas);
                 datas->currentIEventsFct = fileM_event;
                 datas->currentIRenderFct = fileM_update;
-                return;
+                return 1;
             case 4:
                 conception_end(datas);
                 freeComponents(datas);
                 menu_init(datas);
                 datas->currentIEventsFct = menu_event;
                 datas->currentIRenderFct = menu_update;
-                return;
+                return 1;
             case 5:
                 reverseComponent(datas, datas->grid->selectedComponent);
-                return;
+                return 1;
             default:
                 onClickComponent(event.button,datas,(Component){ 0,
                     xMouse/datas->grid->zoomLevel,
@@ -140,7 +140,7 @@ int conception_event(SDL_Event event,SDL_Window* windowP, SDL_Renderer* renderer
     if(newValueComponent != 0 && datas->grid->selectedComponent < datas->grid->nbComponents){
             setSpecificDataComponent(datas, datas->grid->selectedComponent, newValueComponent);
     }
-    return 0;
+    return 1;
 }
 int conception_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
 
@@ -182,13 +182,13 @@ int conception_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas)
 
     //Rend sur l'écran
     SDL_RenderPresent(rendererP);
+    return 1;
 }
 int conception_update_header(SDL_Renderer* rendererP, Datas datas, int width, int height){
 
     int i;
     int idBt = -1;
     int xMouse, yMouse;
-    int marginXHeader = width/2 - 0.2 * width;
     SDL_Rect headerB = datas.ui->rectGroup[0];
     SDL_Rect header = {headerB.x+5, headerB.y+5, headerB.w -10, headerB.h-10};
     SDL_Rect currentBt;
@@ -222,6 +222,7 @@ int conception_update_header(SDL_Renderer* rendererP, Datas datas, int width, in
         SDL_RenderCopy(rendererP,datas.textures->images[i],NULL,&currentIcoBt);
 
     }
+    return 1;
 }
 int conception_update_modules(SDL_Renderer* rendererP, Datas datas, int width, int height){
 
@@ -229,8 +230,6 @@ int conception_update_modules(SDL_Renderer* rendererP, Datas datas, int width, i
     SDL_Rect modulesB = datas.ui->rectGroup[1];
     SDL_Rect modules = {modulesB.x+5, modulesB.y+5, modulesB.w-10, modulesB.h-10};
     SDL_Rect currentMod = {modules.x+5, modules.y+5, modules.w -10, 40};
-    SDL_Rect currentModIco = {currentMod.x+5, currentMod.y+5, currentMod.w/3 -10, 30};
-    SDL_Rect currentModText = {currentMod.x+10+currentMod.w/3, currentMod.y+5, 2*currentMod.w/3 -10, 20};
 
     //Dessine le fond de ModuleLayout
     SDL_SetRenderDrawColor(rendererP,100,100,100,0);
@@ -248,15 +247,14 @@ int conception_update_modules(SDL_Renderer* rendererP, Datas datas, int width, i
         }
         showBtModule(rendererP,currentMod,datas, i);
     }
+    return 1;
 
 }
 
 int conception_update_parameters(SDL_Renderer* rendererP, Datas datas, int width, int height){
 
-    int i;
     int idBt = -1;
     int xMouse, yMouse;
-    int marginXHeader = width/2 - 0.2 * width;
     SDL_Rect headerB = datas.ui->rectGroup[2];
     SDL_Rect header = {headerB.x+5, headerB.y+5, headerB.w -10, headerB.h-10};
     SDL_Rect currentBt;
@@ -296,13 +294,16 @@ int conception_update_parameters(SDL_Renderer* rendererP, Datas datas, int width
         redrawText(rendererP, &datas, 20, datas.filenameInputTxt, 0);
         SDL_RenderCopy(rendererP,datas.textures->texts[20],NULL,&currentIcoBt);
     }
+    return 1;
 }
 
 int freeComponents(Datas *datas){
-    datas->grid->components = removeAll(datas->grid->components);
+    datas->grid->components = (ItemComponent*) removeAll(datas->grid->components);
     datas->grid->nbComponents = 0;
+    return 1;
 }
 int conception_end(Datas *datas){
     free(datas->ui->rectBt);
     free(datas->ui->rectGroup);
+    return 1;
 }

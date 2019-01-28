@@ -18,6 +18,7 @@
 #ifndef I_LEVEL_H
 #define I_LEVEL_H
 #include "iMenu.h"
+
 #endif // I_LEVEL_H
 
 /**
@@ -28,6 +29,8 @@ int level_init(Datas *datas);
 Obligatoire : Mise à jour du rendu de la page (affichage des éléments UI)
 */
 int level_update(SDL_Window* windowP, SDL_Renderer* renderer, Datas datas);
+/** Dessine les boutons représentants les niveaux */
+int level_update_buttons(SDL_Renderer* rendererP, Datas datas, int width, int height);
 /**
 Obligatoire : Mise à jour de la position des élements UI et écoute des évenements de ceux ci
 */

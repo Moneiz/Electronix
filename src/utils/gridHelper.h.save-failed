@@ -19,8 +19,6 @@
 
 /**Vérifie que l'emplacement x et y est libre*/
 ItemComponent* isEmpty(Datas * datas, int x, int y);
-
-/** Dessine une interface pour afficher les informations du composant */
 void drawInfo(SDL_Renderer *renderer, SDL_Rect currentRect, Datas *datas,double value,char* unity);
 
 #endif // GRID_HELPER

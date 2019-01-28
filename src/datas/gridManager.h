@@ -36,10 +36,13 @@ struct Component {
     short isReversed;
 
 };
-
+/** Structure d'un item de la liste des composants */
 typedef struct ItemComponent ItemComponent;
 struct ItemComponent {
+
+    /** Pointeur vers la structure composant */
     Component* component;
+    /** Prochaine élément à itérer */
     ItemComponent * next;
 };
 

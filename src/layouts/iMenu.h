@@ -34,6 +34,8 @@ int menu_init(Datas *datas);
 Obligatoire : Mise à jour du rendu de la page (affichage des éléments UI)
 */
 int menu_update(SDL_Window* windowP, SDL_Renderer* renderer, Datas datas);
+/** Dessine les boutons représentants les niveaux */
+int menu_update_buttons(SDL_Renderer* rendererP, Datas datas, int width, int height);
 /**
 Obligatoire : Mise à jour de la position des élements UI et écoute des évenements de ceux ci
 */

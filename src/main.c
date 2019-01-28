@@ -7,13 +7,14 @@
 #include "datas/surfacesManager.h"
 #include "datas/texturesManager.h"
 #include "config.h"
+#include "moduleLoader.h"
 
 /**
 *
 * \file main.c
 * \author Alan B., Sophie P.
-* \version alpha-4
-* \date 27/0.1/2019
+* \version alpha-5
+* \date 28/0.1/2019
 *
 * ELECTRONIX PROJECT
 *
@@ -46,7 +47,7 @@ int main(int argc, char** argv)
     cDatas.grid = &gm;
 
     //On définit la version et le nom du projet utilisé dans le programme
-    cDatas.version = "alpha-4";
+    cDatas.version = "alpha-5";
     cDatas.projectName = "Electronix";
 
     //On essaye d'initialisé et ensuite de post-initialisé

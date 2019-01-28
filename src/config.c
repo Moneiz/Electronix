@@ -3,7 +3,6 @@
 
 char * subString(char * string, int start, int length){
     char * result;
-    int i;
 
     //On alloue notre substring (+1 car '\0' pris en compte ! )
     result = (char*) malloc(sizeof(char)  * (length+1));

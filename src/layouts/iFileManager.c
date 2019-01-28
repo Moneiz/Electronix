@@ -25,7 +25,6 @@ int fileM_init(Datas* datas){
 int fileM_event(SDL_Event event,SDL_Window* windowP, SDL_Renderer* rendererP,Datas *datas, int *running){
     int width, height;
     int xMouse, yMouse;
-    int counter;
     int idBt = -1;
     int i;
     SDL_Rect menu;
@@ -55,8 +54,8 @@ int fileM_event(SDL_Event event,SDL_Window* windowP, SDL_Renderer* rendererP,Dat
                 break;
             case 1:
 
-                if(datas->mode == 0 && loadCircuit(datas->fileList[datas->filePtr],datas)
-                    || datas->mode == 1 && saveCircuit(datas->filenameInputTxt, *datas))
+                if((datas->mode == 0 && loadCircuit(datas->fileList[datas->filePtr],datas))
+                    || (datas->mode == 1 && saveCircuit(datas->filenameInputTxt, *datas)))
                 {
                     fileM_end(datas);
                     conception_init(datas);
@@ -85,7 +84,6 @@ int fileM_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
     int i ;
 
     //Declaration des éléments
-    SDL_Rect background ;
     SDL_Rect menu = datas.ui->rectGroup[0];
     SDL_Rect listBackgroud, inputTxt;
     SDL_Rect button;
@@ -93,7 +91,7 @@ int fileM_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
     SDL_Rect curButtonFileName;
     SDL_Rect curFileName;
 
-    if(datas.ui->rectGroup[1].w == -1) return;
+    if(datas.ui->rectGroup[1].w == -1) return 0;
 
     //Taille de la fenetre
     SDL_GetWindowSize(windowP, &width, &height);
@@ -157,10 +155,12 @@ int fileM_update(SDL_Window* windowP, SDL_Renderer* rendererP, Datas datas){
     }
     //Rendu
     SDL_RenderPresent(rendererP);
- }
+    return 1;
+}
 
 
 int fileM_end(Datas *datas){
     free(datas->ui->rectBt);
     free(datas->ui->rectGroup);
+    return 1;
 }

@@ -8,6 +8,9 @@
 * interfaces du programme
 */
 
+#ifndef LAYOUT_LOADER
+#define LAYOUT_LOADER
+
 #include <SDL2/SDL.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -48,3 +51,5 @@ void updateEvent(SDL_Event event,SDL_Window * windowP,SDL_Renderer * rendererP, 
 Fonction appelé afin de détruire les textures de Datas
 */
 int destroyTextures(Datas datas);
+
+#endif // LAYOUT_LOADER

@@ -77,7 +77,7 @@ Ressources getFilledRessources(char * configFile){
 void fillModuleList(Module* module){
     //Charge les différents composants
     //id - id texte - id texture - nombre de liason max - pointeur de rendu - pointeur de calcul
-    module[0] = (Module) {1, 6, 8,2, generator_drawComponent, generator_calculate};
+    module[0] = (Module) {1, 6, 8,2, generator_drawComponent, NULL};
     module[1] = (Module) {2, 7, 9,4, wire_drawComponent, NULL};
     module[2] = (Module) {3, 8, 10,2, resistor_drawComponent, NULL};
     module[3] = (Module) {4, 9, 12,2, capacitor_drawComponent, NULL};

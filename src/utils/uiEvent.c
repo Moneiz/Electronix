@@ -42,4 +42,5 @@ int inputTxtListener(Datas * datas, SDL_Event event, int lenghtMax){
             datas->filenameInputTxt[lenght-1] = '\0';
         }
     }
+    return 1;
 }
